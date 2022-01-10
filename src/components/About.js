@@ -17,7 +17,7 @@ export default function About() {
     const dur = [1, 5]
     return (
         <div>
-            <div className='relative overflow-x-hidden overflow-y-hidden max-h-max flex flex-col items-center p-10'>
+            <div className='relative bg-gray-50 dark:bg-gray-900 overflow-x-hidden overflow-y-hidden max-h-max flex flex-col items-center p-10'>
                 {/* Grid background */}
                 <div className='absolute inset-0 p-2 grid grid-cols-12 gap-2 transform -skew-y-12 scale-150'>
                     {/* Row 1 */}
@@ -106,9 +106,9 @@ export default function About() {
                     <div className='col-span-3 bg-gray-800 rounded animate-pulse' style={{ animationDelay: `${getRandomInt(delay)}s`, animationDuration: `${getRandomInt(dur)}s` }}></div>
                 </div>
                 {/* Content */}
-                <div className='w-[90vw] h-min md:w-9/12 lg:w-7/12 relative'>
+                <div className='w-[90vw] pt-8 md:pt-0 h-min md:w-9/12 lg:w-7/12 relative'>
                     <div className='p-2 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg'>
-                        <h1 className='p-2 text-2xl lg:text-4xl text-white font-bold'>
+                        <h1 className='pt-0 p-2 text-2xl lg:text-4xl text-white font-bold'>
                             <span className='text-indigo-500 text-3xl lg:text-5xl' style={{ "fontFamily": 'Caveat' }}>About </span> Me
                         </h1>
                         <article className='pt-2 md:pt-0 px-4 text-black dark:text-white'>
@@ -119,7 +119,7 @@ export default function About() {
                     </div>
                     <div className='flex flex-col md:flex-row'>
                         <div className='my-2 mt-4 md:m-2 md:mt-4 md:ml-0 md:w-2/3 p-2 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg'>
-                            <h1 className='p-2 text-2xl lg:text-4xl text-white font-bold'>
+                            <h1 className='pt-0 p-2 text-2xl lg:text-4xl text-white font-bold'>
                                 <span className='text-indigo-500 text-3xl lg:text-5xl' style={{ "fontFamily": 'Caveat' }}>Education</span>
                             </h1>
                             <article className='pt-2 md:pt-0 px-4 text-black dark:text-white'>
@@ -129,14 +129,14 @@ export default function About() {
                             </article>
                         </div>
                         <div className='my-2 mt-4 md:m-2 md:mt-4 md:mr-0 md:w-1/3 p-2 md:p-4 flex flex-col md:items-center bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg'>
-                            <h1 className='p-2 text-2xl lg:text-4xl text-white font-bold'>
+                            <h1 className='pb-3 text-2xl lg:text-4xl text-white font-bold'>
                                 My <span className='text-indigo-500 text-3xl lg:text-5xl' style={{ "fontFamily": 'Caveat' }}>Location</span>
                             </h1>
                             <iframe className='rounded-lg w-full h-full' title="map" style={{ "border": 0, "filter": "invert(100%)" }} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14008.065053328835!2d77.13053618124533!3d28.629274668703356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d03245972a8ff%3A0x22f0733cd9d891f3!2sNaraina%20Vihar%2C%20Naraina%2C%20New%20Delhi%2C%20Delhi%20110028!5e0!3m2!1sen!2sin!4v1640848168393!5m2!1sen!2sin" allowFullScreen="" loading="lazy"></iframe>
                         </div>
                     </div>
                     <div className='my-2 mt-4 md:m-2 md:mt-4 md:mx-0 p-2 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg'>
-                        <h1 className='p-2 text-2xl lg:text-4xl text-white font-bold'>
+                        <h1 className='pt-0 pb-3 p-2 text-2xl lg:text-4xl text-white font-bold'>
                             My <span className='text-indigo-500 text-3xl lg:text-5xl' style={{ "fontFamily": 'Caveat' }}>Hobbies</span>
                         </h1>
                         <article className='pt-2 md:pt-0 px-4 text-black dark:text-white'>
@@ -155,7 +155,7 @@ export default function About() {
                                 <a className="transform transition-all duration-200 hover:scale-105 px-2" href="https://www.linkedin.com/in/ghost-vaibhav/" rel="noreferrer" target="_blank"><img className='w-10' src={Linkedin}></img></a>
                             </div>
                         </div>
-                        <div className='w-full md:w-1/2 my-2 mt-4 md:m-2 md:mt-4 md:mr-0 pt-1 pb-2 px-2 md:px-4 md:pt-2 md:pb-4 flex flex-row bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg'>
+                        <div className='justify-center w-full md:w-1/2 my-2 mt-4 md:m-2 md:mt-4 md:mr-0 pt-1 pb-2 px-2 md:px-4 md:pt-2 md:pb-4 flex flex-row bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg'>
                             <h1 className='text-center self-center text-2xl lg:text-4xl text-white font-bold'>
                                 Some secrets to be <span className='text-indigo-500 text-3xl lg:text-5xl' style={{ "fontFamily": 'Caveat' }}>shared</span>
                             </h1>

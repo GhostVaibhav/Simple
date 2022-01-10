@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import '@themesberg/flowbite';
 
 ReactDOM.render(
   <React.StrictMode>
