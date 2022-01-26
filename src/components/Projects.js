@@ -66,8 +66,11 @@ function Projects() {
                                             <span className="cursor-default px-2 py-1 bg-green-200 hover:bg-green-300 rounded-full text-xs font-semibold text-green-600">
                                                 Tailwind
                                             </span>
-                                            <span className="cursor-default mx-2 px-2 py-1 bg-red-200 hover:bg-red-300 rounded-full text-xs font-semibold text-red-600">
+                                            <span className="hidden md:inline cursor-default mx-2 px-2 py-1 bg-red-200 hover:bg-red-300 rounded-full text-xs font-semibold text-red-600">
                                                 JavaScript
+                                            </span>
+                                            <span className="inline md:hidden cursor-default mx-2 px-2 py-1 bg-red-200 hover:bg-red-300 rounded-full text-xs font-semibold text-red-600">
+                                                JS
                                             </span>
                                             <span className="cursor-default px-2 py-1 bg-teal-200 hover:bg-teal-300 rounded-full text-xs font-semibold text-teal-600">
                                                 JSX
@@ -93,7 +96,7 @@ function Projects() {
                         <div className='absolute top-[60%] md:top-[50%] left-[30%] md:left-2/4 w-[33.33vw] aspect-square bg-blue-300 rounded-full mix-blend-multiply filter animate-something animation-delay-4000'></div>
                     </div>
                 </div>
-                <div className='snap-start relative flex flex-col justify-center items-center sm:flex-row  h-screen w-screen'>
+                {/* <div className='snap-start relative flex flex-col justify-center items-center sm:flex-row  h-screen w-screen'>
                     <div data-aos="zoom-in" data-aos-once="false" className='relative w-screen md:h-screen h-[30%] sm:w-1/2 !opacity-60 blur-2xl'>
                         <div className='absolute top-[45%] md:top-[35%] left-[30%] md:left-2/4 w-1/3 aspect-square bg-teal-300 rounded-full mix-blend-multiply filter animate-something animation-delay-2000'></div>
                         <div className='absolute top-[45%] md:top-[35%] left-[40%] md:left-1/4 w-1/3 aspect-square bg-yellow-300 rounded-full mix-blend-multiply filter animate-something'></div>
@@ -133,7 +136,7 @@ function Projects() {
                             <img src={markImg} alt='MarkIt' className='drop-shadow-xl mb-4 mt-2 md:mt-4 md:mb-0 border border-gray-600 rounded-lg w-full h-auto' />
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     )

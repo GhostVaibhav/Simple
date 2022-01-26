@@ -17,3 +17,34 @@ html {
         animation-delay: 4s;
     }
 }
+
+.spin_words {
+    animation: word_spin 24s infinite;
+}
+
+@keyframes word_spin {
+    10% {
+        transform: translateY(-100%)
+    }
+    25% {
+        transform: translateY(-200%)
+    }
+    35% {
+        transform: translateY(-300%)
+    }
+    50% {
+        transform: translateY(-400%)
+    }
+    60% {
+        transform: translateY(-300%)
+    }
+    75% {
+        transform: translateY(-200%)
+    }
+    85% {
+        transform: translateY(-100%)
+    }
+    100% {
+        transform: translateY(0%)
+    }
+}

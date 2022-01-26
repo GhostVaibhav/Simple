@@ -10,7 +10,7 @@ function Navbar() {
     return (
         <div>
             {/* Sidebar */}
-            <div className='sidebar border-r-gray-700 border-r-[1px] fixed md:opacity-95 h-screen bg-gray-800 top-0 left-0 z-10 transform -translate-x-full transition duration-200 ease-in-out'>
+            <div className='z-50 sidebar border-r-gray-700 border-r-[1px] fixed md:opacity-95 h-screen bg-gray-800 top-0 left-0 transform -translate-x-full transition duration-200 ease-in-out'>
                 {/* Logo */}
                 <Link to="/">
                     <div className='flex p-2 mt-2 mr-2 text-white'>
