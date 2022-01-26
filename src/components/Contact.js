@@ -1,13 +1,5 @@
 import React from 'react'
 
-function getRandomInt(ranges) {
-    var min = ranges[0]
-    var max = ranges[1]
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
-}
-
 function Contact() {
     const delay = [0, 8]
     const dur = [1, 5]
