@@ -26,7 +26,7 @@ jobs:
            npm i
            npm run predeploy
            git remote set-url origin https://GhostVaibhav:${{ secrets.PASS }}@github.com/GhostVaibhav/Simple.git
-           git config user.email "sharmavaibhav110028@gmail.com"
+           git config user.email "48472541+GhostVaibhav@users.noreply.github.com"
            git config user.name "Vaibhav Sharma"
            npm install gh-pages --save-dev
            npm run deploy
