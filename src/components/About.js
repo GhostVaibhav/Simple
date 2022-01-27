@@ -12,6 +12,17 @@ function getRandomInt(ranges) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
+var challengeBtnCount = 0;
+
+function click() {
+    if (challengeBtnCount == 10) {
+        document.querySelector("#menu-button").classList.toggle("hidden");
+        document.querySelector("#challenge-button").classList.toggle("hidden");
+    }
+    else
+        challengeBtnCount++;
+}
+
 export default function About() {
     const delay = [0, 8]
     const dur = [1, 5]
@@ -123,7 +134,7 @@ export default function About() {
                                 <span className='text-indigo-500 text-3xl lg:text-5xl' style={{ "fontFamily": 'Caveat' }}>Education</span>
                             </h1>
                             <article className='pt-2 md:pt-0 px-4 text-black dark:text-white'>
-                                I am currently a <strong>2nd year student</strong> in <a target="_blank" rel="noreferrer" className="lg:underline-offset-2 underline hover:decoration-transparent decoration-blue-500 hover:bg-gray-600 rounded-md p-1" href='https://vit.ac.in'>Vellore Institute of Technology</a>,<a className="lg:underline-offset-2 underline decoration-indigo-500 hover:bg-gray-600 hover:decoration-transparent p-1 rounded-md" target="_blank" rel="noreferrer" href='https://goo.gl/maps/aPnJgz6SgxoMomna8'>Vellore</a>🏛️ pursuing my <strong>Bachelor of Technology <i>(B.Tech)</i> in Computer Science with specialisation in Blockchain Technology</strong> with a<Popover className="p-1 hover:bg-gray-600 rounded-lg inline"><Popover.Button>CGPA</Popover.Button><Popover.Panel className="absolute p-2 bg-gray-700 border border-gray-600 rounded-md"><div>Cumulative Grade Point Average</div></Popover.Panel></Popover>of <strong>9.0</strong>.
+                                I am currently a <strong>2nd year student</strong> in <a target="_blank" rel="noreferrer" className="lg:underline-offset-2 underline hover:decoration-transparent decoration-blue-500 hover:bg-gray-600 rounded-md p-1" href='https://vit.ac.in'>Vellore Institute of Technology</a>,<a className="lg:underline-offset-2 underline decoration-indigo-500 hover:bg-gray-600 hover:decoration-transparent p-1 rounded-md" target="_blank" rel="noreferrer" href='https://goo.gl/maps/aPnJgz6SgxoMomna8'>Vellore</a>🏛️ pursuing my <strong>Bachelor of Technology <i>(B.Tech)</i> in Computer Science with specialisation in Blockchain Technology</strong> with a<Popover className="p-1 hover:bg-teal-600 mx-1 rounded-lg inline border border-teal-400"><Popover.Button>CGPA</Popover.Button><Popover.Panel className="absolute p-2 bg-gray-700 border border-gray-600 rounded-md"><div>Cumulative Grade Point Average</div></Popover.Panel></Popover>of <strong>9.0</strong>.
                                 I completed my schooling from<a target="_blank" rel="noreferrer" className="lg:underline-offset-2 underline hover:decoration-transparent decoration-green-500 hover:bg-gray-600 rounded-md p-1" href='https://tafssp.com/'>The Air Force School</a>,<a className="lg:underline-offset-2 underline decoration-green-500 hover:bg-gray-600 hover:decoration-transparent p-1 rounded-md" target="_blank" rel="noreferrer" href='https://goo.gl/maps/xQJk7qTvCZ2mhc4H7'>New Delhi</a>🏫 with a score of <strong>96.2% in AISSCE</strong>.
                                 I have avid interest in <div className='inline font-bold text-green-400'>Mathematics</div>, <div className='inline font-bold text-red-400'>Physics</div> and <div className='inline font-bold text-teal-400'>Computer Science</div>.
                             </article>
@@ -157,7 +168,7 @@ export default function About() {
                         </div>
                         <div className='justify-center w-full md:w-1/2 my-2 mt-4 md:m-2 md:mt-4 md:mr-0 pt-1 pb-2 px-2 md:px-4 md:pt-2 md:pb-4 flex flex-row bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg'>
                             <h1 className='text-center self-center text-2xl lg:text-4xl text-white font-bold'>
-                                Some secrets to be <span className='text-indigo-500 text-3xl lg:text-5xl' style={{ "fontFamily": 'Caveat' }}>shared</span>
+                                Some secrets to be <span className='text-indigo-500 select-none text-3xl lg:text-5xl' onClick={click} style={{ "fontFamily": 'Caveat' }}>shared</span>
                             </h1>
                         </div>
                     </div>
