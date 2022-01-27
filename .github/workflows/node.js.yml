@@ -24,6 +24,6 @@ jobs:
         cache: 'npm'
     - run: npm i
     - run: npm run predeploy
-    - run: git remote add origin https://GhostVaibhav:${{ secrets.PASS }}@github.com/GhostVaibhav/simple.git
+    - run: git remote add origin https://GhostVaibhav:${{ secrets.PASS }}@github.com/GhostVaibhav/Simple.git
     - run: npm install gh-pages --save-dev
     - run: npm run deploy
