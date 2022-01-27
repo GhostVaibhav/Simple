@@ -19,32 +19,57 @@ html {
 }
 
 .spin_words {
-    animation: word_spin 24s infinite;
+    animation: word_spin 20s infinite;
+}
+
+#wave:active {
+    animation: shake 1s infinite;
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: rotate3d(0, 0, 1, -15deg);
+    }
+    
+    20%, 80% {
+        transform: rotate3d(0, 0, 0, 15deg);
+    }
+  
+    30%, 50%, 70% {
+        transform: rotate3d(0, 0, 1, -15deg);
+    }
+
+    40%, 60% {
+        transform: rotate3d(0, 0, 0, 15deg);
+    }
 }
 
 @keyframes word_spin {
+    0% {
+        transform: translateY(-80%);
+    }
     10% {
-        transform: translateY(-100%)
+        transform: translateY(-180%)
     }
     25% {
-        transform: translateY(-200%)
+        transform: translateY(-280%)
     }
     35% {
-        transform: translateY(-300%)
+        transform: translateY(-380%)
     }
     50% {
-        transform: translateY(-400%)
+        transform: translateY(-480%)
     }
     60% {
-        transform: translateY(-300%)
+        transform: translateY(-380%)
     }
     75% {
-        transform: translateY(-200%)
+        transform: translateY(-280%)
     }
     85% {
-        transform: translateY(-100%)
+        transform: translateY(-180%)
     }
     100% {
-        transform: translateY(0%)
+        transform: translateY(-80%)
     }
 }
