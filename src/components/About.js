@@ -12,18 +12,15 @@ function getRandomInt(ranges) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
-var challengeBtnCount = 0;
-
-function click() {
-    if (challengeBtnCount == 10) {
-        document.querySelector("#menu-button").classList.toggle("hidden");
-        document.querySelector("#challenge-button").classList.toggle("hidden");
+export default function About(props) {
+    function click() {
+        if (props.btnCount === props.btnCountMax) {
+            document.querySelector("#menu-button").classList.toggle("hidden");
+            document.querySelector("#challenge-button").classList.toggle("hidden");
+        }
+        else
+            props.btnCount++;
     }
-    else
-        challengeBtnCount++;
-}
-
-export default function About() {
     const delay = [0, 8]
     const dur = [1, 5]
     return (
@@ -161,9 +158,9 @@ export default function About() {
                                 Let's stay <span className='text-indigo-500 text-3xl lg:text-5xl' style={{ "fontFamily": 'Caveat' }}>connected</span>
                             </h1>
                             <div className='flex self-center w-full py-2 md:w-[50%] justify-evenly'>
-                                <a className="transform transition-all duration-200 hover:scale-105 px-2" href="https://github.com/GhostVaibhav" rel="noreferrer" target="_blank"><img className='w-10' src={Github}></img></a>
-                                <a className="transform transition-all duration-200 hover:scale-105 px-2" href="mailto:sharmavaibhav110028@gmail.com" rel="noreferrer" target="_blank"><img className='w-10' src={Gmail}></img></a>
-                                <a className="transform transition-all duration-200 hover:scale-105 px-2" href="https://www.linkedin.com/in/ghost-vaibhav/" rel="noreferrer" target="_blank"><img className='w-10' src={Linkedin}></img></a>
+                                <a className="transform transition-all duration-200 hover:scale-105 px-2" href="https://github.com/GhostVaibhav" rel="noreferrer" target="_blank"><img alt="GitHub" className='w-10' src={Github}></img></a>
+                                <a className="transform transition-all duration-200 hover:scale-105 px-2" href="mailto:sharmavaibhav110028@gmail.com" rel="noreferrer" target="_blank"><img alt="Gmail" className='w-10' src={Gmail}></img></a>
+                                <a className="transform transition-all duration-200 hover:scale-105 px-2" href="https://www.linkedin.com/in/ghost-vaibhav/" rel="noreferrer" target="_blank"><img alt="LinkedIn" className='w-10' src={Linkedin}></img></a>
                             </div>
                         </div>
                         <div className='justify-center w-full md:w-1/2 my-2 mt-4 md:m-2 md:mt-4 md:mr-0 pt-1 pb-2 px-2 md:px-4 md:pt-2 md:pb-4 flex flex-row bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg'>

@@ -25,6 +25,8 @@ function useKey(key, cb) {
 }
 
 function App() {
+    var challengeBtnCount = 0;
+    var challengeBtnCountMax = 10;
     function handleOpen() {
         if (document.querySelector(".sidebar").classList.contains("-translate-x-full")) {
             document.querySelector(".sidebar").classList.toggle("-translate-x-full");
@@ -51,7 +53,7 @@ function App() {
                     </OutsideAlerter>
                     <Routes>
                         <Route path="/" element={<Introduction />} />
-                        <Route path="/about" element={<About />} />
+                        <Route path="/about" element={<About btnCount={challengeBtnCount} btnCountMax={challengeBtnCountMax} />} />
                         <Route path="/projects" element={<Projects />} />
                         <Route path="/contact" element={<Contact />} />
                     </Routes>
