@@ -35,5 +35,5 @@ jobs:
            git checkout -b gh-pages
            git add --all
            git commit -m "Added CNAME"
-           git remote add origin https://github.com/GhostVaibhav/Simple.git
+           git remote add origin https://GhostVaibhav:${{ secrets.PASS }}@github.com/GhostVaibhav/Simple.git
            git push -u origin gh-pages
