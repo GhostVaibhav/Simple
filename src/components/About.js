@@ -158,14 +158,14 @@ export default function About(props) {
                                 Let's stay <span data-no-blobity className='text-indigo-500 text-3xl lg:text-5xl' style={{ "fontFamily": 'Caveat' }}>connected</span>
                             </h1>
                             <div className='flex self-center w-full py-2 md:w-[50%] justify-evenly'>
-                                <a data-no-blobity className="transform transition-all duration-200 hover:scale-105 px-2" href="https://github.com/GhostVaibhav" rel="noreferrer" target="_blank"><img alt="GitHub" className='w-10' src={Github}></img></a>
-                                <a data-no-blobity className="transform transition-all duration-200 hover:scale-105 px-2" href="mailto:sharmavaibhav110028@gmail.com" rel="noreferrer" target="_blank"><img alt="Gmail" className='w-10' src={Gmail}></img></a>
-                                <a data-no-blobity className="transform transition-all duration-200 hover:scale-105 px-2" href="https://www.linkedin.com/in/ghost-vaibhav/" rel="noreferrer" target="_blank"><img alt="LinkedIn" className='w-10' src={Linkedin}></img></a>
+                                <a data-no-blobity className="transform transition-all duration-200 hover:scale-105 px-2" href="https://github.com/GhostVaibhav" rel="noreferrer" target="_blank"><img data-blobity-offset-x="5" data-blobity-offset-y="5" alt="GitHub" className='w-10' src={Github}></img></a>
+                                <a data-no-blobity className="transform transition-all duration-200 hover:scale-105 px-2" href="mailto:sharmavaibhav110028@gmail.com" rel="noreferrer" target="_blank"><img data-blobity-offset-x="5" data-blobity-offset-y="5" alt="Gmail" className='w-10' src={Gmail}></img></a>
+                                <a data-no-blobity className="transform transition-all duration-200 hover:scale-105 px-2" href="https://www.linkedin.com/in/ghost-vaibhav/" rel="noreferrer" target="_blank"><img data-blobity-offset-x="5" data-blobity-offset-y="5" alt="LinkedIn" className='w-10' src={Linkedin}></img></a>
                             </div>
                         </div>
                         <div className='justify-center w-full md:w-1/2 my-2 mt-4 md:m-2 md:mt-4 md:mr-0 pt-1 pb-2 px-2 md:px-4 md:pt-2 md:pb-4 flex flex-row bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg'>
                             <h1 className='text-center self-center text-2xl lg:text-4xl text-white font-bold'>
-                                Some secrets to be <span className='text-indigo-500 select-none text-3xl lg:text-5xl' onClick={click} style={{ "fontFamily": 'Caveat' }}>shared</span>
+                                Some secrets to be <span data-blobity-offset-x="10" className='text-indigo-500 select-none text-3xl lg:text-5xl' onClick={click} style={{ "fontFamily": 'Caveat' }}>shared</span>
                             </h1>
                         </div>
                     </div>

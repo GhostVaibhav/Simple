@@ -12,7 +12,7 @@ function Introduction() {
                 <div className='w-[90%] md:w-3/4 flex justify-between'>
                     <div className='flex flex-col'>
                         <div className='relative p-1 m-1 text-5xl overflow-hidden'>
-                            <div className='text-gray-900'>V</div>
+                            <div className='text-gray-900 select-none'>V</div>
                             <div className='absolute text-4xl md:text-5xl'>
                                 <span className='py-2 spin_words font-bold block'>Hi</span>
                                 <span data-blobity-tooltip="Hi in Hindi" className='py-2 spin_words font-bold block'>नमस्ते</span>
@@ -21,7 +21,7 @@ function Introduction() {
                                 <span data-blobity-tooltip="Hi in French" className='py-2 spin_words first-letter:font-bold block'>Salut</span>
                             </div>
                         </div>
-                        <span style={{ "fontFamily": "Caveat" }} className='text-indigo-500 text-5xl md:text-6xl'>
+                        <span data-blobity-offset-x="10" style={{ "fontFamily": "Caveat" }} className='text-indigo-500 text-5xl md:text-6xl'>
                             I'm Vaibhav
                         </span>
                     </div>
