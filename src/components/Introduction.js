@@ -43,7 +43,7 @@ function Introduction() {
                             I'm Vaibhav
                         </motion.span>
                     </div>
-                    <motion.div initial="zoomInit" animate="zoomFinal" exit="zoomInit" transition={{ duration: 0.25 }} variants={pageTransition} id="wave" className='self-center text-5xl md:text-7xl select-none'>
+                    <motion.div initial="zoomInit" animate="zoomFinal" exit="zoomInit" transition={{ duration: 0.25, delay: 1 }} variants={pageTransition} id="wave" className='self-center text-5xl md:text-7xl select-none'>
                         <span data-blobity-magnetic="true" data-blobity-offset-x="8" data-blobity-offset-y="8" data-blobity-radius="48">👋</span>
                     </motion.div>
                 </div>

@@ -48,13 +48,16 @@ html {
     0% {
         transform: translateY(-80%);
     }
-    10% {
+    15% {
         transform: translateY(-180%)
     }
-    25% {
+    20% {
+        transform: translateY(-180%)
+    }
+    30% {
         transform: translateY(-280%)
     }
-    35% {
+    40% {
         transform: translateY(-380%)
     }
     50% {
@@ -63,10 +66,13 @@ html {
     60% {
         transform: translateY(-380%)
     }
-    75% {
+    70% {
         transform: translateY(-280%)
     }
     85% {
+        transform: translateY(-180%)
+    }
+    90% {
         transform: translateY(-180%)
     }
     100% {
