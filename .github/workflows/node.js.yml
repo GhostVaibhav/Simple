@@ -31,7 +31,7 @@ jobs:
            npm run deploy
            cd build
            echo "new.ghostvaibhav.me" > CNAME
-           cd ..
+           git init
            git add --all
            git commit -m "Added CNAME"
-           git push
+           git push -u origin gh-pages
