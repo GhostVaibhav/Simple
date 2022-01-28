@@ -29,11 +29,10 @@ jobs:
            git config user.name "Vaibhav Sharma"
            npm install gh-pages --save-dev
            npm run deploy
-           ls
-           cd build
            git fetch
            git stash
            git checkout gh-pages
+           cd build
            echo "new.ghostvaibhav.me" > CNAME
            git commit -a -m "Added CNAME"
            git push
