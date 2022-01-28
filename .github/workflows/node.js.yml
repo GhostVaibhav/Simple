@@ -34,5 +34,6 @@ jobs:
            git checkout gh-pages
            cd build
            echo "new.ghostvaibhav.me" > CNAME
-           git commit -a -m "Added CNAME"
+           git add --all
+           git commit -m "Added CNAME"
            git push
