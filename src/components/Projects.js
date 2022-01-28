@@ -3,6 +3,28 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import markImg from '../images/markit.png';
 import portfolioImg from '../images/portfolio.png';
+import { motion } from 'framer-motion';
+
+const pageTransition = {
+    in: {
+        opacity: 1,
+        x: 0,
+    },
+    out: {
+        opacity: 0,
+        x: '-100vw',
+    },
+    comeLeftOut: {
+        opacity: 0,
+        x: '100vw',
+    },
+    zoomInit: {
+        scale: 0.8,
+    },
+    zoomFinal: {
+        scale: 1,
+    }
+}
 
 function Projects() {
     useEffect(() => {
@@ -19,7 +41,7 @@ function Projects() {
                     </div>
                     <div className='relative flex justify-center items-end md:items-center w-screen md:h-screen h-[70%] sm:w-1/2'>
                         <div className='flex flex-col w-[90%]'>
-                            <div className='drop-shadow-xl'>
+                            <motion.div transition={{ duration: 0.5 }} initial="comeLeftOut" animate="in" exit="comeLeftOut" variants={pageTransition} className='drop-shadow-xl'>
                                 <div className='flex flex-wrap justify-between items-center p-2 pr-4 md:pr-6 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border-b-0 border rounded-t-lg'>
                                     <h1 className='p-2 text-2xl lg:text-4xl text-white font-bold'>
                                         <div className='flex text-indigo-500 text-4xl lg:text-5xl' style={{ "fontFamily": 'Caveat' }}>MarkIt </div>
@@ -47,15 +69,15 @@ function Projects() {
                                         A cross-platform TODO terminal app
                                     </div>
                                 </article>
-                            </div>
-                            <img data-blobity-radius="10" src={markImg} alt='MarkIt' className='drop-shadow-xl mb-4 mt-2 md:mt-4 md:mb-0 border border-gray-600 rounded-lg w-full h-auto' />
+                            </motion.div>
+                            <motion.img initial="comeLeftOut" animate="in" exit="comeLeftOut" transition={{ duration: 0.5 }} variants={pageTransition} data-blobity-radius="10" src={markImg} alt='MarkIt' className='drop-shadow-xl mb-4 mt-2 md:mt-4 md:mb-0 border border-gray-600 rounded-lg w-full h-auto' />
                         </div>
                     </div>
                 </div>
                 <div className='snap-start relative flex flex-col justify-center items-center sm:flex-row h-screen w-screen'>
                     <div className='relative flex justify-center items-start md:items-center w-screen md:h-screen h-[70%] sm:w-1/2'>
                         <div className='flex flex-col-reverse md:flex-col w-[90%] mt-16 md:mt-0'>
-                            <div className='drop-shadow-xl'>
+                            <motion.div transition={{ duration: 0.5 }} initial="out" animate="in" viewport={{ once: true }} exit="out" variants={pageTransition} className='drop-shadow-xl'>
                                 <div className='flex flex-wrap justify-between items-center p-2 pr-4 md:pr-6 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border-b-0 border rounded-t-lg'>
                                     <h1 className='p-2 text-2xl lg:text-4xl text-white font-bold'>
                                         <div className='text-indigo-500 text-4xl lg:text-5xl' style={{ "fontFamily": 'Caveat' }}>Portfolio </div>
@@ -86,8 +108,8 @@ function Projects() {
                                         My personal website built with React using TailwindCSS
                                     </div>
                                 </article>
-                            </div>
-                            <img data-blobity-radius="10" src={portfolioImg} alt='My Portfolio Website' className='drop-shadow-xl mb-4 mt-2 md:mt-4 md:mb-0 border border-gray-600 rounded-lg w-full h-auto' />
+                            </motion.div>
+                            <motion.img initial="out" animate="in" exit="out" transition={{ duration: 0.5 }} variants={pageTransition} data-blobity-radius="10" src={portfolioImg} alt='My Portfolio Website' className='drop-shadow-xl mb-4 mt-2 md:mt-4 md:mb-0 border border-gray-600 rounded-lg w-full h-auto' />
                         </div>
                     </div>
                     <div data-aos="zoom-in" data-aos-once="false" className='relative w-screen md:h-screen h-[30%] sm:w-1/2 !opacity-60 blur-2xl'>

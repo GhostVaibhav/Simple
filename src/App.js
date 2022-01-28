@@ -7,6 +7,7 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import useBlobity from 'blobity/lib/useBlobity';
+import { AnimatePresence } from 'framer-motion';
 
 function isPhone() {
     var isMobile = false;
@@ -109,12 +110,14 @@ function App() {
                     <OutsideAlerter>
                         <Navbar />
                     </OutsideAlerter>
-                    <Routes>
-                        <Route path="/" element={<Introduction />} />
-                        <Route path="/about" element={<About btnCount={challengeBtnCount} btnCountMax={challengeBtnCountMax} />} />
-                        <Route path="/projects" element={<Projects />} />
-                        <Route path="/contact" element={<Contact />} />
-                    </Routes>
+                    <AnimatePresence>
+                        <Routes>
+                            <Route path="/" element={<Introduction />} />
+                            <Route path="/about" element={<About btnCount={challengeBtnCount} btnCountMax={challengeBtnCountMax} />} />
+                            <Route path="/projects" element={<Projects />} />
+                            <Route path="/contact" element={<Contact />} />
+                        </Routes>
+                    </AnimatePresence>
                 </Router>
             </div>
         </>
