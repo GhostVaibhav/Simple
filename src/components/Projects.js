@@ -24,16 +24,16 @@ function Projects() {
                                     <h1 className='p-2 text-2xl lg:text-4xl text-white font-bold'>
                                         <div className='flex text-indigo-500 text-4xl lg:text-5xl' style={{ "fontFamily": 'Caveat' }}>MarkIt </div>
                                         <div>
-                                            <span data-blobity-magnetic="true" data-blobity-radius="12" className="mr-2 px-2 py-1 bg-indigo-200 hover:bg-indigo-300 rounded-full text-xs font-semibold text-indigo-600">
+                                            <span data-blobity-offset-x="4" data-blobity-offset-y="4" data-blobity-magnetic="true" data-blobity-radius="16" className="mr-2 px-2 py-1 bg-indigo-200 hover:bg-indigo-300 rounded-full text-xs font-semibold text-indigo-600">
                                                 C++
                                             </span>
-                                            <span data-blobity-magnetic="true" data-blobity-radius="12" className="px-2 py-1 bg-green-200 hover:bg-green-300 rounded-full text-xs font-semibold text-green-600">
+                                            <span data-blobity-offset-x="4" data-blobity-offset-y="4" data-blobity-magnetic="true" data-blobity-radius="16" className="px-2 py-1 bg-green-200 hover:bg-green-300 rounded-full text-xs font-semibold text-green-600">
                                                 CMake
                                             </span>
-                                            <span data-blobity-magnetic="true" data-blobity-radius="12" className="mx-2 px-2 py-1 bg-red-200 hover:bg-red-300 rounded-full text-xs font-semibold text-red-600">
+                                            <span data-blobity-offset-x="4" data-blobity-offset-y="4" data-blobity-magnetic="true" data-blobity-radius="16" className="mx-2 px-2 py-1 bg-red-200 hover:bg-red-300 rounded-full text-xs font-semibold text-red-600">
                                                 Docker
                                             </span>
-                                            <span data-blobity-magnetic="true" data-blobity-radius="12" className="px-2 py-1 bg-teal-200 hover:bg-teal-300 rounded-full text-xs font-semibold text-teal-600">
+                                            <span data-blobity-offset-x="4" data-blobity-offset-y="4" data-blobity-magnetic="true" data-blobity-radius="16" className="px-2 py-1 bg-teal-200 hover:bg-teal-300 rounded-full text-xs font-semibold text-teal-600">
                                                 Git
                                             </span>
                                         </div>
@@ -60,19 +60,19 @@ function Projects() {
                                     <h1 className='p-2 text-2xl lg:text-4xl text-white font-bold'>
                                         <div className='text-indigo-500 text-4xl lg:text-5xl' style={{ "fontFamily": 'Caveat' }}>Portfolio </div>
                                         <div>
-                                            <span data-blobity-magnetic="true" data-blobity-radius="12" className="mr-2 px-2 py-1 bg-indigo-200 hover:bg-indigo-300 rounded-full text-xs font-semibold text-indigo-600">
+                                            <span data-blobity-offset-x="4" data-blobity-offset-y="4" data-blobity-magnetic="true" data-blobity-radius="16" className="mr-2 px-2 py-1 bg-indigo-200 hover:bg-indigo-300 rounded-full text-xs font-semibold text-indigo-600">
                                                 React
                                             </span>
-                                            <span data-blobity-magnetic="true" data-blobity-radius="12" className="px-2 py-1 bg-green-200 hover:bg-green-300 rounded-full text-xs font-semibold text-green-600">
+                                            <span data-blobity-offset-x="4" data-blobity-offset-y="4" data-blobity-magnetic="true" data-blobity-radius="16" className="px-2 py-1 bg-green-200 hover:bg-green-300 rounded-full text-xs font-semibold text-green-600">
                                                 Tailwind
                                             </span>
-                                            <span data-blobity-magnetic="true" data-blobity-radius="12" className="hidden md:inline mx-2 px-2 py-1 bg-red-200 hover:bg-red-300 rounded-full text-xs font-semibold text-red-600">
+                                            <span data-blobity-offset-x="4" data-blobity-offset-y="4" data-blobity-magnetic="true" data-blobity-radius="16" className="hidden md:inline mx-2 px-2 py-1 bg-red-200 hover:bg-red-300 rounded-full text-xs font-semibold text-red-600">
                                                 JavaScript
                                             </span>
-                                            <span data-blobity-magnetic="true" data-blobity-radius="12" className="inline md:hidden mx-2 px-2 py-1 bg-red-200 hover:bg-red-300 rounded-full text-xs font-semibold text-red-600">
+                                            <span data-blobity-offset-x="4" data-blobity-offset-y="4" data-blobity-magnetic="true" data-blobity-radius="16" className="inline md:hidden mx-2 px-2 py-1 bg-red-200 hover:bg-red-300 rounded-full text-xs font-semibold text-red-600">
                                                 JS
                                             </span>
-                                            <span data-blobity-magnetic="true" data-blobity-radius="12" className="px-2 py-1 bg-teal-200 hover:bg-teal-300 rounded-full text-xs font-semibold text-teal-600">
+                                            <span data-blobity-offset-x="4" data-blobity-offset-y="4" data-blobity-magnetic="true" data-blobity-radius="16" className="px-2 py-1 bg-teal-200 hover:bg-teal-300 rounded-full text-xs font-semibold text-teal-600">
                                                 JSX
                                             </span>
                                         </div>

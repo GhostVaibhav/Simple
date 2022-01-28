@@ -15,10 +15,10 @@ function Introduction() {
                             <div className='text-gray-900 select-none'>V</div>
                             <div className='absolute text-4xl md:text-5xl'>
                                 <span className='py-2 spin_words font-bold block'>Hi</span>
-                                <span data-blobity-tooltip="Hi in Hindi" className='py-2 spin_words font-bold block'>नमस्ते</span>
-                                <span data-blobity-tooltip="Hi in Spanish" className='py-2 spin_words first-letter:font-bold block'>Hola</span>
-                                <span data-blobity-tooltip="Hi in German" className='py-2 spin_words first-letter:font-bold block'>Hallo</span>
-                                <span data-blobity-tooltip="Hi in French" className='py-2 spin_words first-letter:font-bold block'>Salut</span>
+                                <span data-blobity-magnetic="true" data-blobity-tooltip="Hi in Hindi" className='py-2 spin_words font-bold block'>नमस्ते</span>
+                                <span data-blobity-magnetic="true" data-blobity-tooltip="Hi in Spanish" className='py-2 spin_words first-letter:font-bold block'>Hola</span>
+                                <span data-blobity-magnetic="true" data-blobity-tooltip="Hi in German" className='py-2 spin_words first-letter:font-bold block'>Hallo</span>
+                                <span data-blobity-magnetic="true" data-blobity-tooltip="Hi in French" className='py-2 spin_words first-letter:font-bold block'>Salut</span>
                             </div>
                         </div>
                         <span data-blobity-offset-x="10" style={{ "fontFamily": "Caveat" }} className='text-indigo-500 text-5xl md:text-6xl'>

@@ -165,7 +165,7 @@ export default function About(props) {
                         </div>
                         <div className='justify-center w-full md:w-1/2 my-2 mt-4 md:m-2 md:mt-4 md:mr-0 pt-1 pb-2 px-2 md:px-4 md:pt-2 md:pb-4 flex flex-row bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg'>
                             <h1 className='text-center self-center text-2xl lg:text-4xl text-white font-bold'>
-                                Some secrets to be <span data-blobity-offset-x="10" className='text-indigo-500 select-none text-3xl lg:text-5xl' onClick={click} style={{ "fontFamily": 'Caveat' }}>shared</span>
+                                Some secrets to be <span data-blobity-offset-x="16" className='text-indigo-500 select-none text-3xl lg:text-5xl' onClick={click} style={{ "fontFamily": 'Caveat' }}>shared</span>
                             </h1>
                         </div>
                     </div>
