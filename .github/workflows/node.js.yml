@@ -35,4 +35,4 @@ jobs:
            git checkout -b gh-pages
            git add --all
            git commit -m "Added CNAME"
-           git push -u origin gh-pages
+           git push origin gh-pages
