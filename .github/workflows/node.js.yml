@@ -32,6 +32,7 @@ jobs:
            npm run deploy
            ls
            cd build
+           git fetch
            git checkout gh-pages
            echo "new.ghostvaibhav.me" > CNAME
            git commit -a -m "Added CNAME"
