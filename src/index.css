@@ -143,6 +143,9 @@ html {
 }
 
 .fg-img {
-    background: transparent url("./images/fg-dark.png") no-repeat top center;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: url("./images/fg-dark.png");
     z-index: 3;
 }
