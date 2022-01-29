@@ -44,7 +44,7 @@ function Projects() {
                             <motion.div transition={{ duration: 0.5 }} initial="comeLeftOut" animate="in" exit="comeLeftOut" variants={pageTransition} className='drop-shadow-xl'>
                                 <div className='flex flex-wrap justify-between items-center p-2 pr-4 md:pr-6 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border-b-0 border rounded-t-lg'>
                                     <h1 className='p-2 text-2xl lg:text-4xl text-white font-bold'>
-                                        <div className='flex text-indigo-500 text-4xl lg:text-5xl' style={{ "fontFamily": 'Caveat' }}>MarkIt </div>
+                                        <span data-blobity-offset-x="10" className='text-indigo-500 text-4xl lg:text-5xl' style={{ "fontFamily": 'Caveat' }}>MarkIt </span>
                                         <div>
                                             <span data-blobity-offset-x="4" data-blobity-offset-y="4" data-blobity-magnetic="true" data-blobity-radius="16" className="mr-2 px-2 py-1 bg-indigo-200 hover:bg-indigo-300 rounded-full text-xs font-semibold text-indigo-600">
                                                 C++
@@ -80,7 +80,7 @@ function Projects() {
                             <motion.div transition={{ duration: 0.5 }} initial="out" animate="in" viewport={{ once: true }} exit="out" variants={pageTransition} className='drop-shadow-xl'>
                                 <div className='flex flex-wrap justify-between items-center p-2 pr-4 md:pr-6 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border-b-0 border rounded-t-lg'>
                                     <h1 className='p-2 text-2xl lg:text-4xl text-white font-bold'>
-                                        <div className='text-indigo-500 text-4xl lg:text-5xl' style={{ "fontFamily": 'Caveat' }}>Portfolio </div>
+                                        <span data-blobity-offset-x="10" className='text-indigo-500 text-4xl lg:text-5xl' style={{ "fontFamily": 'Caveat' }}>Portfolio </span>
                                         <div>
                                             <span data-blobity-offset-x="4" data-blobity-offset-y="4" data-blobity-magnetic="true" data-blobity-radius="16" className="mr-2 px-2 py-1 bg-indigo-200 hover:bg-indigo-300 rounded-full text-xs font-semibold text-indigo-600">
                                                 React

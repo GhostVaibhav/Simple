@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
+import Meteor from '../images/Meteor.svg';
 
 const pageTransition = {
     in: {
@@ -17,6 +18,9 @@ const pageTransition = {
     },
     zoomFinal: {
         scale: 1,
+    },
+    zoomBig: {
+        scale: 2,
     }
 }
 
@@ -26,13 +30,19 @@ function Introduction() {
     }, []);
     return (
         <div>
-            <div className='flex justify-center items-center text-white bg-gray-900 h-screen w-screen'>
+            <div className='-z-10 bg-gray-900 absolute h-screen w-screen overflow-hidden'>
+                <motion.div initial="zoomBig" animate="zoomFinal" exit="zoomBig" transition={{ transition: 'linear', duration: 8 }} variants={pageTransition} className="stars" />
+                <div className="twinkling" />
+                <motion.div initial="zoomBig" animate="zoomFinal" exit="zoomBig" transition={{ transition: 'linear', duration: 16, delay: 1 }} variants={pageTransition} className="clouds" />
+                <div className='fg-img' />
+            </div>
+            <div className='flex justify-center items-center text-white h-screen w-screen'>
                 <div className='w-[90%] md:w-3/4 flex justify-between'>
                     <div className='flex flex-col'>
                         <div className='relative p-1 m-1 text-5xl overflow-hidden'>
-                            <div className='text-gray-900 select-none'>V</div>
+                            <div className='opacity-0 select-none'>.</div>
                             <motion.div initial="out" animate="in" exit="out" variants={pageTransition} className='absolute text-4xl md:text-5xl'>
-                                <span className='py-2 spin_words font-bold block'>Hi</span>
+                                <span data-blobity-magnetic="true" className='py-2 spin_words font-bold block'>Hi</span>
                                 <span data-blobity-magnetic="true" data-blobity-tooltip="Hi in Hindi" className='py-2 spin_words font-bold block'>नमस्ते</span>
                                 <span data-blobity-magnetic="true" data-blobity-tooltip="Hi in Spanish" className='py-2 spin_words first-letter:font-bold block'>Hola</span>
                                 <span data-blobity-magnetic="true" data-blobity-tooltip="Hi in German" className='py-2 spin_words first-letter:font-bold block'>Hallo</span>

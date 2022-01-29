@@ -74,8 +74,8 @@ function App() {
             opacity: 0.75,
             fontColor: '#000000',
             zIndex: -1,
-            size: 40,
-            radius: 4,
+            size: 0,
+            radius: 0,
         }
     }
     const blobity = useBlobity(blobProps);
