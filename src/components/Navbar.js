@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import GPL from '../images/gplv3.png';
 
 function click() {
     if (document.querySelector("#challenge-button").classList.contains("hidden")) {
@@ -12,7 +13,6 @@ function click() {
         document.querySelector("#menu-button").classList.toggle("hidden");
     }
 }
-
 function Navbar() {
     return (
         <div>
@@ -94,7 +94,18 @@ function Navbar() {
                                 </div>
                             </Link>
                         </div>
-                        <div className='w-full mt-2 h-[1px] bg-gray-600'></div>
+                        <div className='w-full mt-2 h-[1px] bg-gray-600' />
+                        <a href='https://github.com/GhostVaibhav/Simple/blob/master/LICENSE' rel='noreferrer' target='_blank'>
+                            <img alt='GPLv3 License' src={GPL} className='m-2 p-2 border rounded-md border-gray-600' />
+                        </a>
+                        <div className='flex flex-col w-full items-center'>
+                            <div className='max-w-full'>
+                                © 2022
+                            </div>
+                            <div className='max-w-full'>
+                                Vaibhav Sharma
+                            </div>
+                        </div>
                     </nav>
                 </div>
                 {/* Opening button */}

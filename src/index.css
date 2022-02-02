@@ -13,10 +13,6 @@ html {
     width: 4px;
 }
 
-::-webkit-scrollbar:hover {
-    width: 8px;
-}
-
 ::-webkit-scrollbar-track {
     background: #111827;
 }
@@ -36,6 +32,18 @@ html {
     }
     .animation-delay-4000 {
         animation-delay: 4s;
+    }
+}
+
+@keyframes movingStars {
+    0% {
+        transform: translateY(-50px) translateX(-20px) scale(1) rotate(0deg);
+    }
+    50% {
+        transform: translateY(50px) translateX(20px) scale(2.5) rotate(180deg);
+    }
+    100% {
+        transform: translateY(-50px) translateX(-20px) scale(1) rotate(360deg);
     }
 }
 
@@ -123,7 +131,8 @@ html {
 }
 
 .stars {
-    background: transparent url("../src/images/stars.png") repeat top center;
+    animation: movingStars 80s linear infinite;
+    background: transparent url("../src/images/stars.png") repeat-x top center;
     z-index: 0;
 }
 

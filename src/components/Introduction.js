@@ -30,7 +30,7 @@ function Introduction() {
     return (
         <div>
             <div className='-z-10 bg-gray-900 absolute h-screen w-screen overflow-hidden'>
-                <motion.div initial="zoomBig" animate="zoomFinal" exit="zoomBig" transition={{ transition: 'linear', duration: 8 }} variants={pageTransition} className="stars" />
+                <motion.div viewport={{ once: true }} initial="zoomBig" animate="zoomFinal" exit="zoomBig" transition={{ transition: 'linear', duration: 8 }} variants={pageTransition} className="stars" />
                 <div className="twinkling" />
                 <motion.div initial="zoomBig" animate="zoomFinal" exit="zoomBig" transition={{ transition: 'linear', duration: 16, delay: 1 }} variants={pageTransition} className="clouds" />
                 <div className='fg-img' />
@@ -38,7 +38,7 @@ function Introduction() {
             <div className='flex justify-center items-center text-white h-screen w-screen'>
                 <div className='w-[90%] md:w-3/4 flex justify-between'>
                     <div className='flex flex-col'>
-                        <div className='relative p-1 m-1 text-5xl overflow-hidden'>
+                        <div className='relative p-1 md:p-2 m-1 text-5xl overflow-hidden'>
                             <div className='opacity-0 select-none'>.</div>
                             <motion.div initial="out" animate="in" exit="out" variants={pageTransition} className='absolute text-4xl md:text-5xl'>
                                 <span data-blobity-magnetic="true" className='py-2 spin_words font-bold block'>Hi</span>

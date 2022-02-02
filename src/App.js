@@ -87,7 +87,10 @@ function App() {
     var challengeBtnCount = 0;
     var challengeBtnCountMax = 10;
     function handleOpen() {
-        if (document.querySelector(".sidebar").classList.contains("-translate-x-full")) {
+        const elem = document.getElementById('in-name');
+        const elem2 = document.getElementById('in-email');
+        const elem3 = document.getElementById('in-msg');
+        if (elem !== document.activeElement && elem2 !== document.activeElement && elem3 !== document.activeElement && document.querySelector(".sidebar").classList.contains("-translate-x-full")) {
             document.querySelector(".sidebar").classList.toggle("-translate-x-full");
             document.querySelector("#menu-button").classList.toggle("hidden");
             document.querySelector("#close-button").classList.toggle("hidden");
