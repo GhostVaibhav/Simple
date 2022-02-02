@@ -29,6 +29,6 @@ jobs:
            git config --global user.email "48472541+GhostVaibhav@users.noreply.github.com"
            git config --global user.name "Vaibhav Sharma"
            touch .env
-           echo 'REACT_APP_RECAPTCHA_KEY=${{ REACT_APP_RECAPTCHA_KEY }}' >> .env
+           echo 'REACT_APP_RECAPTCHA_KEY=${{ secrets.REACT_APP_RECAPTCHA_KEY }}' >> .env
            npm install gh-pages --save-dev
            npm run deploy
