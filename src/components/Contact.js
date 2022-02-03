@@ -59,8 +59,6 @@ function handleSubmit(e) {
     e.preventDefault();
     if(recaptcha)
         document.getElementById("form").submit();
-    else
-        document.getElementById("form").reset();
 }
 
 function Contact() {
