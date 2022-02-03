@@ -43,11 +43,6 @@ const trans = {
     duration: 0.5
 }
 
-const transBack = {
-    transition: "linear",
-    duration: 200
-}
-
 const trans2 = {
     transition: "linear",
     duration: 0.5,
@@ -59,7 +54,6 @@ const trans3 = {
     duration: 0.5,
     delay: 0.1,
 }
-
 
 function getRandomInt(ranges) {
     var min = ranges[0]
@@ -78,11 +72,15 @@ export default function About(props) {
         else
             props.btnCount++;
     }
+    const transBack = {
+        transition: "linear",
+        duration: props.isPhone() ? 0.5 : 200
+    }
     const delay = [0, 8]
     const dur = [1, 5]
     return (
         <div>
-            <div className='relative bg-gray-50 dark:bg-gray-900 overflow-x-hidden overflow-y-hidden max-h-max flex flex-col items-center p-10'>
+            <div className='relative bg-gray-50 dark:bg-gray-900 overflow-x-hidden overflow-y-hidden max-h-max md:h-max md:min-h-screen flex flex-col items-center p-10'>
                 {/* Grid background */}
                 <div className='absolute inset-0 p-2 grid grid-cols-12 gap-2 transform -skew-y-12 scale-150'>
                     {/* Row 1 */}

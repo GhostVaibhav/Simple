@@ -21,16 +21,18 @@ function Navbar() {
                 <div>
                     {/* Logo */}
                     <Link to="/">
-                        <article className='flex p-2 mt-2 mr-2 text-white'>
-                            <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 20 20" fill="white">
-                                    <path fillRule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L7.586 10 5.293 7.707a1 1 0 010-1.414zM11 12a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd" />
-                                </svg>
-                            </div>
-                            <div className='inline self-center font-bold text-3xl' style={{ "fontFamily": "Caveat" }}>
-                                Vaibhav
-                            </div>
-                        </article>
+                        <div className='flex justify-center'>
+                            <article className='flex p-2 mt-2 mr-2 text-white'>
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 20 20" fill="white">
+                                        <path fillRule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L7.586 10 5.293 7.707a1 1 0 010-1.414zM11 12a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd" />
+                                    </svg>
+                                </div>
+                                <div className='inline self-center font-bold text-3xl' style={{ "fontFamily": "Caveat" }}>
+                                    Vaibhav
+                                </div>
+                            </article>
+                        </div>
                     </Link>
                     {/* Navbar */}
                     <nav className='text-white flex flex-col'>
@@ -99,7 +101,7 @@ function Navbar() {
                             <img alt='GPLv3 License' src={GPL} className='m-2 p-2 border rounded-md border-gray-600' />
                         </a>
                         <div className='flex flex-col w-full items-center'>
-                            <div className='max-w-full'>
+                            <div className='font-bold max-w-full'>
                                 © 2022
                             </div>
                             <div className='max-w-full'>
