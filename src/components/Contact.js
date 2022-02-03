@@ -42,14 +42,25 @@ const trans = {
     duration: 4
 }
 
+let recaptcha = false;
 function success() {
+    recaptcha = true;
     document.getElementById("open").classList.remove("hidden");
     document.getElementById("dis").classList.add("hidden");
 }
 
 function expire() {
+    recaptcha = false;
     document.getElementById("open").classList.add("hidden");
     document.getElementById("dis").classList.remove("hidden");
+}
+
+function handleSubmit(e) {
+    e.preventDefault();
+    if(recaptcha)
+        document.getElementById("form").submit();
+    else
+        document.getElementById("form").reset();
 }
 
 function Contact() {
@@ -68,15 +79,15 @@ function Contact() {
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className='z-20 flex justify-center backdrop-blur-2xl rounded-lg'>
                     <div className='flex flex-col md:flex-row items-center border border-gray-800 bg-opacity-80 bg-gray-700 rounded-lg'>
                         <div data-blobity-offset-y="10" style={{ fontFamily: 'Caveat' }} className='font-extrabold mt-3 m-2 text-indigo-500 text-5xl w-full md:ml-6 md:mr-20'>📑Contact Me</div>
-                        <form action="https://formcarry.com/s/rJM8b8RJ5Ob" method="POST" acceptCharset="UTF-8" className='flex flex-col text-white my-4 md:mr-6 m-2 justify-center w-[90%]'>
+                        <form id="form" onSubmit={handleSubmit} action="https://formcarry.com/s/rJM8b8RJ5Ob" method="POST" acceptCharset="UTF-8" className='flex flex-col text-white my-4 md:mr-6 m-2 justify-center w-[90%]'>
                             <input id='in-name' data-blobity-radius="8" name='firstName' spellCheck='false' className='w-full m-2 self-center p-2 rounded-md bg-gray-800' placeholder='Name' type="text" />
                             <input id='in-email' data-blobity-radius="8" name="email" className='w-full m-2 self-center p-2 rounded-md bg-gray-800' placeholder='Email*' type="email" required />
                             <input id='in-msg' data-blobity-radius="8" name='anotherInput' spellCheck='false' autoComplete='off' className='resize-none w-full m-2 self-center p-2 rounded-md bg-gray-800' placeholder='Message*' type="text" required />
-                            <span className='mr-4 md:mr-0 mt-1 w-fit'>
+                            <span className='mr-4 md:mr-0 mt-1 w-fit' required>
                             <ReCAPTCHA onErrored={expire} onExpired={expire} onChange={success} className="w-fit" sitekey={rekey} theme="dark"/>
                             </span>
                             <button id="open" data-blobity-radius="8" className='hidden cursor-none m-2 w-fit self-end p-1 border-2 border-transparent focus:border-indigo-900 bg-indigo-700 rounded-md' type='submit'>Submit</button>
-                            <button disabled id="dis" data-blobity-radius="8" className='cursor-none m-2 w-fit self-end p-1 border-2 border-transparent focus:border-indigo-500 bg-indigo-400 rounded-md' type='submit'>Submit</button>
+                            <button onClick={handleSubmit} disabled id="dis" data-blobity-radius="8" className='cursor-none m-2 w-fit self-end p-1 border-2 border-transparent focus:border-indigo-500 bg-indigo-400 rounded-md' type='button'>Submit</button>
                             <input type="hidden" name="_gotcha" />
                         </form>
                     </div>
