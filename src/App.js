@@ -3,7 +3,7 @@ import About from "./components/About";
 import Navbar from "./components/Navbar";
 import OutsideAlerter from "./components/OutsideAlerter";
 import Introduction from "./components/Introduction";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import useBlobity from 'blobity/lib/useBlobity';
@@ -18,11 +18,11 @@ function useKey(key, cb) {
     useEffect(() => {
         callbackRef.current = cb;
     });
-
+    
     useEffect(() => {
         function handle(event) {
             if (event.code === key)
-                callbackRef.current(event)
+            callbackRef.current(event)
         }
         document.addEventListener("keydown", handle)
         return () => document.removeEventListener("keydown", handle);
@@ -30,6 +30,7 @@ function useKey(key, cb) {
 }
 
 function App() {
+    const [sidebar, setSidebar] = useState(false);
     var blobProps;
     if (!isPhone()) {
         blobProps = {
@@ -41,7 +42,7 @@ function App() {
             invert: false,
             mode: 'bouncy',
             focusableElements:
-                '[data-blobity], input:not([data-no-blobity]), img:not([data-no-blobity]), article:not([data-no-blobity]), span:not([data-no-blobity]), a:not([data-no-blobity]), button:not([data-no-blobity]), [data-blobity-tooltip]',
+            '[data-blobity], input:not([data-no-blobity]), img:not([data-no-blobity]), article:not([data-no-blobity]), span:not([data-no-blobity]), a:not([data-no-blobity]), button:not([data-no-blobity]), [data-blobity-tooltip]',
             font: "Inter",
             fontSize: 14,
             fontWeight: 600,
@@ -79,6 +80,7 @@ function App() {
             document.querySelector("#menu-button").classList.toggle("hidden");
             document.querySelector("#close-button").classList.toggle("hidden");
         }
+        setSidebar(true);
     }
     function handleClose() {
         if (!document.querySelector(".sidebar").classList.contains("-translate-x-full")) {
@@ -86,6 +88,7 @@ function App() {
             document.querySelector("#menu-button").classList.toggle("hidden");
             document.querySelector("#close-button").classList.toggle("hidden");
         }
+        setSidebar(false);
     }
     useKey("ArrowRight", handleOpen);
     useKey("ArrowLeft", handleClose);
@@ -95,7 +98,7 @@ function App() {
             <div className="scroll-smooth">
                 <Router>
                     <OutsideAlerter>
-                        <Navbar />
+                        <Navbar isPhone={isPhone} sidebar={sidebar} setSidebar={setSidebar} handleClose={handleClose} useKey={useKey} />
                     </OutsideAlerter>
                     <AnimatePresence>
                         <Routes>
