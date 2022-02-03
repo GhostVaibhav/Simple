@@ -18,11 +18,11 @@ function useKey(key, cb) {
     useEffect(() => {
         callbackRef.current = cb;
     });
-    
+
     useEffect(() => {
         function handle(event) {
             if (event.code === key)
-            callbackRef.current(event)
+                callbackRef.current(event)
         }
         document.addEventListener("keydown", handle)
         return () => document.removeEventListener("keydown", handle);
@@ -42,7 +42,7 @@ function App() {
             invert: false,
             mode: 'bouncy',
             focusableElements:
-            '[data-blobity], input:not([data-no-blobity]), img:not([data-no-blobity]), article:not([data-no-blobity]), span:not([data-no-blobity]), a:not([data-no-blobity]), button:not([data-no-blobity]), [data-blobity-tooltip]',
+                '[data-blobity], input:not([data-no-blobity]), img:not([data-no-blobity]), article:not([data-no-blobity]), span:not([data-no-blobity]), a:not([data-no-blobity]), button:not([data-no-blobity]), [data-blobity-tooltip]',
             font: "Inter",
             fontSize: 14,
             fontWeight: 600,
@@ -71,11 +71,16 @@ function App() {
     const [verified, setVerified] = useState(false);
     var challengeBtnCount = 0;
     var challengeBtnCountMax = 10;
-    function handleOpen() {
+    function inInput() {
         const elem = document.getElementById('in-name');
         const elem2 = document.getElementById('in-email');
         const elem3 = document.getElementById('in-msg');
-        if (elem !== document.activeElement && elem2 !== document.activeElement && elem3 !== document.activeElement && document.querySelector(".sidebar").classList.contains("-translate-x-full")) {
+        if (elem === document.activeElement || elem2 === document.activeElement || elem3 === document.activeElement)
+            return true;
+        return false;
+    }
+    function handleOpen() {
+        if (!inInput() && document.querySelector(".sidebar").classList.contains("-translate-x-full")) {
             document.querySelector(".sidebar").classList.toggle("-translate-x-full");
             document.querySelector("#menu-button").classList.toggle("hidden");
             document.querySelector("#close-button").classList.toggle("hidden");
@@ -90,9 +95,14 @@ function App() {
         }
         setSidebar(false);
     }
+    function openLicense() {
+        if (!inInput())
+            window.open("https://github.com/GhostVaibhav/Simple/blob/master/LICENSE");
+    }
     useKey("ArrowRight", handleOpen);
     useKey("ArrowLeft", handleClose);
     useKey("Escape", handleClose);
+    useKey("KeyL", openLicense);
     return (
         <>
             <div className="scroll-smooth">
