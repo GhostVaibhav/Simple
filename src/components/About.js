@@ -170,7 +170,7 @@ export default function About(props) {
                 </div>
                 {/* Content */}
                 <div className='w-[90vw] pt-8 md:pt-0 h-min md:w-9/12 lg:w-7/12 relative'>
-                    <motion.div transition={trans} initial="upOut" animate="upIn" exit="upOut" variants={pageTransition} className='p-2 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg'>
+                    <motion.div transition={trans} initial={props.isPhone() ? "comeLeftOut" : "upOut"} animate={props.isPhone() ? "in" : "upIn"} exit={props.isPhone() ? "comeLeftOut" : "upOut"} variants={pageTransition} className='p-2 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg'>
                         <h1 className='pt-0 p-2 text-2xl lg:text-4xl text-white font-bold'>
                             <span data-no-blobity className='text-indigo-500 text-3xl lg:text-5xl' style={{ "fontFamily": 'Caveat' }}>About </span> Me
                         </h1>
@@ -198,7 +198,7 @@ export default function About(props) {
                             <iframe className='rounded-lg w-full h-full' title="map" style={{ "border": 0, "filter": "invert(100%)" }} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14008.065053328835!2d77.13053618124533!3d28.629274668703356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d03245972a8ff%3A0x22f0733cd9d891f3!2sNaraina%20Vihar%2C%20Naraina%2C%20New%20Delhi%2C%20Delhi%20110028!5e0!3m2!1sen!2sin!4v1640848168393!5m2!1sen!2sin" allowFullScreen="" loading="lazy"></iframe>
                         </motion.div>
                     </div>
-                    <motion.div transition={trans3} initial="downOut" animate="upIn" exit="downOut" variants={pageTransition} className='my-2 mt-4 md:m-2 md:mt-4 md:mx-0 p-2 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg'>
+                    <motion.div transition={trans3} initial={props.isPhone() ? "comeLeftOut" : "downOut"} animate={props.isPhone() ? "in" : "upIn"} exit={props.isPhone() ? "comeLeftOut" : "downOut"} variants={pageTransition} className='my-2 mt-4 md:m-2 md:mt-4 md:mx-0 p-2 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg'>
                         <h1 className='pt-0 pb-3 p-2 text-2xl lg:text-4xl text-white font-bold'>
                             My <span data-no-blobity className='text-indigo-500 text-3xl lg:text-5xl' style={{ "fontFamily": 'Caveat' }}>Hobbies</span>
                         </h1>
