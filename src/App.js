@@ -3,7 +3,7 @@ import About from "./components/About";
 import Navbar from "./components/Navbar";
 import OutsideAlerter from "./components/OutsideAlerter";
 import Introduction from "./components/Introduction";
-import { HashRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import useBlobity from 'blobity/lib/useBlobity';
