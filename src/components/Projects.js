@@ -35,16 +35,16 @@ function Projects() {
             <div className='snap-both snap-mandatory snap-always overflow-scroll overflow-x-hidden h-screen w-screen bg-gray-50 dark:bg-gray-900'>
                 <div className='snap-start relative flex flex-col justify-center items-center sm:flex-row h-screen w-screen'>
                     <div data-aos="zoom-in" data-aos-once="false" className='relative w-screen md:h-screen h-[30%] sm:w-1/2 !opacity-60 blur-2xl'>
-                        <div className='absolute top-[45%] md:top-[35%] left-[30%] md:left-2/4 w-1/3 aspect-square bg-purple-300 rounded-full mix-blend-multiply filter animate-something animation-delay-2000'></div>
-                        <div className='absolute top-[45%] md:top-[35%] left-[40%] md:left-1/4 w-1/3 aspect-square bg-yellow-300 rounded-full mix-blend-multiply filter animate-something'></div>
-                        <div className='absolute top-[60%] md:top-[50%] left-[30%] md:left-2/4 w-1/3 aspect-square bg-pink-300 rounded-full mix-blend-multiply filter animate-something animation-delay-4000'></div>
+                        <div className='absolute top-[70%] md:top-[35%] left-[30%] md:left-[25%] w-1/3 aspect-square bg-purple-300 rounded-full mix-blend-multiply filter animate-something animation-delay-2000'></div>
+                        <div className='absolute top-[70%] md:top-[35%] left-[40%] md:left-[35%] w-1/3 aspect-square bg-yellow-300 rounded-full mix-blend-multiply filter animate-something'></div>
+                        <div className='absolute top-[80%] md:top-[50%] left-[30%] md:left-[25%] w-1/3 aspect-square bg-pink-300 rounded-full mix-blend-multiply filter animate-something animation-delay-4000'></div>
                     </div>
                     <div className='relative flex justify-center items-end md:items-center w-screen md:h-screen h-[70%] sm:w-1/2'>
                         <div className='flex flex-col w-[90%]'>
                             <motion.div transition={{ duration: 0.5 }} initial="comeLeftOut" animate="in" exit="comeLeftOut" variants={pageTransition} className='drop-shadow-xl'>
                                 <div className='flex flex-wrap justify-between items-center p-2 pr-4 md:pr-6 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border-b-0 border rounded-t-lg'>
                                     <h1 className='p-2 text-2xl lg:text-4xl text-white font-bold'>
-                                        <span data-blobity-offset-x="10" className='text-indigo-500 text-4xl lg:text-5xl' style={{ "fontFamily": 'Caveat' }}>MarkIt </span>
+                                        <span data-blobity-offset-x="16" className='text-indigo-500 text-4xl lg:text-5xl' style={{ "fontFamily": 'Caveat' }}>MarkIt </span>
                                         <div>
                                             <span data-blobity-offset-x="4" data-blobity-offset-y="4" data-blobity-magnetic="true" data-blobity-radius="16" className="mr-2 px-2 py-1 bg-indigo-200 hover:bg-indigo-300 rounded-full text-xs font-semibold text-indigo-600">
                                                 C++
@@ -113,9 +113,9 @@ function Projects() {
                         </div>
                     </div>
                     <div data-aos="zoom-in" data-aos-once="false" className='relative w-screen md:h-screen h-[30%] sm:w-1/2 !opacity-60 blur-2xl'>
-                        <div className='absolute top-[45%] md:top-[35%] left-[30%] md:left-2/4 w-[33.33vw] aspect-square bg-green-300 rounded-full mix-blend-multiply filter animate-something animation-delay-2000'></div>
-                        <div className='absolute top-[45%] md:top-[35%] left-[40%] md:left-1/4 w-[33.33vw] aspect-square bg-red-300 rounded-full mix-blend-multiply filter animate-something'></div>
-                        <div className='absolute top-[60%] md:top-[50%] left-[30%] md:left-2/4 w-[33.33vw] aspect-square bg-blue-300 rounded-full mix-blend-multiply filter animate-something animation-delay-4000'></div>
+                        <div className='absolute -top-16 md:top-[15%] left-[30%] md:left-[10%] w-[33.33vw] aspect-square bg-green-300 rounded-full mix-blend-multiply filter animate-something animation-delay-2000'></div>
+                        <div className='absolute -top-16 md:top-[15%] left-[40%] md:left-[10%] w-[33.33vw] aspect-square bg-red-300 rounded-full mix-blend-multiply filter animate-something'></div>
+                        <div className='absolute top-[5%] md:top-[30%] left-[30%] md:left-[0%] w-[33.33vw] aspect-square bg-blue-300 rounded-full mix-blend-multiply filter animate-something animation-delay-4000'></div>
                     </div>
                 </div>
                 {/* <div className='snap-start relative flex flex-col justify-center items-center sm:flex-row  h-screen w-screen'>
