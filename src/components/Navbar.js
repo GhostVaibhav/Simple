@@ -1,18 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import GPL from '../images/gplv3.png';
 
-function click() {
-    if (document.querySelector("#challenge-button").classList.contains("hidden")) {
-        document.querySelector(".sidebar").classList.toggle("-translate-x-full");
-        document.querySelector("#menu-button").classList.toggle("hidden");
-        document.querySelector("#close-button").classList.toggle("hidden");
-    }
-    else {
-        window.open("#");
-        document.querySelector("#challenge-button").classList.toggle("hidden");
-        document.querySelector("#menu-button").classList.toggle("hidden");
-    }
-}
 function hover1() {
     const elt = document.querySelector('.icon1');
     elt.classList.remove("opacity-0");
@@ -48,6 +36,19 @@ function hoverOut4() {
 function Navbar(props) {
     const displayIcons = false;
     const navigate = useNavigate();
+    function click() {
+        if (document.querySelector("#challenge-button").classList.contains("hidden")) {
+            document.querySelector(".sidebar").classList.toggle("-translate-x-full");
+            document.querySelector("#menu-button").classList.toggle("hidden");
+            document.querySelector("#close-button").classList.toggle("hidden");
+            props.setSidebar(true);
+        }
+        else {
+            window.open("#");
+            document.querySelector("#challenge-button").classList.toggle("hidden");
+            document.querySelector("#menu-button").classList.toggle("hidden");
+        }
+    }
     function gotoHome() {
         if (props.sidebar) {
             navigate('/');
