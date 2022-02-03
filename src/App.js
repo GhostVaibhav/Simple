@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import About from "./components/About";
 import Navbar from "./components/Navbar";
 import OutsideAlerter from "./components/OutsideAlerter";
@@ -84,6 +84,7 @@ function App() {
             window.blobity = blobity.current;
         }
     }, [blobity]);
+    const [verified, setVerified] = useState(false);
     var challengeBtnCount = 0;
     var challengeBtnCountMax = 10;
     function handleOpen() {
@@ -118,7 +119,7 @@ function App() {
                             <Route path="/" element={<Introduction />} />
                             <Route path="/about" element={<About btnCount={challengeBtnCount} btnCountMax={challengeBtnCountMax} />} />
                             <Route path="/projects" element={<Projects />} />
-                            <Route path="/contact" element={<Contact />} />
+                            <Route path="/contact" element={<Contact verified={verified} setVerified={setVerified} />} />
                         </Routes>
                     </AnimatePresence>
                 </Router>

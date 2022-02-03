@@ -42,26 +42,22 @@ const trans = {
     duration: 4
 }
 
-let recaptcha = false;
-function success() {
-    recaptcha = true;
-    document.getElementById("open").classList.remove("hidden");
-    document.getElementById("dis").classList.add("hidden");
-}
-
-function expire() {
-    recaptcha = false;
-    document.getElementById("open").classList.add("hidden");
-    document.getElementById("dis").classList.remove("hidden");
-}
-
-function handleSubmit(e) {
-    e.preventDefault();
-    if(recaptcha)
-        document.getElementById("form").submit();
-}
-
-function Contact() {
+function Contact(props) {
+    const success = () => {
+        props.setVerified(true);
+        document.getElementById("open").classList.remove("hidden");
+        document.getElementById("dis").classList.add("hidden");
+    }
+    const expire = () => {
+        props.setVerified(false);
+        document.getElementById("open").classList.add("hidden");
+        document.getElementById("dis").classList.remove("hidden");
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if(props.verified)
+            document.getElementById("form").submit();
+    }
     const rekey = process.env.REACT_APP_RECAPTCHA_KEY;
     useEffect(() => {
         AOS.init();
