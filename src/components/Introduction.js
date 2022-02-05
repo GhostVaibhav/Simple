@@ -33,7 +33,6 @@ function Introduction() {
                 <motion.div viewport={{ once: true }} initial="zoomBig" animate="zoomFinal" exit="zoomBig" transition={{ transition: 'linear', duration: 8 }} variants={pageTransition} className="stars" />
                 <div className="twinkling" />
                 <motion.div initial="zoomBig" animate="zoomFinal" exit="zoomBig" transition={{ transition: 'linear', duration: 16, delay: 1 }} variants={pageTransition} className="clouds" />
-                <div className='fg-img' />
             </div>
             <div className='flex justify-center items-center text-white h-screen w-screen'>
                 <div className='w-[90%] md:w-3/4 flex justify-between'>
