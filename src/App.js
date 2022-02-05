@@ -1,13 +1,19 @@
-import { useRef, useEffect, useState } from "react";
-import About from "./components/About";
-import Navbar from "./components/Navbar";
-import OutsideAlerter from "./components/OutsideAlerter";
-import Introduction from "./components/Introduction";
+import { useRef, useEffect, useState, lazy, Suspense } from "react";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
-import useBlobity from 'blobity/lib/useBlobity';
 import { AnimatePresence } from 'framer-motion';
+import useBlobity from 'blobity/lib/useBlobity';
+import Loader from "./components/Loader";
+import Navbar from "./components/Navbar";
+const About = lazy(() => import('./components/About'));
+const OutsideAlerter = lazy(() => import('./components/OutsideAlerter'));
+const Introduction = lazy(() => import('./components/Introduction'));
+const Projects = lazy(() => import('./components/Projects'));
+const Contact = lazy(() => import('./components/Contact'));
+// import About from "./components/About";
+// import OutsideAlerter from "./components/OutsideAlerter";
+// import Introduction from "./components/Introduction";
+// import Projects from "./components/Projects";
+// import Contact from "./components/Contact";
 
 function isPhone() {
     return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -106,19 +112,21 @@ function App() {
     return (
         <>
             <div className="scroll-smooth">
-                <Router>
-                    <OutsideAlerter>
-                        <Navbar isPhone={isPhone} sidebar={sidebar} setSidebar={setSidebar} handleClose={handleClose} useKey={useKey} />
-                    </OutsideAlerter>
-                    <AnimatePresence>
-                        <Routes>
-                            <Route path="/" element={<Introduction />} />
-                            <Route path="/about" element={<About isPhone={isPhone} btnCount={challengeBtnCount} btnCountMax={challengeBtnCountMax} />} />
-                            <Route path="/projects" element={<Projects />} />
-                            <Route path="/contact" element={<Contact verified={verified} setVerified={setVerified} />} />
-                        </Routes>
-                    </AnimatePresence>
-                </Router>
+                <Suspense fallback={<Loader />}>
+                    <Router>
+                        <OutsideAlerter>
+                            <Navbar isPhone={isPhone} sidebar={sidebar} setSidebar={setSidebar} handleClose={handleClose} useKey={useKey} />
+                        </OutsideAlerter>
+                        <AnimatePresence>
+                            <Routes>
+                                <Route path="/" element={<Introduction />} />
+                                <Route path="/about" element={<About isPhone={isPhone} btnCount={challengeBtnCount} btnCountMax={challengeBtnCountMax} />} />
+                                <Route path="/projects" element={<Projects />} />
+                                <Route path="/contact" element={<Contact verified={verified} setVerified={setVerified} />} />
+                            </Routes>
+                        </AnimatePresence>
+                    </Router>
+                </Suspense>
             </div>
         </>
     );
