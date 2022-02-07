@@ -34,12 +34,12 @@ function Projects() {
         <div>
             <div className='scroll-auto snap-both snap-mandatory snap-always overflow-scroll overflow-x-hidden h-screen w-screen bg-gray-50 dark:bg-gray-900'>
                 <div className='snap-start relative flex flex-col justify-center items-center sm:flex-row h-screen w-screen'>
-                    <div data-aos="zoom-in" data-aos-once="false" className='relative w-screen md:h-screen h-[30%] sm:w-1/2 !opacity-60 blur-2xl'>
-                        <div className='absolute top-[70%] md:top-[35%] left-[30%] md:left-[25%] w-1/3 aspect-square bg-purple-300 rounded-full mix-blend-multiply filter animate-something animation-delay-2000'></div>
-                        <div className='absolute top-[70%] md:top-[35%] left-[40%] md:left-[35%] w-1/3 aspect-square bg-yellow-300 rounded-full mix-blend-multiply filter animate-something'></div>
-                        <div className='absolute top-[80%] md:top-[50%] left-[30%] md:left-[25%] w-1/3 aspect-square bg-pink-300 rounded-full mix-blend-multiply filter animate-something animation-delay-4000'></div>
+                    <div data-aos="zoom-in" data-aos-once="false" className='relative w-screen sm:place-self-center md:h-screen h-[30%] sm:w-1/2 !opacity-60 blur-2xl'>
+                        <div className='absolute top-[70%] sm:top-[25%] md:top-[35%] left-[30%] md:left-[25%] w-1/3 aspect-square bg-purple-300 rounded-full mix-blend-multiply filter animate-something animation-delay-2000'></div>
+                        <div className='absolute top-[70%] sm:top-[25%] md:top-[35%] left-[40%] md:left-[35%] w-1/3 aspect-square bg-yellow-300 rounded-full mix-blend-multiply filter animate-something'></div>
+                        <div className='absolute top-[80%] sm:top-[35%] md:top-[50%] left-[30%] md:left-[25%] w-1/3 aspect-square bg-pink-300 rounded-full mix-blend-multiply filter animate-something animation-delay-4000'></div>
                     </div>
-                    <div className='relative flex justify-center items-end md:items-center w-screen md:h-screen h-[70%] sm:w-1/2'>
+                    <div className='relative flex justify-center items-end sm:items-center w-screen md:h-screen h-[70%] sm:w-1/2'>
                         <div className='flex flex-col w-[90%]'>
                             <motion.div transition={{ duration: 0.5 }} initial="comeLeftOut" animate="in" exit="comeLeftOut" variants={pageTransition} className='drop-shadow-xl'>
                                 <div className='flex flex-wrap justify-between items-center p-2 pr-4 md:pr-6 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border-b-0 border rounded-t-lg'>
@@ -65,7 +65,7 @@ function Projects() {
                                     </h1>
                                 </div>
                                 <article className='hover:bg-indigo-500 transition-all duration-300 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border rounded-b-lg'>
-                                    <div data-no-blobity className='text-center py-3 md:py-0 px-4 text-black dark:text-white'>
+                                    <div data-no-blobity className='sm:text-sm md:text-base text-center py-3 md:py-0 px-4 text-black dark:text-white'>
                                         A cross-platform TODO terminal app
                                     </div>
                                 </article>
@@ -75,8 +75,8 @@ function Projects() {
                     </div>
                 </div>
                 <div className='snap-start relative flex flex-col justify-center items-center sm:flex-row h-screen w-screen'>
-                    <div className='relative flex justify-center items-start md:items-center w-screen md:h-screen h-[70%] sm:w-1/2'>
-                        <div className='flex flex-col-reverse md:flex-col w-[90%] mt-16 md:mt-0'>
+                    <div className='relative flex justify-center items-start sm:items-center w-screen md:h-screen h-[70%] sm:w-1/2'>
+                        <div className='flex flex-col-reverse md:flex-col w-[90%] mt-16 sm:mt-0'>
                             <motion.div transition={{ duration: 0.5 }} initial="out" animate="in" viewport={{ once: true }} exit="out" variants={pageTransition} className='drop-shadow-xl'>
                                 <div className='flex flex-wrap justify-between items-center p-2 pr-4 md:pr-6 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border-b-0 border rounded-t-lg'>
                                     <h1 className='p-2 text-2xl lg:text-4xl text-white font-bold'>
@@ -104,7 +104,7 @@ function Projects() {
                                     </div>
                                 </div>
                                 <article className='hover:bg-indigo-500 transition-all duration-300 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border rounded-b-lg'>
-                                    <div className='text-center py-3 md:py-0 px-4 text-black dark:text-white'>
+                                    <div className='sm:text-sm md:text-base text-center py-3 md:py-0 px-4 text-black dark:text-white'>
                                         My personal website built with React using TailwindCSS
                                     </div>
                                 </article>
@@ -113,9 +113,9 @@ function Projects() {
                         </div>
                     </div>
                     <div data-aos="zoom-in" data-aos-once="false" className='relative w-screen md:h-screen h-[30%] sm:w-1/2 !opacity-60 blur-2xl'>
-                        <div className='absolute -top-16 md:top-[15%] left-[30%] md:left-[10%] w-[33.33vw] aspect-square bg-green-300 rounded-full mix-blend-multiply filter animate-something animation-delay-2000'></div>
-                        <div className='absolute -top-16 md:top-[15%] left-[40%] md:left-[10%] w-[33.33vw] aspect-square bg-red-300 rounded-full mix-blend-multiply filter animate-something'></div>
-                        <div className='absolute top-[5%] md:top-[30%] left-[30%] md:left-[0%] w-[33.33vw] aspect-square bg-blue-300 rounded-full mix-blend-multiply filter animate-something animation-delay-4000'></div>
+                        <div className='absolute -top-16 md:top-[15%] left-[30%] sm:left-[10%] md:left-[10%] w-[33.33vw] aspect-square bg-green-300 rounded-full mix-blend-multiply filter animate-something animation-delay-2000'></div>
+                        <div className='absolute -top-16 md:top-[15%] left-[40%] sm:left-[20%] md:left-[10%] w-[33.33vw] aspect-square bg-red-300 rounded-full mix-blend-multiply filter animate-something'></div>
+                        <div className='absolute top-[5%] md:top-[30%] left-[30%] sm:left-[10%] md:left-[0%] w-[33.33vw] aspect-square bg-blue-300 rounded-full mix-blend-multiply filter animate-something animation-delay-4000'></div>
                     </div>
                 </div>
                 {/* <div className='snap-start relative flex flex-col justify-center items-center sm:flex-row  h-screen w-screen'>

@@ -88,7 +88,7 @@ function Navbar(props) {
     return (
         <div>
             {/* Sidebar */}
-            <div className='z-50 sidebar border-r-gray-700 border-r-[1px] fixed md:opacity-95 h-screen bg-gray-800 top-0 left-0 transform -translate-x-full transition duration-200 ease-in-out'>
+            <div className='z-50 sidebar border-r-gray-700 border-r-[1px] fixed md:opacity-95 h-fit min-h-screen bg-gray-800 top-0 left-0 transform -translate-x-full transition duration-200 ease-in-out'>
                 <div>
                     {/* Logo */}
                     <Link to="/">
