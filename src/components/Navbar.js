@@ -189,7 +189,7 @@ function Navbar(props) {
                 </div>
                 {/* Opening button */}
                 <div>
-                    <button aria-label="Sidebar button" onClick={click} className='cursor-none open-button transition duration-150 focus:outline-none opacity-90 backdrop-blur-xl fixed mx-0 m-2 p-4 rounded-full bg-gray-900 hover:bg-gray-700 border border-gray-700 z-10 -right-16 top-0 text-white'>
+                    <button aria-label="Sidebar button" onClick={click} className='open-button cursor-none open-button transition duration-150 focus:outline-none opacity-90 backdrop-blur-xl fixed mx-0 m-2 p-4 rounded-full bg-gray-900 hover:bg-gray-700 border border-gray-700 z-10 -right-16 top-0 text-white'>
                         <div id="menu-button" className='block'>
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="white" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h7" />

@@ -64,7 +64,7 @@ function Contact(props) {
     }, []);
     return (
         <div>
-            <div className='h-screen w-screen bg-gray-900 flex justify-center items-center'>
+            <div className='h-fit min-h-screen w-screen bg-gray-900 flex justify-center items-center'>
                 <div className='z-10 absolute h-screen w-screen !opacity-60 blur-2xl overflow-hidden'>
                     <div className='absolute top-1/2 md:top-1/4 left-[10%] md:left-1/4 h-1/3 md:h-auto md:w-1/3 aspect-square bg-purple-300 rounded-full mix-blend-multiply filter animate-something animation-delay-2000' />
                     <div className='absolute top-1/2 md:top-1/4 left-[15%] md:left-[45%] h-1/3 md:h-auto md:w-1/3 aspect-square bg-yellow-300 rounded-full mix-blend-multiply filter animate-something' />
