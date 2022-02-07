@@ -33,13 +33,13 @@ html {
 
 @keyframes movingStars {
     0% {
-        transform: translateY(-50px) translateX(-20px) scale(1) rotate(0deg);
+        transform: scale(1);
     }
     50% {
-        transform: translateY(50px) translateX(20px) scale(2.5) rotate(180deg);
+        transform: scale(1.2);
     }
     100% {
-        transform: translateY(-50px) translateX(-20px) scale(1) rotate(360deg);
+        transform: scale(1);
     }
 }
 
@@ -127,7 +127,7 @@ html {
 }
 
 .stars {
-    animation: movingStars 80s linear infinite;
+    animation: movingStars 20s linear infinite;
     background: transparent url("../src/images/stars.webp") repeat-x top center;
     z-index: 0;
 }

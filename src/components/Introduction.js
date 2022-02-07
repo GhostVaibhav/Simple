@@ -30,7 +30,7 @@ function Introduction() {
     return (
         <div>
             <div className='-z-10 bg-gray-900 absolute h-screen w-screen overflow-hidden'>
-                <motion.div viewport={{ once: true }} initial="zoomBig" animate="zoomFinal" exit="zoomBig" transition={{ transition: 'linear', duration: 8 }} variants={pageTransition} className="stars" />
+                <div className="stars" />
                 <div className="twinkling" />
                 <motion.div initial="zoomBig" animate="zoomFinal" exit="zoomBig" transition={{ transition: 'linear', duration: 16, delay: 1 }} variants={pageTransition} className="clouds" />
             </div>
