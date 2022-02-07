@@ -119,7 +119,7 @@ function App() {
                         </OutsideAlerter>
                         <AnimatePresence>
                             <Routes>
-                                <Route path="/" element={<Introduction />} />
+                                <Route path="/" element={<Introduction isPhone={isPhone} />} />
                                 <Route path="/about" element={<About isPhone={isPhone} btnCount={challengeBtnCount} btnCountMax={challengeBtnCountMax} />} />
                                 <Route path="/projects" element={<Projects />} />
                                 <Route path="/contact" element={<Contact verified={verified} setVerified={setVerified} />} />

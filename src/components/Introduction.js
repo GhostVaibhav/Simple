@@ -23,7 +23,7 @@ const pageTransition = {
     }
 }
 
-function Introduction() {
+function Introduction(props) {
     useEffect(() => {
         AOS.init();
     }, []);
@@ -32,7 +32,7 @@ function Introduction() {
             <div className='-z-10 bg-gray-900 absolute h-screen w-screen overflow-hidden'>
                 <div className="stars" />
                 <div className="twinkling" />
-                <motion.div initial="zoomBig" animate="zoomFinal" exit="zoomBig" transition={{ transition: 'linear', duration: 16, delay: 1 }} variants={pageTransition} className="clouds" />
+                {!props.isPhone() && <motion.div initial="zoomBig" animate="zoomFinal" exit="zoomBig" transition={{ transition: 'linear', duration: 16, delay: 1 }} variants={pageTransition} className="clouds" />}
             </div>
             <div className='flex justify-center items-center text-white h-screen w-screen'>
                 <div className='w-[90%] md:w-3/4 flex justify-between'>
