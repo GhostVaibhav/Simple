@@ -40,7 +40,7 @@ function Projects() {
                         <div className='absolute top-[80%] sm:top-[35%] md:top-[50%] left-[30%] md:left-[25%] w-1/3 aspect-square bg-pink-300 rounded-full mix-blend-multiply filter animate-something animation-delay-4000'></div>
                     </div>
                     <div className='relative flex justify-center items-end sm:items-center w-screen md:h-screen h-[70%] sm:w-1/2'>
-                        <div className='flex flex-col w-[90%]'>
+                        <div className='flex flex-col w-[90%] phone_landscape:w-[80%]'>
                             <motion.div transition={{ duration: 0.5 }} initial="comeLeftOut" animate="in" exit="comeLeftOut" variants={pageTransition} className='drop-shadow-xl'>
                                 <div className='flex flex-wrap justify-between items-center phone_landscape:p-1 phone_landscape:pr-2 p-2 pr-4 md:pr-6 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border-b-0 border rounded-t-lg'>
                                     <h1 className='p-2 text-2xl lg:text-4xl text-white font-bold'>
@@ -76,7 +76,7 @@ function Projects() {
                 </div>
                 <div className='snap-start relative flex flex-col justify-center items-center sm:flex-row h-screen w-screen'>
                     <div className='relative flex justify-center items-start sm:items-center w-screen md:h-screen h-[70%] sm:w-1/2'>
-                        <div className='flex flex-col-reverse md:flex-col w-[90%] mt-16 sm:mt-0'>
+                        <div className='flex flex-col-reverse md:flex-col w-[90%]  phone_landscape:w-[80%] mt-16 sm:mt-0'>
                             <motion.div transition={{ duration: 0.5 }} initial="out" animate="in" viewport={{ once: true }} exit="out" variants={pageTransition} className='drop-shadow-xl'>
                                 <div className='flex flex-wrap justify-between items-center phone_landscape:p-0 phone_landscape:pr-2 p-2 pr-4 md:pr-6 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border-b-0 border rounded-t-lg'>
                                     <h1 className='p-2 text-2xl lg:text-4xl text-white font-bold'>
