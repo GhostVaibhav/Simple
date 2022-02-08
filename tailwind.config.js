@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        'phone_landscape': { 'raw': '(orientation: landscape) and (max-width: 1024px)' },
+      },
       animation: {
         something: "something 7s infinite",
       },
