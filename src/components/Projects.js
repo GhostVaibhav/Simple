@@ -43,7 +43,7 @@ function Projects() {
                         <div className='flex flex-col w-[90%] phone_landscape:w-[80%]'>
                             <motion.div transition={{ duration: 0.5 }} initial="comeLeftOut" animate="in" exit="comeLeftOut" variants={pageTransition} className='drop-shadow-xl'>
                                 <div className='flex flex-wrap justify-between items-center phone_landscape:p-1 phone_landscape:pr-2 p-2 pr-4 md:pr-6 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border-b-0 border rounded-t-lg'>
-                                    <h1 className='p-2 text-2xl lg:text-4xl text-white font-bold'>
+                                    <h1 className='phone_landscape:p-1 p-2 text-2xl lg:text-4xl text-white font-bold'>
                                         <span data-blobity-offset-x="16" className='text-indigo-500 text-4xl lg:text-5xl' style={{ "fontFamily": 'Caveat' }}>MarkIt </span>
                                         <div>
                                             <span data-blobity-offset-x="4" data-blobity-offset-y="4" data-blobity-magnetic="true" data-blobity-radius="16" className="mr-2 px-2 py-1 bg-indigo-200 hover:bg-indigo-300 rounded-full text-xs font-semibold text-indigo-600">
@@ -65,12 +65,12 @@ function Projects() {
                                     </h1>
                                 </div>
                                 <article className='hover:bg-indigo-500 transition-all duration-300 phone_landscape:p-1 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border rounded-b-lg'>
-                                    <div data-no-blobity className='sm:text-sm md:text-base phone_landscape:text-sm phone_landscape:p-2 text-center py-3 md:py-0 px-4 text-black dark:text-white'>
+                                    <div data-no-blobity className='sm:text-sm md:text-base phone_landscape:text-sm phone_landscape:p-1 phone_landscape:py-2 text-center py-3 md:py-0 px-4 text-black dark:text-white'>
                                         A cross-platform TODO terminal app
                                     </div>
                                 </article>
                             </motion.div>
-                            <motion.img initial="comeLeftOut" animate="in" exit="comeLeftOut" transition={{ duration: 0.5 }} variants={pageTransition} data-blobity-radius="10" src={markImg} alt='MarkIt' className='drop-shadow-xl mb-4 mt-2 md:mt-4 md:mb-0 border border-gray-600 rounded-lg w-full h-auto' />
+                            <motion.img initial="comeLeftOut" animate="in" exit="comeLeftOut" transition={{ duration: 0.5 }} variants={pageTransition} data-blobity-radius="10" src={markImg} alt='MarkIt' className='drop-shadow-xl phone_landscape:mt-2 mb-2 mt-2 md:mt-4 md:mb-0 border border-gray-600 rounded-lg w-full h-auto' />
                         </div>
                     </div>
                 </div>
@@ -109,7 +109,7 @@ function Projects() {
                                     </div>
                                 </article>
                             </motion.div>
-                            <motion.img initial="out" animate="in" exit="out" transition={{ duration: 0.5 }} variants={pageTransition} data-blobity-radius="10" src={portfolioImg} alt='My Portfolio Website' className='drop-shadow-xl mb-4 mt-2 md:mt-4 md:mb-0 border border-gray-600 rounded-lg w-full h-auto' />
+                            <motion.img initial="out" animate="in" exit="out" transition={{ duration: 0.5 }} variants={pageTransition} data-blobity-radius="10" src={portfolioImg} alt='My Portfolio Website' className='drop-shadow-xl phone_landscape:mt-2 mb-2 mt-2 md:mt-4 md:mb-0 border border-gray-600 rounded-lg w-full h-auto' />
                         </div>
                     </div>
                     <div data-aos="zoom-in" data-aos-once="false" className='relative w-screen md:h-screen h-[30%] sm:w-1/2 !opacity-60 blur-2xl'>
