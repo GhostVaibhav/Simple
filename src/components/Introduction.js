@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const pageTransition = {
     in: {
@@ -24,6 +25,14 @@ const pageTransition = {
 }
 
 function Introduction(props) {
+    const navigate = useNavigate();
+    let clickCounter = 1;
+    function toAbout() {
+        if(clickCounter === 7)
+            navigate("./about");
+        else
+            clickCounter++;
+    }
     useEffect(() => {
         AOS.init();
     }, []);
@@ -47,7 +56,7 @@ function Introduction(props) {
                                 <span data-blobity-magnetic="true" data-blobity-tooltip="Hi in French" className='py-2 spin_words first-letter:font-bold block'>Salut</span>
                             </motion.div>
                         </div>
-                        <motion.span initial="out" animate="in" exit="out" variants={pageTransition} data-blobity-offset-x="10" style={{ "fontFamily": "Caveat" }} className='text-indigo-500 text-5xl md:text-6xl'>
+                        <motion.span onClick={toAbout} initial="out" animate="in" exit="out" variants={pageTransition} data-blobity-offset-x="10" style={{ "fontFamily": "Caveat" }} className='text-indigo-500 text-5xl md:text-6xl select-none'>
                             I'm Vaibhav
                         </motion.span>
                     </div>
