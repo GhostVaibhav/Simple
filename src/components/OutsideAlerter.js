@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 /**
  * Hook that alerts clicks outside of the passed ref
  */
-function useOutsideAlerter(ref) {
+function useOutsideAlerter(ref, props) {
     useEffect(() => {
         /**
          * Alert if clicked on outside of element
@@ -15,6 +15,8 @@ function useOutsideAlerter(ref) {
                     document.querySelector(".sidebar").classList.toggle("-translate-x-full");
                     document.querySelector("#menu-button").classList.toggle("hidden");
                     document.querySelector("#close-button").classList.toggle("hidden");
+                    if (props.isPhone())
+                        document.querySelector(".open-button").classList.toggle("hidden");
                 }
             }
         }
@@ -32,7 +34,7 @@ function useOutsideAlerter(ref) {
  */
 function OutsideAlerter(props) {
     const wrapperRef = useRef(null);
-    useOutsideAlerter(wrapperRef);
+    useOutsideAlerter(wrapperRef, props);
 
     return <div ref={wrapperRef}>{props.children}</div>;
 }

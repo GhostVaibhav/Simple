@@ -9,11 +9,6 @@ const OutsideAlerter = lazy(() => import('./components/OutsideAlerter'));
 const Introduction = lazy(() => import('./components/Introduction'));
 const Projects = lazy(() => import('./components/Projects'));
 const Contact = lazy(() => import('./components/Contact'));
-// import About from "./components/About";
-// import OutsideAlerter from "./components/OutsideAlerter";
-// import Introduction from "./components/Introduction";
-// import Projects from "./components/Projects";
-// import Contact from "./components/Contact";
 
 function isPhone() {
     return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -90,6 +85,8 @@ function App() {
             document.querySelector(".sidebar").classList.toggle("-translate-x-full");
             document.querySelector("#menu-button").classList.toggle("hidden");
             document.querySelector("#close-button").classList.toggle("hidden");
+            if (isPhone())
+                document.querySelector(".open-button").classList.toggle("hidden");
         }
         setSidebar(true);
     }
@@ -98,6 +95,8 @@ function App() {
             document.querySelector(".sidebar").classList.toggle("-translate-x-full");
             document.querySelector("#menu-button").classList.toggle("hidden");
             document.querySelector("#close-button").classList.toggle("hidden");
+            if (isPhone())
+                document.querySelector(".open-button").classList.toggle("hidden");
         }
         setSidebar(false);
     }
@@ -114,8 +113,8 @@ function App() {
             <div className="scroll-smooth">
                 <Suspense fallback={<Loader />}>
                     <Router>
-                        <OutsideAlerter>
-                            <Navbar isPhone={isPhone} sidebar={sidebar} setSidebar={setSidebar} handleClose={handleClose} useKey={useKey} />
+                        <OutsideAlerter isPhone={isPhone}>
+                            <Navbar isPhone={isPhone} sidebar={sidebar} setSidebar={setSidebar} handleClose={handleClose} handleOpen={handleOpen} useKey={useKey} />
                         </OutsideAlerter>
                         <AnimatePresence>
                             <Routes>

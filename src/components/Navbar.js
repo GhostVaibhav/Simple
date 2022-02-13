@@ -1,46 +1,24 @@
 import { Link, useNavigate } from 'react-router-dom';
 import GPL from '../images/gplv3.png';
 
-function hover1() {
-    const elt = document.querySelector('.icon1');
-    elt.classList.remove("opacity-0");
-}
-function hoverOut1() {
-    const elt = document.querySelector('.icon1');
-    elt.classList.add("opacity-0");
-}
-function hover2() {
-    const elt = document.querySelector('.icon2');
-    elt.classList.remove("opacity-0");
-}
-function hoverOut2() {
-    const elt = document.querySelector('.icon2');
-    elt.classList.add("opacity-0");
-}
-function hover3() {
-    const elt = document.querySelector('.icon3');
-    elt.classList.remove("opacity-0");
-}
-function hoverOut3() {
-    const elt = document.querySelector('.icon3');
-    elt.classList.add("opacity-0");
-}
-function hover4() {
-    const elt = document.querySelector('.icon4');
-    elt.classList.remove("opacity-0");
-}
-function hoverOut4() {
-    const elt = document.querySelector('.icon4');
-    elt.classList.add("opacity-0");
-}
 function Navbar(props) {
-    const displayIcons = false;
+    const displayIcons = true;
     const navigate = useNavigate();
+    function hoverIn(element) {
+        const elt = document.querySelector(element);
+        elt.classList.remove("opacity-0");
+    }
+    function hoverOut(element) {
+        const elt = document.querySelector(element);
+        elt.classList.add("opacity-0");
+    }
     function click() {
         if (document.querySelector("#challenge-button").classList.contains("hidden")) {
             document.querySelector(".sidebar").classList.toggle("-translate-x-full");
             document.querySelector("#menu-button").classList.toggle("hidden");
             document.querySelector("#close-button").classList.toggle("hidden");
+            if (props.isPhone())
+                document.querySelector(".open-button").classList.toggle("hidden");
             props.setSidebar(true);
         }
         else {
@@ -49,49 +27,28 @@ function Navbar(props) {
             document.querySelector("#menu-button").classList.toggle("hidden");
         }
     }
-    function gotoHome() {
+    function gotoPage(page) {
         if (props.sidebar) {
-            navigate('/');
+            navigate('/' + page);
             props.handleClose();
             props.setSidebar(false);
         }
     }
-    function gotoProjects() {
-        if (props.sidebar) {
-            navigate('/projects');
-            props.handleClose();
-            props.setSidebar(false);
-        }
-    }
-    function gotoAbout() {
-        if (props.sidebar) {
-            navigate('/about');
-            props.handleClose();
-            props.setSidebar(false);
-        }
-    }
-    function gotoContact() {
-        if (props.sidebar) {
-            navigate('/contact');
-            props.handleClose();
-            props.setSidebar(false);
-        }
-    }
-    props.useKey("Digit1", gotoHome);
-    props.useKey("Numpad1", gotoHome);
-    props.useKey("Digit2", gotoProjects);
-    props.useKey("Numpad2", gotoProjects);
-    props.useKey("Digit3", gotoAbout);
-    props.useKey("Numpad3", gotoAbout);
-    props.useKey("Digit4", gotoContact);
-    props.useKey("Numpad4", gotoContact);
+    props.useKey("Digit1", () => gotoPage(""));
+    props.useKey("Numpad1", () => gotoPage(""));
+    props.useKey("Digit2", () => gotoPage("projects"));
+    props.useKey("Numpad2", () => gotoPage("projects"));
+    props.useKey("Digit3", () => gotoPage("about"));
+    props.useKey("Numpad3", () => gotoPage("about"));
+    props.useKey("Digit4", () => gotoPage("contact"));
+    props.useKey("Numpad4", () => gotoPage("contact"));
     return (
         <div>
             {/* Sidebar */}
             <div className='z-50 sidebar border-r-gray-700 border-r-[1px] fixed md:opacity-95 h-fit min-h-screen bg-gray-800 top-0 left-0 transform -translate-x-full transition duration-200 ease-in-out'>
                 <div>
                     {/* Logo */}
-                    <Link to="/">
+                    <Link to="/" onClick={props.isPhone() && props.handleClose}>
                         <div className='flex justify-center'>
                             <article className='flex p-2 mt-2 mr-2 text-white'>
                                 <div>
@@ -108,9 +65,9 @@ function Navbar(props) {
                     {/* Navbar */}
                     <nav className='text-white flex flex-col'>
                         <div>
-                            <Link to="/">
+                            <Link to="/" onClick={props.isPhone() && props.handleClose}>
                                 <div className='m-1 mx-2'>
-                                    <article onMouseEnter={displayIcons && !props.isPhone() ? hover1 : () => { }} onMouseLeave={displayIcons && !props.isPhone() ? hoverOut1 : () => { }} data-blobity-magnetic="true" data-blobity-radius="12" className='flex items-center justify-between rounded-md hover:bg-gray-700 md:hover:bg-gray-800 p-2 pr-4'>
+                                    <article onMouseEnter={displayIcons && !props.isPhone() ? () => hoverIn('.icon1') : () => { }} onMouseLeave={displayIcons && !props.isPhone() ? () => hoverOut('.icon1') : () => { }} data-blobity-magnetic="true" data-blobity-radius="12" className='flex items-center justify-between rounded-md hover:bg-gray-700 md:hover:bg-gray-800 p-2 pr-4'>
                                         <div>
                                             <svg xmlns="http://www.w3.org/2000/svg" className="mx-1 inline h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                                 <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
@@ -125,9 +82,9 @@ function Navbar(props) {
                             </Link>
                         </div>
                         <div>
-                            <Link to="/projects">
+                            <Link to="/projects" onClick={props.isPhone() && props.handleClose}>
                                 <div className='m-1 mx-2'>
-                                    <article onMouseEnter={displayIcons && !props.isPhone() ? hover2 : () => { }} onMouseLeave={displayIcons && !props.isPhone() ? hoverOut2 : () => { }} data-blobity-magnetic="true" data-blobity-radius="12" className='flex items-center justify-between rounded-md hover:bg-gray-700 md:hover:bg-gray-800 p-2 pr-4'>
+                                    <article onMouseEnter={displayIcons && !props.isPhone() ? () => hoverIn('.icon2') : () => { }} onMouseLeave={displayIcons && !props.isPhone() ? () => hoverOut('.icon2') : () => { }} data-blobity-magnetic="true" data-blobity-radius="12" className='flex items-center justify-between rounded-md hover:bg-gray-700 md:hover:bg-gray-800 p-2 pr-4'>
                                         <div>
                                             <svg xmlns="http://www.w3.org/2000/svg" className="inline mx-1 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                                 <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
@@ -142,9 +99,9 @@ function Navbar(props) {
                             </Link>
                         </div>
                         <div>
-                            <Link to="/about">
+                            <Link to="/about" onClick={props.isPhone() && props.handleClose}>
                                 <div className='m-1 mx-2'>
-                                    <article onMouseEnter={displayIcons && !props.isPhone() ? hover3 : () => { }} onMouseLeave={displayIcons && !props.isPhone() ? hoverOut3 : () => { }} data-blobity-magnetic="true" data-blobity-radius="12" className='flex items-center justify-between rounded-md hover:bg-gray-700 md:hover:bg-gray-800 p-2 pr-4'>
+                                    <article onMouseEnter={displayIcons && !props.isPhone() ? () => hoverIn('.icon3') : () => { }} onMouseLeave={displayIcons && !props.isPhone() ? () => hoverOut('.icon3') : () => { }} data-blobity-magnetic="true" data-blobity-radius="12" className='flex items-center justify-between rounded-md hover:bg-gray-700 md:hover:bg-gray-800 p-2 pr-4'>
                                         <div>
                                             <svg xmlns="http://www.w3.org/2000/svg" className="mx-1 inline h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                                 <path fillRule="evenodd" d="M10 2a1 1 0 00-1 1v1a1 1 0 002 0V3a1 1 0 00-1-1zM4 4h3a3 3 0 006 0h3a2 2 0 012 2v9a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm2.5 7a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm2.45 4a2.5 2.5 0 10-4.9 0h4.9zM12 9a1 1 0 100 2h3a1 1 0 100-2h-3zm-1 4a1 1 0 011-1h2a1 1 0 110 2h-2a1 1 0 01-1-1z" clipRule="evenodd" />
@@ -159,9 +116,9 @@ function Navbar(props) {
                             </Link>
                         </div>
                         <div>
-                            <Link to="contact">
+                            <Link to="contact" onClick={props.isPhone() && props.handleClose}>
                                 <div className='m-1 mx-2'>
-                                    <article onMouseEnter={displayIcons && !props.isPhone() ? hover4 : () => { }} onMouseLeave={displayIcons && !props.isPhone() ? hoverOut4 : () => { }} data-blobity-magnetic="true" data-blobity-radius="12" className='flex items-center hover:bg-gray-700 md:hover:bg-gray-800 rounded-md p-2 pr-4'>
+                                    <article onMouseEnter={displayIcons && !props.isPhone() ? () => hoverIn('.icon4') : () => { }} onMouseLeave={displayIcons && !props.isPhone() ? () => hoverOut('.icon4') : () => { }} data-blobity-magnetic="true" data-blobity-radius="12" className='flex items-center hover:bg-gray-700 md:hover:bg-gray-800 rounded-md p-2 pr-4'>
                                         <svg xmlns="http://www.w3.org/2000/svg" className="mx-1 inline h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                             <path fillRule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z" clipRule="evenodd" />
                                         </svg>
