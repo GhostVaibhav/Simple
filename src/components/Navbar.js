@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import GPL from '../images/gplv3.png';
 
 function Navbar(props) {
-    const displayIcons = true;
+    const displayIcons = false;
     const navigate = useNavigate();
     function hoverIn(element) {
         const elt = document.querySelector(element);
