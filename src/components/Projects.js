@@ -65,12 +65,12 @@ function Projects() {
                                     </h1>
                                 </div>
                                 <article className='hover:bg-indigo-500 transition-all duration-300 phone_landscape:p-1 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border rounded-b-lg'>
-                                    <div data-no-blobity className='sm:text-sm md:text-base phone_landscape:text-sm phone_landscape:p-1 phone_landscape:py-2 text-center py-3 md:py-0 px-4 text-black dark:text-white'>
+                                    <div className='sm:text-sm md:text-base phone_landscape:text-sm phone_landscape:p-1 phone_landscape:py-2 text-center py-3 md:py-0 px-4 text-black dark:text-white'>
                                         A cross-platform TODO terminal app
                                     </div>
                                 </article>
                             </motion.div>
-                            <motion.img initial="comeLeftOut" animate="in" exit="comeLeftOut" transition={{ duration: 0.5 }} variants={pageTransition} data-blobity-radius="10" src={markImg} alt='MarkIt' className='drop-shadow-xl phone_landscape:mt-2 mb-2 mt-2 md:mt-4 md:mb-0 border border-gray-600 rounded-lg w-full h-auto' />
+                            <motion.img initial="comeLeftOut" animate="in" exit="comeLeftOut" transition={{ duration: 0.5 }} variants={pageTransition} data-blobity-radius="10" src={markImg} alt='MarkIt' className='drop-shadow-xl phone_landscape:mb-0 phone_landscape:mt-2 mb-2 mt-2 md:mt-4 md:mb-0 border border-gray-600 rounded-lg w-full h-auto' />
                         </div>
                     </div>
                 </div>

@@ -70,8 +70,8 @@ function App() {
         }
     }, [blobity]);
     const [verified, setVerified] = useState(false);
-    var challengeBtnCount = 0;
-    var challengeBtnCountMax = 10;
+    const challengeBtnCountMax = 10;
+    const [challengeBtn, setChallengeBtn] = useState(1);
     function inInput() {
         const elem = document.getElementById('in-name');
         const elem2 = document.getElementById('in-email');
@@ -119,7 +119,7 @@ function App() {
                         <AnimatePresence>
                             <Routes>
                                 <Route path="/" element={<Introduction isPhone={isPhone} />} />
-                                <Route path="/about" element={<About isPhone={isPhone} btnCount={challengeBtnCount} btnCountMax={challengeBtnCountMax} />} />
+                                <Route path="/about" element={<About isPhone={isPhone} setChallengeBtn={setChallengeBtn} challengeBtn={challengeBtn} btnCountMax={challengeBtnCountMax} />} />
                                 <Route path="/projects" element={<Projects />} />
                                 <Route path="/contact" element={<Contact verified={verified} setVerified={setVerified} />} />
                             </Routes>

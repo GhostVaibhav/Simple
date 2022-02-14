@@ -65,12 +65,14 @@ function getRandomInt(ranges) {
 
 export default function About(props) {
     function click() {
-        if (props.btnCount === props.btnCountMax) {
-            document.querySelector("#menu-button").classList.toggle("hidden");
-            document.querySelector("#challenge-button").classList.toggle("hidden");
+        if (props.challengeBtn === props.btnCountMax) {
+            if (!document.querySelector("#challenge-btn")) {
+                document.querySelector("#menu-button").classList.toggle("hidden");
+                document.querySelector("#challenge-button").classList.toggle("hidden");
+            }
         }
         else
-            props.btnCount++;
+            props.setChallengeBtn(props.challengeBtn + 1);
     }
     const transBack = {
         transition: "linear",
