@@ -172,7 +172,7 @@ export default function About(props) {
                 </motion.div>
                 {/* Content */}
                 <div className='w-[90vw] pt-8 md:pt-0 h-min md:w-9/12 lg:w-7/12 relative'>
-                    <motion.div transition={trans} initial={props.isPhone() ? "comeLeftOut" : "upOut"} animate={props.isPhone() ? "in" : "upIn"} exit={props.isPhone() ? "comeLeftOut" : "upOut"} variants={pageTransition} className='p-2 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg'>
+                    <motion.div transition={trans} initial={props.isPhone() ? "comeLeftOut" : "upOut"} animate={props.isPhone() ? "in" : "upIn"} exit={props.isPhone() ? "comeLeftOut" : "upOut"} variants={pageTransition} className='phone_landscape:p-1 p-2 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg'>
                         <h1 className='pt-0 p-2 text-2xl lg:text-4xl text-white font-bold'>
                             <span data-no-blobity className='text-indigo-500 text-3xl lg:text-5xl' style={{ "fontFamily": 'Caveat' }}>About </span> Me
                         </h1>
@@ -183,7 +183,7 @@ export default function About(props) {
                         </article>
                     </motion.div>
                     <div className='flex flex-col md:flex-row'>
-                        <motion.div transition={trans} initial="out" animate="in" exit="out" variants={pageTransition} className='my-2 mt-4 md:m-2 md:mt-4 md:ml-0 md:w-2/3 p-2 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg'>
+                        <motion.div transition={trans} initial="out" animate="in" exit="out" variants={pageTransition} className='phone_landscape:p-1 my-2 mt-4 md:m-2 md:mt-4 md:ml-0 md:w-2/3 p-2 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg'>
                             <h1 className='pt-0 p-2 text-2xl lg:text-4xl text-white font-bold'>
                                 <span data-no-blobity className='text-indigo-500 text-3xl lg:text-5xl' style={{ "fontFamily": 'Caveat' }}>Education</span>
                             </h1>
@@ -193,14 +193,14 @@ export default function About(props) {
                                 I have avid interest in <div className='inline font-bold text-green-400'>Mathematics</div>, <div className='inline font-bold text-red-400'>Physics</div> and <div className='inline font-bold text-teal-400'>Computer Science</div>.
                             </article>
                         </motion.div>
-                        <motion.div transition={trans} initial="comeLeftOut" animate="in" exit="comeLeftOut" variants={pageTransition} className='my-2 mt-4 md:m-2 md:mt-4 md:mr-0 md:w-1/3 p-2 md:p-4 flex flex-col md:items-center bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg'>
+                        <motion.div transition={trans} initial="comeLeftOut" animate="in" exit="comeLeftOut" variants={pageTransition} className='phone_landscape:p-1 my-2 mt-4 md:m-2 md:mt-4 md:mr-0 md:w-1/3 p-2 md:p-4 flex flex-col md:items-center bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg'>
                             <h1 className='pb-3 text-2xl lg:text-4xl text-white font-bold'>
                                 My <span data-no-blobity className='text-indigo-500 text-3xl lg:text-5xl' style={{ "fontFamily": 'Caveat' }}>Location</span>
                             </h1>
                             <iframe className='rounded-lg w-full h-full' title="map" style={{ "border": 0, "filter": "invert(100%)" }} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14008.065053328835!2d77.13053618124533!3d28.629274668703356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d03245972a8ff%3A0x22f0733cd9d891f3!2sNaraina%20Vihar%2C%20Naraina%2C%20New%20Delhi%2C%20Delhi%20110028!5e0!3m2!1sen!2sin!4v1640848168393!5m2!1sen!2sin" allowFullScreen="" loading="lazy"></iframe>
                         </motion.div>
                     </div>
-                    <motion.div transition={trans3} initial={props.isPhone() ? "comeLeftOut" : "downOut"} animate={props.isPhone() ? "in" : "upIn"} exit={props.isPhone() ? "comeLeftOut" : "downOut"} variants={pageTransition} className='my-2 mt-4 md:m-2 md:mt-4 md:mx-0 p-2 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg'>
+                    <motion.div transition={trans3} initial={props.isPhone() ? "comeLeftOut" : "downOut"} animate={props.isPhone() ? "in" : "upIn"} exit={props.isPhone() ? "comeLeftOut" : "downOut"} variants={pageTransition} className='phone_landscape:p-1 my-2 mt-4 md:m-2 md:mt-4 md:mx-0 p-2 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg'>
                         <h1 className='pt-0 pb-3 p-2 text-2xl lg:text-4xl text-white font-bold'>
                             My <span data-no-blobity className='text-indigo-500 text-3xl lg:text-5xl' style={{ "fontFamily": 'Caveat' }}>Hobbies</span>
                         </h1>
@@ -210,17 +210,17 @@ export default function About(props) {
                         </article>
                     </motion.div>
                     <div className='flex flex-col md:flex-row w-full'>
-                        <motion.div transition={trans2} initial="out" animate="in" exit="out" variants={pageTransition} className='my-2 mt-4 w-full md:w-1/2 md:m-2 md:mt-4 md:ml-0 p-2 md:p-4 flex flex-row bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg'>
+                        <motion.div transition={trans2} initial="out" animate="in" exit="out" variants={pageTransition} className='phone_landscape:p-1 my-2 mt-4 w-full md:w-1/2 md:m-2 md:mt-4 md:ml-0 p-2 md:p-4 flex flex-row bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg'>
                             <h1 className='p-2 text-2xl lg:text-4xl text-white font-bold'>
                                 Let's stay <span data-no-blobity className='text-indigo-500 text-3xl lg:text-5xl' style={{ "fontFamily": 'Caveat' }}>connected</span>
                             </h1>
                             <div className='flex self-center w-full py-2 md:w-[50%] justify-evenly'>
-                                <a data-no-blobity className="transform transition-all duration-200 hover:scale-105 px-2" href="https://github.com/GhostVaibhav" rel="noreferrer" target="_blank"><img data-blobity-offset-x="5" data-blobity-offset-y="5" alt="GitHub" className='w-10' src={Github}></img></a>
-                                <a data-no-blobity className="transform transition-all duration-200 hover:scale-105 px-2" href="mailto:sharmavaibhav110028@gmail.com" rel="noreferrer" target="_blank"><img data-blobity-offset-x="5" data-blobity-offset-y="5" alt="Gmail" className='w-10' src={Gmail}></img></a>
-                                <a data-no-blobity className="transform transition-all duration-200 hover:scale-105 px-2" href="https://www.linkedin.com/in/ghost-vaibhav/" rel="noreferrer" target="_blank"><img data-blobity-offset-x="5" data-blobity-offset-y="5" alt="LinkedIn" className='w-10' src={Linkedin}></img></a>
+                                <a data-no-blobity className="transform transition-all duration-200 hover:scale-105 px-2" href="https://github.com/GhostVaibhav" rel="noreferrer" target="_blank"><img data-blobity-offset-x="5" data-blobity-offset-y="5" alt="GitHub" className='min-w-[25px]' src={Github}></img></a>
+                                <a data-no-blobity className="transform transition-all duration-200 hover:scale-105 px-2" href="mailto:sharmavaibhav110028@gmail.com" rel="noreferrer" target="_blank"><img data-blobity-offset-x="5" data-blobity-offset-y="5" alt="Gmail" className='min-w-[25px]' src={Gmail}></img></a>
+                                <a data-no-blobity className="transform transition-all duration-200 hover:scale-105 px-2" href="https://www.linkedin.com/in/ghost-vaibhav/" rel="noreferrer" target="_blank"><img data-blobity-offset-x="5" data-blobity-offset-y="5" alt="LinkedIn" className='min-w-[25px]' src={Linkedin}></img></a>
                             </div>
                         </motion.div>
-                        <motion.div transition={trans2} initial="comeLeftOut" animate="in" exit="comeLeftOut" variants={pageTransition} className='justify-center w-full md:w-1/2 my-2 mt-4 md:m-2 md:mt-4 md:mr-0 pt-1 pb-2 px-2 md:px-4 md:pt-2 md:pb-4 flex flex-row bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg'>
+                        <motion.div transition={trans2} initial="comeLeftOut" animate="in" exit="comeLeftOut" variants={pageTransition} className='phone_landscape:p-1 justify-center w-full md:w-1/2 my-2 mt-4 md:m-2 md:mt-4 md:mr-0 pt-1 pb-2 px-2 md:px-4 md:pt-2 md:pb-4 flex flex-row bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg'>
                             <h1 className='text-center self-center text-2xl lg:text-4xl text-white font-bold'>
                                 Some secrets to be <span data-blobity-offset-x="16" className='text-indigo-500 select-none text-3xl lg:text-5xl' onClick={click} style={{ "fontFamily": 'Caveat' }}>shared</span>
                             </h1>
