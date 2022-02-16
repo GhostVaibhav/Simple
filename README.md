@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7e2676d4540b42c6b2a48a5884f7facf)](https://app.codacy.com/gh/GhostVaibhav/Simple?utm_source=github.com&utm_medium=referral&utm_content=GhostVaibhav/Simple&utm_campaign=Badge_Grade_Settings)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
