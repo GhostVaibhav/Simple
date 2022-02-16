@@ -1,13 +1,10 @@
-name: Docker Image CI
-
+name: Publishing to GitHub packages
 on:
   push:
     branches: [ master ]
-
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
-
 jobs:
   build:
     runs-on: ubuntu-latest
