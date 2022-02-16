@@ -1,12 +1,12 @@
 module.exports = {
-  darkMode: 'media',
+  darkMode: "media",
   content: [
     "./src/**/*.{js,jsx,ts,tsx}"
   ],
   theme: {
     extend: {
       screens: {
-        'phone_landscape': { 'raw': '(orientation: landscape) and (max-width: 1024px)' },
+        "phone_landscape": { "raw": "(orientation: landscape) and (max-width: 1024px)" },
       },
       animation: {
         something: "something 7s infinite",
@@ -34,7 +34,7 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/typography'),
-    require('@themesberg/flowbite/plugin'),
+    require("@tailwindcss/typography"),
+    require("@themesberg/flowbite/plugin"),
   ],
 }

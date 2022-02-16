@@ -1,14 +1,14 @@
 import { useRef, useEffect, useState, lazy, Suspense } from "react";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import { AnimatePresence } from 'framer-motion';
-import useBlobity from 'blobity/lib/useBlobity';
+import { AnimatePresence } from "framer-motion";
+import useBlobity from "blobity/lib/useBlobity";
 import Loader from "./components/Loader";
 import Navbar from "./components/Navbar";
-const About = lazy(() => import('./components/About'));
-const OutsideAlerter = lazy(() => import('./components/OutsideAlerter'));
-const Introduction = lazy(() => import('./components/Introduction'));
-const Projects = lazy(() => import('./components/Projects'));
-const Contact = lazy(() => import('./components/Contact'));
+const About = lazy(() => import("./components/About"));
+const OutsideAlerter = lazy(() => import("./components/OutsideAlerter"));
+const Introduction = lazy(() => import("./components/Introduction"));
+const Projects = lazy(() => import("./components/Projects"));
+const Contact = lazy(() => import("./components/Contact"));
 
 function isPhone() {
     return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -35,20 +35,20 @@ function App() {
     var blobProps;
     if (!isPhone()) {
         blobProps = {
-            licenseKey: '...',
+            licenseKey: "...",
             focusableElementsOffsetX: 2,
             focusableElementsOffsetY: 2,
-            color: '#9ca3af',
-            dotColor: '#93c5fd',
+            color: "#9ca3af",
+            dotColor: "#93c5fd",
             invert: false,
-            mode: 'bouncy',
+            mode: "bouncy",
             focusableElements:
-                '[data-blobity], input:not([data-no-blobity]), img:not([data-no-blobity]), article:not([data-no-blobity]), span:not([data-no-blobity]), a:not([data-no-blobity]), button:not([data-no-blobity]), [data-blobity-tooltip]',
+                "[data-blobity], input:not([data-no-blobity]), img:not([data-no-blobity]), article:not([data-no-blobity]), span:not([data-no-blobity]), a:not([data-no-blobity]), button:not([data-no-blobity]), [data-blobity-tooltip]",
             font: "Inter",
             fontSize: 14,
             fontWeight: 600,
             opacity: 0.5,
-            fontColor: '#000000',
+            fontColor: "#000000",
             zIndex: 99,
             size: 40,
             radius: 4,
@@ -56,7 +56,7 @@ function App() {
     }
     else {
         blobProps = {
-            licenseKey: '...',
+            licenseKey: "...",
             opacity: 0,
             zIndex: -999,
             size: 0,
@@ -73,9 +73,9 @@ function App() {
     const challengeBtnCountMax = 10;
     const [challengeBtn, setChallengeBtn] = useState(1);
     function inInput() {
-        const elem = document.getElementById('in-name');
-        const elem2 = document.getElementById('in-email');
-        const elem3 = document.getElementById('in-msg');
+        const elem = document.getElementById("in-name");
+        const elem2 = document.getElementById("in-email");
+        const elem3 = document.getElementById("in-msg");
         if (elem === document.activeElement || elem2 === document.activeElement || elem3 === document.activeElement)
             return true;
         return false;
