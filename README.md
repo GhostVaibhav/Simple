@@ -32,6 +32,6 @@
 ### _My social handles_
 
 
-<img src="src/images/linkedin.svg" style="max-width: 32px;">&ensp;
-<img src="src/images/gmail.svg" style="max-width: 32px;">&ensp;
-<img src="src/images/github.svg" style="max-width: 32px;">
+<img src="src/images/linkedin.svg" style="width: 32px;">&ensp;
+<img src="src/images/gmail.svg" style="width: 32px;">&ensp;
+<img src="src/images/github.svg" style="width: 32px;">
