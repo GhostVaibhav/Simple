@@ -205,14 +205,14 @@ export default function About(props) {
                             My <span data-no-blobity className="text-indigo-500 text-3xl lg:text-5xl" style={{ "fontFamily": "Caveat" }}>Hobbies</span>
                         </h1>
                         <article data-no-blobity className="pt-2 md:pt-0 px-4 text-black dark:text-white">
-                            My hobbies include sports like <strong className="italic">Cricket</strong>, <strong className="italic">Badminton</strong> and <strong className="italic">Football</strong>. I"m also interested in <div className="inline font-bold text-teal-400">creating music</div> and <div className="inline font-bold text-blue-400">challenging puzzles</div>.
-                            I"m also interested in <strong>reading and doing</strong> a lot of different things from a variety of domains in <div className="inline text-red-400 font-bold">Computer Science</div>.
+                            My hobbies include sports like <strong className="italic">Cricket</strong>, <strong className="italic">Badminton</strong> and <strong className="italic">Football</strong>. I'm also interested in <div className="inline font-bold text-teal-400">creating music</div>, <div className="inline font-bold text-blue-400">challenging puzzles</div>
+                            , <strong>reading and doing</strong> a lot of different things from a variety of domains in <div className="inline text-red-400 font-bold">Computer Science</div>.
                         </article>
                     </motion.div>
                     <div className="flex flex-col md:flex-row w-full">
                         <motion.div transition={trans2} initial="out" animate="in" exit="out" variants={pageTransition} className="phone_landscape:p-1 my-2 mt-4 w-full md:w-1/2 md:m-2 md:mt-4 md:ml-0 p-2 md:p-4 flex flex-row bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg">
                             <h1 className="p-2 text-2xl lg:text-4xl text-white font-bold">
-                                Let"s stay <span data-no-blobity className="text-indigo-500 text-3xl lg:text-5xl" style={{ "fontFamily": "Caveat" }}>connected</span>
+                                Let's stay <span data-no-blobity className="text-indigo-500 text-3xl lg:text-5xl" style={{ "fontFamily": "Caveat" }}>connected</span>
                             </h1>
                             <div className="flex self-center w-full py-2 md:w-[50%] justify-evenly">
                                 <a data-no-blobity className="transform transition-all duration-200 hover:scale-105 px-2" href="https://github.com/GhostVaibhav" rel="noreferrer" target="_blank"><img data-blobity-offset-x="5" data-blobity-offset-y="5" alt="GitHub" className="min-w-[25px]" src={Github}></img></a>

@@ -57,7 +57,7 @@ function Introduction(props) {
                             </motion.div>
                         </div>
                         <motion.span onClick={toAbout} initial="out" animate="in" exit="out" variants={pageTransition} data-blobity-offset-x="10" style={{ "fontFamily": "Caveat" }} className="text-indigo-500 text-5xl md:text-6xl select-none">
-                            I"m Vaibhav
+                            I'm Vaibhav
                         </motion.span>
                     </div>
                     <motion.div initial="zoomInit" animate="zoomFinal" exit="zoomInit" transition={{ duration: 0.25, delay: 1 }} variants={pageTransition} id="wave" className="self-center text-5xl md:text-7xl select-none">
