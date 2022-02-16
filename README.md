@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://ghostvaibhav.me"><img src="./public/icons/icon-192x192.png" /></a>
+    <a href="https://ghostvaibhav.me"><img src="./public/android-icon-96x96.png" /></a>
     <b><h1 align="center">Simple</h1></b>
     <i><h3 align="center">Simple is my personal website created using React and Tailwind CSS.</h3></i>
     <img src="./src/images/portfolio.png" style="border-radius: 8px;" />
