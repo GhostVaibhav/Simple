@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+<p align="center">
+    <a href="https://ghostvaibhav.me"><img src="./public/icons/icon-192x192.png" /></a>
+    <b><h1 align="center">Simple</h1></b>
+    <i><h3 align="center">Simple is my personal website created using React and Tailwind CSS.</h3></i>
+    <img src="./src/images/portfolio.png" style="border-radius: 8px;" />
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+[![wakatime](https://wakatime.com/badge/user/611e9ce2-c2cb-4772-95cf-098eb0afe5f2/project/33eee947-84b5-404f-9869-5cbe8286fa00.svg)](https://wakatime.com/badge/user/611e9ce2-c2cb-4772-95cf-098eb0afe5f2/project/33eee947-84b5-404f-9869-5cbe8286fa00)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/b722db5b1a6842c5a179f22b85f3dd1d)](https://www.codacy.com/gh/GhostVaibhav/Simple/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GhostVaibhav/Simple&amp;utm_campaign=Badge_Grade)
 
-In the project directory, you can run:
 
-### `npm start`
+### _Dependencies_
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [React](https://github.com/facebook/react)
+- [React Router](https://github.com/remix-run/react-router)
+- [Framer Motion](https://github.com/framer/motion)
+- [AOS](https://github.com/michalsnik/aos)
+- [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss)
+- [Blobity](https://github.com/gmrchk/blobity)
+- [react-google-recaptcha](https://github.com/dozoisch/react-google-recaptcha)
+- [gh-pages](https://github.com/tschaub/gh-pages)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### _Checkout the license_
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[![License](src/images/gplv3.png)](LICENSE)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### _My social handles_
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<img src="src/images/linkedin.svg" style="max-width: 32px;">&ensp;
+<img src="src/images/gmail.svg" style="max-width: 32px;">&ensp;
+<img src="src/images/github.svg" style="max-width: 32px;">
