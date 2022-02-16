@@ -33,6 +33,6 @@
 ### _My social handles_
 
 
-<img src="src/images/linkedin.svg" style="width: 32px;">&ensp;
-<img src="src/images/gmail.svg" style="width: 32px;">&ensp;
-<img src="src/images/github.svg" style="width: 32px; filter: invert()">
+<a href="https://www.linkedin.com/in/ghost-vaibhav/"><img src="src/images/linkedin.svg" style="width: 32px;"></a>&ensp;
+<a href="mailto:sharmavaibhav110028@gmail.com"><img src="src/images/gmail.svg" style="width: 32px;"></a>&ensp;
+<a href="https://github.com/GhostVaibhav"><img src="src/images/github.svg" style="width: 32px; filter: invert(1)"></a>
