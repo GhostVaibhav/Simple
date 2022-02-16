@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Build site
 
 on:
   pull_request:
@@ -20,4 +20,5 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm install
+    - name: Installing dependencies
+      run: npm install
