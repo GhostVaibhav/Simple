@@ -35,5 +35,5 @@
 
 <a href="https://www.linkedin.com/in/ghost-vaibhav/"><img src="src/images/linkedin.svg" width="32" /></a>&ensp;
 <a href="mailto:sharmavaibhav110028@gmail.com"><img src="src/images/gmail.svg" width="32" /></a>&ensp;
-<a href="https://github.com/GhostVaibhav"><img src="https://raw.githubusercontent.com/GhostVaibhav/Simple/master/src/images/github.svg#gh-light-mode-only" width="32" /></a>
-<a href="https://github.com/GhostVaibhav"><img src="https://raw.githubusercontent.com/GhostVaibhav/Simple/master/src/images/github_light.svg#gh-dark-mode-only" width="32" /></a>
+[![GitHub](https://raw.githubusercontent.com/GhostVaibhav/Simple/master/src/images/github.svg#gh-light-mode-only|width=32px)](https://github.com/GhostVaibhav)
+[![GitHub](https://raw.githubusercontent.com/GhostVaibhav/Simple/master/src/images/github_light.svg#gh-dark-mode-only|width=32px)](https://github.com/GhostVaibhav)
