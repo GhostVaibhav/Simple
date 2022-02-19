@@ -210,14 +210,14 @@ export default function About(props) {
                         </article>
                     </motion.div>
                     <div className="flex flex-col md:flex-row w-full">
-                        <motion.div transition={trans2} initial="out" animate="in" exit="out" variants={pageTransition} className="phone_landscape:p-1 my-2 mt-4 w-full md:w-1/2 md:m-2 md:mt-4 md:ml-0 p-2 md:p-4 flex flex-row bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg">
+                        <motion.div transition={trans2} initial="out" animate="in" exit="out" variants={pageTransition} className="phone_landscape:p-1 my-2 mt-4 w-full md:w-1/2 md:m-2 md:mt-4 md:ml-0 p-2 md:p-4 items-center flex flex-row bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg">
                             <h1 className="p-2 text-2xl lg:text-4xl text-white font-bold">
                                 Let's stay <span data-no-blobity className="text-indigo-500 text-3xl lg:text-5xl" style={{ "fontFamily": "Caveat" }}>connected</span>
                             </h1>
                             <div className="flex self-center w-full py-2 md:w-[50%] justify-evenly">
-                                <a data-no-blobity className="transform transition-all duration-200 hover:scale-105 px-2" href="https://github.com/GhostVaibhav" rel="noreferrer" target="_blank"><img data-blobity-offset-x="5" data-blobity-offset-y="5" alt="GitHub" className="min-w-[25px]" src={Github}></img></a>
-                                <a data-no-blobity className="transform transition-all duration-200 hover:scale-105 px-2" href="mailto:sharmavaibhav110028@gmail.com" rel="noreferrer" target="_blank"><img data-blobity-offset-x="5" data-blobity-offset-y="5" alt="Gmail" className="min-w-[25px]" src={Gmail}></img></a>
-                                <a data-no-blobity className="transform transition-all duration-200 hover:scale-105 px-2" href="https://www.linkedin.com/in/ghost-vaibhav/" rel="noreferrer" target="_blank"><img data-blobity-offset-x="5" data-blobity-offset-y="5" alt="LinkedIn" className="min-w-[25px]" src={Linkedin}></img></a>
+                                <a data-no-blobity className="transform transition-all duration-200 hover:scale-105 px-2" href="https://github.com/GhostVaibhav" rel="noreferrer" target="_blank"><img data-blobity-offset-x="5" data-blobity-offset-y="5" alt="GitHub" className="min-w-[32px] phone_landscape:max-w-[50%]" src={Github}></img></a>
+                                <a data-no-blobity className="transform transition-all duration-200 hover:scale-105 px-2" href="mailto:sharmavaibhav110028@gmail.com" rel="noreferrer" target="_blank"><img data-blobity-offset-x="5" data-blobity-offset-y="5" alt="Gmail" className="min-w-[32px] phone_landscape:max-w-[50%]" src={Gmail}></img></a>
+                                <a data-no-blobity className="transform transition-all duration-200 hover:scale-105 px-2" href="https://www.linkedin.com/in/ghost-vaibhav/" rel="noreferrer" target="_blank"><img data-blobity-offset-x="5" data-blobity-offset-y="5" alt="LinkedIn" className="min-w-[32px] phone_landscape:max-w-[50%]" src={Linkedin}></img></a>
                             </div>
                         </motion.div>
                         <motion.div transition={trans2} initial="comeLeftOut" animate="in" exit="comeLeftOut" variants={pageTransition} className="phone_landscape:p-1 justify-center w-full md:w-1/2 my-2 mt-4 md:m-2 md:mt-4 md:mr-0 pt-1 pb-2 px-2 md:px-4 md:pt-2 md:pb-4 flex flex-row bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg">
