@@ -81,8 +81,8 @@ function App() {
         return false;
     }
     function handleOpen() {
-        if (!inInput() && document.querySelector(".sidebar").classList.contains("-translate-x-full")) {
-            document.querySelector(".sidebar").classList.toggle("-translate-x-full");
+        if (!inInput() && document.querySelector(".sidebar").classList.contains("-translate-x-[11rem]")) {
+            document.querySelector(".sidebar").classList.toggle("-translate-x-[11rem]");
             document.querySelector("#menu-button").classList.toggle("hidden");
             document.querySelector("#close-button").classList.toggle("hidden");
             if (isPhone())
@@ -91,8 +91,8 @@ function App() {
         setSidebar(true);
     }
     function handleClose() {
-        if (!document.querySelector(".sidebar").classList.contains("-translate-x-full")) {
-            document.querySelector(".sidebar").classList.toggle("-translate-x-full");
+        if (!document.querySelector(".sidebar").classList.contains("-translate-x-[11rem]")) {
+            document.querySelector(".sidebar").classList.toggle("-translate-x-[11rem]");
             document.querySelector("#menu-button").classList.toggle("hidden");
             document.querySelector("#close-button").classList.toggle("hidden");
             if (isPhone())

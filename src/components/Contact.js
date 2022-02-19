@@ -64,13 +64,13 @@ function Contact(props) {
     }, []);
     return (
         <div>
-            <div className="h-fit min-h-screen w-screen bg-gray-900 flex justify-center items-center">
+            <div className="h-fit min-h-screen min-w-full w-fit bg-gray-900 flex justify-center items-center">
                 <div className="z-10 absolute h-screen w-screen !opacity-60 blur-2xl overflow-hidden">
                     <div className="absolute top-1/2 md:top-1/4 left-[10%] md:left-1/4 h-1/3 md:h-auto md:w-1/3 aspect-square bg-purple-300 rounded-full mix-blend-multiply filter animate-something animation-delay-2000" />
                     <div className="absolute top-1/2 md:top-1/4 left-[15%] md:left-[45%] h-1/3 md:h-auto md:w-1/3 aspect-square bg-yellow-300 rounded-full mix-blend-multiply filter animate-something" />
                     <motion.div transition={trans} initial="upOut" animate="upIn" exit="upOut" variants={pageTransition} className="absolute top-1/3 md:top-[20%] left-[15%] md:left-[45%] h-1/3 md:h-auto md:w-1/3 aspect-square bg-pink-300 rounded-full mix-blend-multiply filter animate-something animation-delay-4000" />
                 </div>
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="z-20 flex justify-center backdrop-blur-2xl rounded-lg">
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="z-20 phone_landscape:my-2 flex justify-center backdrop-blur-2xl rounded-lg">
                     <div className="flex flex-col sm:flex-row items-center border border-gray-800 bg-opacity-80 bg-gray-700 rounded-lg">
                         <div data-blobity-offset-y="10" style={{ fontFamily: "Caveat" }} className="text-center font-extrabold mt-6 pr-3 md:pr-0 m-2 text-indigo-500 text-5xl w-full md:ml-6 md:mr-20">📑Contact Me</div>
                         <form id="form" onSubmit={handleSubmit} action="https://formcarry.com/s/rJM8b8RJ5Ob" method="POST" acceptCharset="UTF-8" className="flex flex-col text-white my-4 md:mr-6 m-2 justify-center w-[90%]">

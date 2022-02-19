@@ -11,12 +11,13 @@ function useOutsideAlerter(ref, isPhone) {
          */
         function handleClickOutside(event) {
             if (ref.current && !ref.current.contains(event.target)) {
-                if (!document.querySelector(".sidebar").classList.contains("-translate-x-full")) {
-                    document.querySelector(".sidebar").classList.toggle("-translate-x-full");
+                if (!document.querySelector(".sidebar").classList.contains("-translate-x-[11rem]")) {
+                    document.querySelector(".sidebar").classList.toggle("-translate-x-[11rem]");
                     document.querySelector("#menu-button").classList.toggle("hidden");
                     document.querySelector("#close-button").classList.toggle("hidden");
-                    if (isPhone())
+                    if (isPhone()) {
                         document.querySelector(".open-button").classList.toggle("hidden");
+                    }
                 }
             }
         }
