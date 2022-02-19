@@ -53,10 +53,40 @@ function Contact(props) {
         document.getElementById("open").classList.add("hidden");
         document.getElementById("dis").classList.remove("hidden");
     }
+    const validateEmail = (email) => {
+        return String(email)
+            .toLowerCase()
+            .match(
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            );
+    };
     const handleSubmit = (e) => {
+        let validEmail = true;
+        let validMsg = true;
         e.preventDefault();
-        if (props.verified)
+        if (props.verified) {
+            if (document.getElementById("in-email").value === "" || !validateEmail(document.getElementById("in-email").value)) {
+                document.getElementById("in-email").classList.add("border-red-500");
+                validEmail = false;
+            }
+            if (document.getElementById("in-msg").value === "") {
+                document.getElementById("in-msg").classList.add("border-red-500");
+                validMsg = false;
+            }
+        }
+        else {
+            validEmail = false;
+            validMsg = false;
+        }
+        if (validEmail) {
+            document.getElementById("in-email").classList.remove("border-red-500");
+        }
+        if (validMsg) {
+            document.getElementById("in-msg").classList.remove("border-red-500");
+        }
+        if (validEmail && validMsg) {
             document.getElementById("form").submit();
+        }
     }
     const rekey = process.env.REACT_APP_RECAPTCHA_KEY ? process.env.REACT_APP_RECAPTCHA_KEY : "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
     useEffect(() => {
@@ -75,8 +105,8 @@ function Contact(props) {
                         <div data-blobity-offset-y="10" style={{ fontFamily: "Caveat" }} className="text-center phone_landscape:mx-1 font-extrabold mt-6 pr-3 md:pr-0 m-2 text-indigo-500 text-5xl w-full md:ml-6 md:mr-20">📑Contact Me</div>
                         <form id="form" onSubmit={handleSubmit} action="https://formcarry.com/s/rJM8b8RJ5Ob" method="POST" acceptCharset="UTF-8" className="flex flex-col phone_landscape:my-0 phone_landscape:mx-2 text-white my-4 md:mr-6 m-2 justify-center w-[90%]">
                             <input id="in-name" data-blobity-radius="8" name="firstName" spellCheck="false" className="w-full m-2 self-center p-2 rounded-md bg-gray-800" placeholder="Name" type="text" />
-                            <input id="in-email" data-blobity-radius="8" name="email" className="w-full m-2 self-center p-2 rounded-md bg-gray-800" placeholder="Email*" type="email" required />
-                            <input id="in-msg" data-blobity-radius="8" name="anotherInput" spellCheck="false" autoComplete="off" className="resize-none w-full m-2 self-center p-2 rounded-md bg-gray-800" placeholder="Message*" type="text" required />
+                            <input id="in-email" data-blobity-radius="8" name="email" className="w-full m-2 self-center p-2 rounded-md bg-gray-800" placeholder="Email*" type="email" />
+                            <input id="in-msg" data-blobity-radius="8" name="anotherInput" spellCheck="false" autoComplete="off" className="resize-none w-full m-2 self-center p-2 rounded-md bg-gray-800" placeholder="Message*" type="text" />
                             <span className="flex w-full pr-4 phone_landscape:pr-0 md:pr-0" required>
                                 <ReCAPTCHA onErrored={expire} onExpired={expire} onChange={success} className="w-fit self-center" sitekey={rekey} theme="dark" />
                             </span>
