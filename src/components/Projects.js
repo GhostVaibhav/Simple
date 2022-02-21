@@ -32,7 +32,7 @@ function Projects() {
     }, []);
     return (
         <div>
-            <div className="scroll-auto snap-both snap-mandatory snap-always overflow-scroll overflow-x-hidden h-screen w-screen bg-gray-50 dark:bg-gray-900">
+            <div className="scroll-auto snap-both snap-mandatory snap-always overflow-scroll overflow-x-hidden h-screen w-screen bg-gray-900">
                 <div className="snap-start relative flex flex-col justify-center items-center sm:flex-row h-screen w-screen">
                     <div data-aos="zoom-in" data-aos-once="false" className="relative w-screen sm:place-self-center md:h-screen h-[30%] sm:w-1/2 !opacity-60 blur-2xl">
                         <div className="absolute top-[70%] sm:top-[25%] md:top-[35%] left-[30%] md:left-[25%] w-1/3 aspect-square bg-purple-300 rounded-full mix-blend-multiply filter animate-something animation-delay-2000"></div>
@@ -65,7 +65,7 @@ function Projects() {
                                     </h1>
                                 </div>
                                 <article className="hover:bg-indigo-500 transition-all duration-300 phone_landscape:p-1 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border rounded-b-lg">
-                                    <div className="sm:text-sm md:text-base phone_landscape:text-sm phone_landscape:p-1 phone_landscape:py-2 text-center py-3 md:py-0 px-4 text-black dark:text-white">
+                                    <div className="sm:text-sm md:text-base phone_landscape:text-sm phone_landscape:p-1 phone_landscape:py-2 text-center py-3 md:py-0 px-4 text-white">
                                         A cross-platform TODO terminal app
                                     </div>
                                 </article>
@@ -104,7 +104,7 @@ function Projects() {
                                     </div>
                                 </div>
                                 <article className="hover:bg-indigo-500 transition-all phone_landscape:p-1 duration-300 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border rounded-b-lg">
-                                    <div className="sm:text-sm md:text-base phone_landscape:text-sm phone_landscape:p-1 text-center py-3 md:py-0 px-4 text-black dark:text-white">
+                                    <div className="sm:text-sm md:text-base phone_landscape:text-sm phone_landscape:p-1 text-center py-3 md:py-0 px-4 text-white">
                                         My personal website built with React using TailwindCSS
                                     </div>
                                 </article>

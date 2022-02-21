@@ -82,7 +82,7 @@ export default function About(props) {
     const dur = [1, 5]
     return (
         <div>
-            <div className="relative bg-gray-50 dark:bg-gray-900 overflow-x-hidden overflow-y-hidden max-h-max md:h-max md:min-h-screen flex flex-col items-center p-10">
+            <div className="relative bg-gray-900 overflow-x-hidden overflow-y-hidden max-h-max md:h-max md:min-h-screen flex flex-col items-center p-10">
                 {/* Grid background */}
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={transBack} variants={pageTransition} className="absolute inset-0 p-2 grid grid-cols-12 gap-2 transform -skew-y-12 scale-150">
                     {/* Row 1 */}
@@ -176,7 +176,7 @@ export default function About(props) {
                         <h1 className="pt-0 p-2 text-2xl lg:text-4xl text-white font-bold">
                             <span data-no-blobity className="text-indigo-500 text-3xl lg:text-5xl" style={{ "fontFamily": "Caveat" }}>About </span> Me
                         </h1>
-                        <article data-no-blobity className="pt-2 md:pt-0 px-4 text-black dark:text-white">
+                        <article data-no-blobity className="pt-2 md:pt-0 px-4 text-white">
                             <span className="text-indigo-300">Hi</span>👋, my name is<a target="_blank" rel="noreferrer" className="lg:underline-offset-2 underline hover:decoration-transparent decoration-teal-500 rounded-md p-1" href="https://www.linkedin.com/in/ghost-vaibhav/"><strong>Vaibhav Sharma!</strong></a>I am a student currently pursuing
                             <strong> Bachelor of Technology in Computer Science</strong> from<a target="_blank" rel="noreferrer" className="lg:underline-offset-2 underline hover:decoration-transparent decoration-blue-500 rounded-md p-1" href="https://vit.ac.in">Vellore Institute of Technology</a>,<a className="lg:underline-offset-2 underline decoration-indigo-500 hover:decoration-transparent p-1 rounded-md" target="_blank" rel="noreferrer" href="https://goo.gl/maps/gosdtXmyUZt5scTE8">Vellore</a>🏛️.
                             I am a keen learner proficient in C, C++, HTML, CSS, Python, JavaScript, React, TailwindCSS, Bootstrap, Git, Docker, deployment tools <i>(Heroku, Netlify, etc.)</i> and various CI/CD tools <i>(GitHub Actions, TravisCI, CircleCI, etc.)</i>.
@@ -187,7 +187,7 @@ export default function About(props) {
                             <h1 className="pt-0 p-2 text-2xl lg:text-4xl text-white font-bold">
                                 <span data-no-blobity className="text-indigo-500 text-3xl lg:text-5xl" style={{ "fontFamily": "Caveat" }}>Education</span>
                             </h1>
-                            <article data-no-blobity className="pt-2 md:pt-0 px-4 text-black dark:text-white">
+                            <article data-no-blobity className="pt-2 md:pt-0 px-4 text-white">
                                 I am currently a <strong>2nd year student</strong> in <a target="_blank" rel="noreferrer" className="lg:underline-offset-2 underline hover:decoration-transparent decoration-blue-500 rounded-md p-1" href="https://vit.ac.in">Vellore Institute of Technology</a>,<a className="lg:underline-offset-2 underline decoration-indigo-500 hover:decoration-transparent p-1 rounded-md" target="_blank" rel="noreferrer" href="https://goo.gl/maps/aPnJgz6SgxoMomna8">Vellore</a>🏛️ pursuing my <strong>Bachelor of Technology <i>(B.Tech)</i> in Computer Science with specialisation in Blockchain Technology</strong> with a<Popover className="p-1 hover:bg-teal-600 mx-1 rounded-lg inline border border-teal-400"><Popover.Button data-blobity-offset-x="4" data-blobity-radius="8">CGPA</Popover.Button><Popover.Panel className="absolute p-2 bg-gray-700 border border-gray-600 rounded-md"><div>Cumulative Grade Point Average</div></Popover.Panel></Popover>of <strong>9.0</strong>.
                                 I completed my schooling from<a target="_blank" rel="noreferrer" className="lg:underline-offset-2 underline hover:decoration-transparent decoration-green-500 rounded-md p-1" href="https://tafssp.com/">The Air Force School</a>,<a className="lg:underline-offset-2 underline decoration-green-500 hover:decoration-transparent p-1 rounded-md" target="_blank" rel="noreferrer" href="https://goo.gl/maps/xQJk7qTvCZ2mhc4H7">New Delhi</a>🏫 with a score of <strong>96.2% in AISSCE</strong>.
                                 I have avid interest in <div className="inline font-bold text-green-400">Mathematics</div>, <div className="inline font-bold text-red-400">Physics</div> and <div className="inline font-bold text-teal-400">Computer Science</div>.
@@ -204,7 +204,7 @@ export default function About(props) {
                         <h1 className="pt-0 pb-3 p-2 text-2xl lg:text-4xl text-white font-bold">
                             My <span data-no-blobity className="text-indigo-500 text-3xl lg:text-5xl" style={{ "fontFamily": "Caveat" }}>Hobbies</span>
                         </h1>
-                        <article data-no-blobity className="pt-2 md:pt-0 px-4 text-black dark:text-white">
+                        <article data-no-blobity className="pt-2 md:pt-0 px-4 text-white">
                             My hobbies include sports like <strong className="italic">Cricket</strong>, <strong className="italic">Badminton</strong> and <strong className="italic">Football</strong>. I'm also interested in <div className="inline font-bold text-teal-400">creating music</div>, <div className="inline font-bold text-blue-400">challenging puzzles</div>
                             , <strong>reading and doing</strong> a lot of different things from a variety of domains in <div className="inline text-red-400 font-bold">Computer Science</div>.
                         </article>
