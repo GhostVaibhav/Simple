@@ -282,9 +282,9 @@ function Navbar(props) {
                             </div>
                             <div className="w-full mt-2 h-[1px] bg-gray-600" />
                             <div className="flex">
-                                <ThemeButton bgColor="bg-[#059669]" setTheme={props.setTheme} active={props.theme === "green"}/>
-                                <ThemeButton bgColor="bg-[#ff220e]" setTheme={props.setTheme} active={props.theme === "red"}/>
-                                <ThemeButton bgColor="bg-[#2563eb]" setTheme={props.setTheme} active={props.theme === "blue"}/>
+                                <ThemeButton bgColor="bg-[#059669]" setTheme={props.setTheme} active={props.theme === "green"} />
+                                <ThemeButton bgColor="bg-[#ff220e]" setTheme={props.setTheme} active={props.theme === "red"} />
+                                <ThemeButton bgColor="bg-[#2563eb]" setTheme={props.setTheme} active={props.theme === "blue"} />
                             </div>
                         </nav>
                     </div>

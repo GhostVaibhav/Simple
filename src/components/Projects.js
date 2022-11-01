@@ -55,7 +55,7 @@ function Projects(props) {
     }, []);
     return (
         <div>
-            <div className={`${props.isPhone() ? "scroll-auto snap-both snap-mandatory snap-always overflow-scroll" : "" } overflow-x-hidden duration-500 transition h-screen w-screen ${colors[props.theme].backgroundColor}`}>
+            <div className={`${props.isPhone() ? "scroll-auto snap-both snap-mandatory snap-always overflow-scroll" : ""} overflow-x-hidden duration-500 transition h-screen w-screen ${colors[props.theme].backgroundColor}`}>
                 <div className={`${props.isPhone() ? "snap-start" : ""} relative flex flex-col justify-center items-center sm:flex-row h-screen w-screen`}>
                     <div data-aos="zoom-in" data-aos-once="false" className="relative w-screen sm:place-self-center md:h-screen h-[30%] sm:w-1/2 !opacity-60 blur-2xl">
                         <div className="absolute top-[70%] sm:top-[25%] md:top-[35%] left-[30%] md:left-[25%] w-1/3 aspect-square bg-purple-300 rounded-full mix-blend-multiply filter animate-something animation-delay-2000"></div>

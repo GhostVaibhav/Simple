@@ -28,7 +28,7 @@ function Introduction(props) {
     const navigate = useNavigate();
     let clickCounter = 1;
     function toAbout() {
-        if(clickCounter === 7)
+        if (clickCounter === 7)
             navigate("./about");
         else
             clickCounter++;
