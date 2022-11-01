@@ -33,6 +33,17 @@ function Introduction(props) {
         else
             clickCounter++;
     }
+    const colors = {
+        green: {
+            textColor: "text-green-500",
+        },
+        red: {
+            textColor: "text-red-500",
+        },
+        blue: {
+            textColor: "text-indigo-500",
+        }
+    };
     useEffect(() => {
         AOS.init();
     }, []);
@@ -56,7 +67,7 @@ function Introduction(props) {
                                 <span data-blobity-magnetic="true" data-blobity-tooltip="Hi in French" className="py-2 spin_words first-letter:font-bold block">Salut</span>
                             </motion.div>
                         </div>
-                        <motion.span onClick={toAbout} initial="out" animate="in" exit="out" variants={pageTransition} data-blobity-offset-x="10" style={{ "fontFamily": "Caveat" }} className="text-indigo-500 text-5xl md:text-6xl select-none">
+                        <motion.span onClick={toAbout} initial="out" animate="in" exit="out" variants={pageTransition} data-blobity-offset-x="10" style={{ "fontFamily": "Caveat" }} className={`${colors[props.theme].textColor} transition-colors ease-linear duration-500 text-5xl md:text-6xl select-none`}>
                             I'm Vaibhav
                         </motion.span>
                     </div>
