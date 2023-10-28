@@ -2,7 +2,7 @@
   "name": "simple",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://new.ghostvaibhav.tech/",
+  "homepage": "https://new.ghostvaibhav.codes/",
   "dependencies": {
     "@headlessui/react": "^1.4.2",
     "@testing-library/jest-dom": "^5.16.1",
@@ -37,7 +37,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "predeploy": "npm run build",
-    "deploy": "echo 'new.ghostvaibhav.tech' > ./build/CNAME && gh-pages -d build",
+    "deploy": "echo 'new.ghostvaibhav.codes' > ./build/CNAME && gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
