@@ -197,7 +197,7 @@ export default function About(props) {
                             <h1 className="pb-3 text-2xl lg:text-4xl text-white font-bold">
                                 My <span data-no-blobity className="text-indigo-500 text-3xl lg:text-5xl" style={{ "fontFamily": "Caveat" }}>Location</span>
                             </h1>
-                            <iframe className="rounded-lg w-full h-full" title="map" style={{ "border": 0, "filter": "invert(100%)" }} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14008.065053328835!2d77.13053618124533!3d28.629274668703356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d03245972a8ff%3A0x22f0733cd9d891f3!2sNaraina%20Vihar%2C%20Naraina%2C%20New%20Delhi%2C%20Delhi%20110028!5e0!3m2!1sen!2sin!4v1640848168393!5m2!1sen!2sin" allowFullScreen="" loading="lazy"></iframe>
+                            <iframe className="rounded-lg w-full h-full" title="map" style={{ "border": 0, "filter": "invert(100%)" }} src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7005.920258451487!2d77.0438831!3d28.6009729!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1ad166cab617%3A0xab1280adec323c9b!2sSector%204%2C%20Dwarka%2C%20Delhi!5e0!3m2!1sen!2sin!4v1699302812364!5m2!1sen!2sin" allowFullScreen="" loading="lazy"></iframe>
                         </motion.div>
                     </div>
                     <motion.div transition={trans3} initial={props.isPhone() ? "comeLeftOut" : "downOut"} animate={props.isPhone() ? "in" : "upIn"} exit={props.isPhone() ? "comeLeftOut" : "downOut"} variants={pageTransition} className="phone_landscape:p-1 my-2 mt-4 md:m-2 md:mt-4 md:mx-0 p-2 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border rounded-lg">
