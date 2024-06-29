@@ -1,7 +1,8 @@
-name: Push to prod
+name: Build release site and deploy
 
 on:
-  workflow_dispatch:
+  push:
+    branches: [ master ]
 
 jobs:
   build:
@@ -19,11 +20,13 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - name: Replacing the website's value for release
+      run: sed -i 's/dev-simple.ghostvaibhav.com/ghostvaibhav.com/g' package.json
     - name: Installing dependencies
       run: npm install
     - name: Setting up Git
       run: |
-           git remote set-url origin https://GhostVaibhav:${{ secrets.PASS }}@github.com/GhostVaibhav/prod-Simple.git
+           git remote set-url origin https://GhostVaibhav:${{ secrets.PASS }}@github.com/GhostVaibhav/Simple.git
            git config --global user.email "48472541+GhostVaibhav@users.noreply.github.com"
            git config --global user.name "Vaibhav Sharma"
     - name: Writing to environment variable
