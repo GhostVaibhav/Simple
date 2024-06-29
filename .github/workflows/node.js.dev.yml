@@ -27,7 +27,6 @@ jobs:
       if: github.ref == 'refs/heads/development'
       run: |
           sed -i 's/dev-simple.ghostvaibhav.com/theme-change.ghostvaibhav.com/g' package.json
-          echo 'theme-change.ghostvaibhav.com' > ./build/CNAME
     - name: Setting up Git
       run: |
           git remote set-url origin https://GhostVaibhav:${{ secrets.PASS }}@github.com/GhostVaibhav/Simple.git
