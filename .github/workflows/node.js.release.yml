@@ -1,0 +1,43 @@
+name: Build release site and deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: github-pages
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - name: Replacing the website's value for release
+      run: sed -i 's/dev-simple.ghostvaibhav.com/ghostvaibhav.com/g' package.json
+    - name: Installing dependencies
+      run: npm install
+    - name: Writing to environment variable
+      run: |
+           touch .env
+           echo 'REACT_APP_RECAPTCHA_KEY=${{ secrets.REACT_APP_RECAPTCHA_KEY }}' >> .env
+    - name: Build the website
+      run: npm run build
+    - name: Creating the CNAME file
+      run: echo 'ghostvaibhav.com' > ./build/CNAME
+    - name: Pushes to another repository
+      uses: cpina/github-action-push-to-another-repository@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        source-directory: 'build'
+        destination-github-username: 'GhostVaibhav'
+        destination-repository-name: 'prod-Simple'
+        user-email: 48472541+GhostVaibhav@users.noreply.github.com
+        target-branch: main

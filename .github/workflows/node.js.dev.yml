@@ -1,13 +1,14 @@
-name: Build site
+name: Build dev site and deploy
 
 on:
-  pull_request:
-    branches: [ master ]
+  push:
+    branches: [ develop ]
+  workflow_dispatch:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+    environment: github-pages
 
     strategy:
       matrix:
@@ -22,3 +23,15 @@ jobs:
         cache: 'npm'
     - name: Installing dependencies
       run: npm install
+    - name: Setting up Git
+      run: |
+           git remote set-url origin https://GhostVaibhav:${{ secrets.PASS }}@github.com/GhostVaibhav/Simple.git
+           git config --global user.email "48472541+GhostVaibhav@users.noreply.github.com"
+           git config --global user.name "Vaibhav Sharma"
+    - name: Writing to environment variable
+      run: |
+           touch .env
+           echo 'REACT_APP_RECAPTCHA_KEY=${{ secrets.REACT_APP_RECAPTCHA_KEY }}' >> .env
+           npm install gh-pages --save-dev
+    - name: Building and deploying the site
+      run: npm run deploy
