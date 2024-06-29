@@ -2,7 +2,7 @@ name: Build dev site and deploy
 
 on:
   push:
-    branches: [ develop ]
+    branches: [ develop, development ]
   workflow_dispatch:
 
 jobs:
@@ -23,15 +23,20 @@ jobs:
         cache: 'npm'
     - name: Installing dependencies
       run: npm install
+    - name: (Optional) Change the subdomain
+      if: github.ref == 'refs/heads/development'
+      run: |
+          sed -i 's/dev-simple.ghostvaibhav.com/theme-change.ghostvaibhav.com/g' package.json
+          echo 'theme-change.ghostvaibhav.com' > ./build/CNAME
     - name: Setting up Git
       run: |
-           git remote set-url origin https://GhostVaibhav:${{ secrets.PASS }}@github.com/GhostVaibhav/Simple.git
-           git config --global user.email "48472541+GhostVaibhav@users.noreply.github.com"
-           git config --global user.name "Vaibhav Sharma"
+          git remote set-url origin https://GhostVaibhav:${{ secrets.PASS }}@github.com/GhostVaibhav/Simple.git
+          git config --global user.email "48472541+GhostVaibhav@users.noreply.github.com"
+          git config --global user.name "Vaibhav Sharma"
     - name: Writing to environment variable
       run: |
-           touch .env
-           echo 'REACT_APP_RECAPTCHA_KEY=${{ secrets.REACT_APP_RECAPTCHA_KEY }}' >> .env
-           npm install gh-pages --save-dev
+          touch .env
+          echo 'REACT_APP_RECAPTCHA_KEY=${{ secrets.REACT_APP_RECAPTCHA_KEY }}' >> .env
+          npm install gh-pages --save-dev
     - name: Building and deploying the site
       run: npm run deploy
