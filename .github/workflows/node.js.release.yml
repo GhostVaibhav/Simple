@@ -29,6 +29,8 @@ jobs:
            echo 'REACT_APP_RECAPTCHA_KEY=${{ secrets.REACT_APP_RECAPTCHA_KEY }}' >> .env
     - name: Build the website
       run: npm run build
+    - name: Creating the CNAME file
+      run: echo 'ghostvaibhav.com' > ./build/CNAME
     - name: Pushes to another repository
       uses: cpina/github-action-push-to-another-repository@main
       env:
