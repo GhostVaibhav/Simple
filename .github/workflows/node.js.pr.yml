@@ -2,7 +2,7 @@ name: Build site
 
 on:
   pull_request:
-    types: [opened, reopened]
+    branches: [ develop ]
 
 jobs:
   build:
