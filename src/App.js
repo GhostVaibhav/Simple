@@ -72,7 +72,6 @@ function App() {
     const [verified, setVerified] = useState(false);
     const challengeBtnCountMax = 10;
     const [challengeBtn, setChallengeBtn] = useState(1);
-    const [theme, setTheme] = useState("blue");
     function inInput() {
         const elem = document.getElementById("in-name");
         const elem2 = document.getElementById("in-email");
@@ -115,14 +114,14 @@ function App() {
                 <Suspense fallback={<Loader />}>
                     <Router>
                         <OutsideAlerter isPhone={isPhone}>
-                            <Navbar isPhone={isPhone} sidebar={sidebar} theme={theme} setTheme={setTheme} setSidebar={setSidebar} handleClose={handleClose} handleOpen={handleOpen} useKey={useKey} />
+                            <Navbar isPhone={isPhone} sidebar={sidebar} setSidebar={setSidebar} handleClose={handleClose} handleOpen={handleOpen} useKey={useKey} />
                         </OutsideAlerter>
                         <AnimatePresence>
                             <Routes>
-                                <Route path="/" element={<Introduction isPhone={isPhone} theme={theme} />} />
-                                <Route path="/about" element={<About isPhone={isPhone} theme={theme} setChallengeBtn={setChallengeBtn} challengeBtn={challengeBtn} btnCountMax={challengeBtnCountMax} />} />
-                                <Route path="/projects" element={<Projects theme={theme} isPhone={isPhone} />} />
-                                <Route path="/contact" element={<Contact theme={theme} verified={verified} setVerified={setVerified} />} />
+                                <Route path="/" element={<Introduction isPhone={isPhone} />} />
+                                <Route path="/about" element={<About isPhone={isPhone} setChallengeBtn={setChallengeBtn} challengeBtn={challengeBtn} btnCountMax={challengeBtnCountMax} />} />
+                                <Route path="/projects" element={<Projects />} />
+                                <Route path="/contact" element={<Contact verified={verified} setVerified={setVerified} />} />
                             </Routes>
                         </AnimatePresence>
                     </Router>
