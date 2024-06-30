@@ -8,7 +8,7 @@
 
 [![wakatime](https://wakatime.com/badge/user/611e9ce2-c2cb-4772-95cf-098eb0afe5f2/project/33eee947-84b5-404f-9869-5cbe8286fa00.svg)](https://wakatime.com/badge/user/611e9ce2-c2cb-4772-95cf-098eb0afe5f2/project/33eee947-84b5-404f-9869-5cbe8286fa00)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/b722db5b1a6842c5a179f22b85f3dd1d)](https://www.codacy.com/gh/GhostVaibhav/Simple/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GhostVaibhav/Simple&amp;utm_campaign=Badge_Grade)
-[![Node.js CI](https://github.com/GhostVaibhav/Simple/actions/workflows/node.js.yml/badge.svg?branch=master)](https://github.com/GhostVaibhav/Simple/actions/workflows/node.js.yml)
+[![Node.js CI](https://github.com/GhostVaibhav/Simple/actions/workflows/node.js.dev.yml/badge.svg?branch=master)](https://github.com/GhostVaibhav/Simple/actions/workflows/node.js.dev.yml)
 
 
 ### _Dependencies_
