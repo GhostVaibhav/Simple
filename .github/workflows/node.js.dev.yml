@@ -2,7 +2,7 @@ name: Build dev site and deploy
 
 on:
   push:
-    branches: [ develop, development ]
+    branches: [ develop ]
   workflow_dispatch:
 
 jobs:
@@ -23,10 +23,6 @@ jobs:
         cache: 'npm'
     - name: Installing dependencies
       run: npm install
-    - name: (Optional) Change the subdomain
-      if: github.ref == 'refs/heads/development'
-      run: |
-          sed -i 's/dev-simple.ghostvaibhav.com/theme-change.ghostvaibhav.com/g' package.json
     - name: Setting up Git
       run: |
           git remote set-url origin https://GhostVaibhav:${{ secrets.PASS }}@github.com/GhostVaibhav/Simple.git
