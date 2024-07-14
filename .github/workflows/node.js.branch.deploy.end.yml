@@ -26,7 +26,7 @@ jobs:
         --url https://api.cloudflare.com/client/v4/zones/${{ secrets.CNAME_ZONE_ID }}/dns_records/'"$CNAME_ID"' \
         --header 'Content-Type: application/json' \
         --header 'X-Auth-Email: sharmavaibhav110028@gmail.com' \
-        --header 'X-Auth-Key: ${{ secrets.CNAME_KEY }}'
+        --header 'Authorization: Bearer ${{ secrets.CNAME_KEY }}'
     - name: Deleting the temporary GitHub repository
       run: |
         curl -L \

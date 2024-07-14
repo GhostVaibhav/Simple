@@ -23,13 +23,15 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - name: Installing dependencies
+      run: sudo apt-get install -y jq
     - name: Creating the new website's CNAME value on Cloudflare
       run: |
         echo "CNAME_ID=$(echo -n ${{ github.run_id }} | sha256sum | cut -c-32)" >> $GITHUB_ENV
-        curl --request POST \
+        echo "REAL_ID=$(curl --request POST \
         --url https://api.cloudflare.com/client/v4/zones/${{ secrets.CNAME_ZONE_ID }}/dns_records \
         --header 'Content-Type: application/json' \
-        --header 'X-Auth-Key: ${{ secrets.CNAME_KEY }}' \
+        --header 'Authorization: Bearer ${{ secrets.CNAME_KEY }}' \
         --header 'X-Auth-Email: sharmavaibhav110028@gmail.com' \
         --data '{
         "content": "ghostvaibhav.github.io",
@@ -39,7 +41,7 @@ jobs:
         "comment": "Temporary Feature Branch",
         "id": "'"$CNAME_ID"'",
         "ttl": 3600
-        }'
+        }') | jq '.result.id')" >> $GITHUB_ENV
     - name: Installing dependencies
       run: npm install
     - name: Writing to environment variable
@@ -60,7 +62,7 @@ jobs:
         https://api.github.com/orgs/Temporary-Feature-Branch/repos \
         -d '{
         "name": "${{ github.ref_name }}-Simple",
-        "description": "'"$CNAME_ID"'",
+        "description": "'"$REAL_ID"'",
         "homepage": "https://github.com/GhostVaibhav/Simple",
         "visibility": "public",
         "has_issues": false,
