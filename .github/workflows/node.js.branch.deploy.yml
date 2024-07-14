@@ -41,7 +41,7 @@ jobs:
         "comment": "Temporary Feature Branch",
         "id": "'"$CNAME_ID"'",
         "ttl": 3600
-        }') | jq '.result.id')" >> $GITHUB_ENV
+        }' | jq '.result.id')" >> $GITHUB_ENV
         curl -L \
         -X POST \
         -H "Accept: application/vnd.github+json" \
