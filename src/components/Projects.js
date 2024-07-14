@@ -29,22 +29,25 @@ const pageTransition = {
 
 function Projects(props) {
     const colors = {
-        green: {
-            headingColor: "text-green-300",
-            backgroundColor: "bg-green-800",
-            boxColor: "bg-green-600",
-            hoverColor: "bg-green-900",
-            borderColor: "border-green-600",
+        light: {
+            headingColor: "text-black",
+            subtitleColor: "text-black",
+            backgroundColor: "bg-white",
+            boxColor: "bg-gray-300",
+            hoverColor: "bg-gray-900",
+            borderColor: "border-gray-400",
         },
-        red: {
-            headingColor: "text-red-300",
-            backgroundColor: "bg-red-800",
-            boxColor: "bg-red-600",
-            hoverColor: "bg-red-700",
-            borderColor: "border-pink-600",
+        sw: {
+            headingColor: "text-white",
+            subtitleColor: "text-white",
+            backgroundColor: "bg-black",
+            boxColor: "bg-yellow-300",
+            hoverColor: "bg-yellow-700",
+            borderColor: "border-yellow-200",
         },
-        blue: {
+        dark: {
             headingColor: "text-indigo-500",
+            subtitleColor: "text-white",
             backgroundColor: "bg-gray-900",
             boxColor: "bg-gray-700",
             hoverColor: "bg-indigo-500",
@@ -84,17 +87,17 @@ function Projects(props) {
                                             </span>
                                         </div>
                                     </h1>
-                                    <h1 className="inline text-2xl lg:text-4xl text-white font-bold hover:scale-110 transition duration-100 ease-in-out">
-                                        <a data-blobity-offset-x="10" data-blobity-offset-y="10" target="_blank" rel="noreferrer" href="https://github.com/GhostVaibhav/MarkIt"><svg className="h-8 aspect-square" fill="white" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" /></svg></a>
+                                    <h1 className="itransition-all ease-linear duration-500 nline text-2xl lg:text-4xl text-white font-bold hover:scale-110">
+                                        <a data-blobity-offset-x="10" data-blobity-offset-y="10" target="_blank" rel="noreferrer" href="https://github.com/GhostVaibhav/MarkIt"><svg className="h-8 aspect-square" fill={props.theme === "dark" ? "white" : "black"} role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" /></svg></a>
                                     </h1>
                                 </div>
                                 <article className={`hover:${colors[props.theme].hoverColor} transition-all duration-500 phone_landscape:p-1 md:p-4 ${colors[props.theme].boxColor} bg-opacity-80 ${colors[props.theme].borderColor} border rounded-b-lg`}>
-                                    <div className="sm:text-sm md:text-base phone_landscape:text-sm phone_landscape:p-1 phone_landscape:py-2 text-center py-3 md:py-0 px-4 text-white">
+                                    <div className={`transition-all ease-linear duration-500 sm:text-sm md:text-base phone_landscape:text-sm phone_landscape:p-1 phone_landscape:py-2 text-center py-3 md:py-0 px-4 ${colors[props.theme].subtitleColor}`}>
                                         A cross-platform TODO terminal app
                                     </div>
                                 </article>
                             </motion.div>
-                            <motion.img initial="comeLeftOut" animate="in" exit="comeLeftOut" transition={{ duration: 0.5 }} variants={pageTransition} data-blobity-radius="10" src={markImg} alt="MarkIt" className={`drop-shadow-xl phone_landscape:mb-0 phone_landscape:mt-2 mb-2 mt-2 md:mt-4 md:mb-0 border ${colors[props.theme].borderColor} rounded-lg w-full h-auto`} />
+                            <motion.img initial="comeLeftOut" animate="in" exit="comeLeftOut" transition={{ duration: 0.5 }} variants={pageTransition} data-blobity-radius="10" src={markImg} alt="MarkIt" className={`transition-colors ease-linear duration-500 drop-shadow-xl phone_landscape:mb-0 phone_landscape:mt-2 mb-2 mt-2 md:mt-4 md:mb-0 border ${colors[props.theme].borderColor} rounded-lg w-full h-auto`} />
                         </div>
                     </div>
                 </div>
@@ -123,17 +126,17 @@ function Projects(props) {
                                             </span>
                                         </div>
                                     </h1>
-                                    <div className="inline text-2xl lg:text-4xl text-white font-bold hover:scale-110 transition duration-100 ease-in-out">
-                                        <a data-blobity-offset-x="10" data-blobity-offset-y="10" target="_blank" rel="noreferrer" href="https://github.com/GhostVaibhav/Simple"><svg className="h-8 aspect-square" fill="white" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" /></svg></a>
+                                    <div className="transition-all ease-linear duration-500 inline text-2xl lg:text-4xl font-bold hover:scale-110">
+                                        <a data-blobity-offset-x="10" data-blobity-offset-y="10" target="_blank" rel="noreferrer" href="https://github.com/GhostVaibhav/Simple"><svg className="h-8 aspect-square" fill={props.theme === "dark" ? "white" : "black"} role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" /></svg></a>
                                     </div>
                                 </div>
                                 <article className={`hover:${colors[props.theme].hoverColor} transition-all phone_landscape:p-1 duration-500 md:p-4 ${colors[props.theme].boxColor} bg-opacity-80 ${colors[props.theme].borderColor} border rounded-b-lg`}>
-                                    <div className="sm:text-sm md:text-base phone_landscape:text-sm phone_landscape:p-1 text-center py-3 md:py-0 px-4 text-white">
+                                    <div className={`transition-all ease-linear duration-500 sm:text-sm md:text-base phone_landscape:text-sm phone_landscape:p-1 text-center py-3 md:py-0 px-4 ${colors[props.theme].subtitleColor}`}>
                                         My personal website built with React using TailwindCSS
                                     </div>
                                 </article>
                             </motion.div>
-                            <motion.img initial="out" animate="in" exit="out" transition={{ duration: 0.5 }} variants={pageTransition} data-blobity-radius="10" src={portfolioImg} alt="My Portfolio Website" className={`drop-shadow-xl phone_landscape:mt-2 mb-2 mt-2 md:mt-4 md:mb-0 border ${colors[props.theme].borderColor} rounded-lg w-full h-auto`} />
+                            <motion.img initial="out" animate="in" exit="out" transition={{ duration: 0.5 }} variants={pageTransition} data-blobity-radius="10" src={portfolioImg} alt="My Portfolio Website" className={`transition-colors ease-linear duration-500 drop-shadow-xl phone_landscape:mt-2 mb-2 mt-2 md:mt-4 md:mb-0 border ${colors[props.theme].borderColor} rounded-lg w-full h-auto`} />
                         </div>
                     </div>
                     <div data-aos="zoom-in" data-aos-once="false" className="relative w-screen md:h-screen h-[30%] sm:w-1/2 !opacity-60 blur-2xl">
@@ -151,9 +154,9 @@ function Projects(props) {
                     <div className="relative flex justify-center items-end sm:items-center w-screen md:h-screen h-[70%] sm:w-1/2">
                         <div className="flex flex-col w-[90%] phone_landscape:w-[80%]">
                             <motion.div transition={{ duration: 0.5 }} initial="comeLeftOut" animate="in" exit="comeLeftOut" variants={pageTransition} className="drop-shadow-xl">
-                                <div className="flex flex-wrap justify-between items-center phone_landscape:p-1 phone_landscape:pr-2 p-2 pr-4 md:pr-6 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border-b-0 border rounded-t-lg">
+                                <div className={`flex flex-wrap justify-between items-center  transition-colors duration-500 phone_landscape:p-0 phone_landscape:pr-2 p-2 pr-4 md:pr-6 md:p-4 ${colors[props.theme].boxColor} bg-opacity-80 ${colors[props.theme].borderColor} border-b-0 border rounded-t-lg`}>
                                     <h1 className="phone_landscape:p-1 p-2 text-2xl lg:text-4xl text-white font-bold">
-                                        <span data-blobity-offset-x="16" className="text-indigo-500 text-4xl lg:text-5xl" style={{ "fontFamily": "Caveat" }}>vupdate </span>
+                                        <span data-blobity-offset-x="10" className={`${colors[props.theme].headingColor} transition-colors duration-500 text-4xl lg:text-5xl`} style={{ "fontFamily": "Caveat" }}>Vupdate </span>
                                         <div>
                                             <span data-blobity-offset-x="4" data-blobity-offset-y="4" data-blobity-magnetic="true" data-blobity-radius="16" className="mr-2 px-2 py-1 bg-indigo-200 hover:bg-indigo-300 rounded-full text-xs font-semibold text-indigo-600">
                                                 C++
@@ -169,17 +172,17 @@ function Projects(props) {
                                             </span>
                                         </div>
                                     </h1>
-                                    <h1 className="inline text-2xl lg:text-4xl text-white font-bold hover:scale-110 transition duration-100 ease-in-out">
-                                        <a data-blobity-offset-x="10" data-blobity-offset-y="10" target="_blank" rel="noreferrer" href="https://github.com/GhostVaibhav/vupdate"><svg className="h-8 aspect-square" fill="white" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" /></svg></a>
+                                    <h1 className="transition-all ease-linear duration-500 inline text-2xl lg:text-4xl text-white font-bold hover:scale-110">
+                                        <a data-blobity-offset-x="10" data-blobity-offset-y="10" target="_blank" rel="noreferrer" href="https://github.com/GhostVaibhav/vupdate"><svg className="h-8 aspect-square" fill={props.theme === "dark" ? "white" : "black"} role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" /></svg></a>
                                     </h1>
                                 </div>
-                                <article className="hover:bg-indigo-500 transition-all duration-300 phone_landscape:p-1 md:p-4 bg-gray-700 bg-opacity-80 border-gray-600 border rounded-b-lg">
-                                    <div className="sm:text-sm md:text-base phone_landscape:text-sm phone_landscape:p-1 phone_landscape:py-2 text-center py-3 md:py-0 px-4 text-white">
+                                <article className={`hover:${colors[props.theme].hoverColor} transition-all phone_landscape:p-1 duration-500 md:p-4 ${colors[props.theme].boxColor} bg-opacity-80 ${colors[props.theme].borderColor} border rounded-b-lg`}>
+                                    <div className={`transition-all ease-linear duration-500 sm:text-sm md:text-base phone_landscape:text-sm phone_landscape:p-1 phone_landscape:py-2 text-center py-3 md:py-0 px-4 ${colors[props.theme].subtitleColor}`}>
                                         The most basic updater for any C++ application
                                     </div>
                                 </article>
                             </motion.div>
-                            <motion.img initial="comeLeftOut" animate="in" exit="comeLeftOut" transition={{ duration: 0.5 }} variants={pageTransition} data-blobity-radius="10" src={vupdateImg} alt="MarkIt" className="drop-shadow-xl phone_landscape:mb-0 phone_landscape:mt-2 mb-2 mt-2 md:mt-4 md:mb-0 border border-gray-600 rounded-lg w-full h-auto" />
+                            <motion.img initial="comeLeftOut" animate="in" exit="comeLeftOut" transition={{ duration: 0.5 }} variants={pageTransition} data-blobity-radius="10" src={vupdateImg} alt="MarkIt" className="transition-colors ease-linear duration-500 drop-shadow-xl phone_landscape:mb-0 phone_landscape:mt-2 mb-2 mt-2 md:mt-4 md:mb-0 border border-gray-600 rounded-lg w-full h-auto" />
                         </div>
                     </div>
                 </div>

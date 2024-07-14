@@ -17,9 +17,18 @@ const pageTransition = {
         scale: 0,
     },
     zoomFinal: {
-        scale: 1,
+        scale: 4,
     },
     zoomBig: {
+        scale: 8,
+    },
+    zoomHandInit: {
+        scale: 0,
+    },
+    zoomHandFinal: {
+        scale: 1,
+    },
+    zoomHandBig: {
         scale: 2,
     }
 }
@@ -34,14 +43,20 @@ function Introduction(props) {
             clickCounter++;
     }
     const colors = {
-        green: {
-            textColor: "text-green-500",
+        light: {
+            textColor: "text-black",
+            bgColor: "bg-white",
+            subTextColor: "text-black",
         },
-        red: {
-            textColor: "text-red-500",
+        sw: {
+            textColor: "text-yellow-300",
+            bgColor: "bg-black",
+            subTextColor: "text-white",
         },
-        blue: {
+        dark: {
             textColor: "text-indigo-500",
+            bgColor: "bg-gray-900",
+            subTextColor: "text-white",
         }
     };
     useEffect(() => {
@@ -49,12 +64,12 @@ function Introduction(props) {
     }, []);
     return (
         <div>
-            <div className="-z-10 bg-gray-900 absolute h-screen w-screen overflow-hidden">
-                <div className="stars" />
-                <div className="twinkling" />
+            <div id="intro-app-id" className={`transition ease-linear duration-500 -z-10 ${colors[props.theme].bgColor} absolute h-screen w-screen overflow-hidden`}>
+                <div className={`stars ${props.theme === "light" ? "invert" : ""}`} />
+                <div className={`twinkling ${props.theme === "light" ? "!invisible" : ("!transition-all " + (((document.getElementById("intro-app-id") && document.getElementById("intro-app-id").classList.contains(colors["light"].bgColor)) || (props.theme === "light")) ? "!delay-700 " : "") + (props.theme === "dark" ? "twinkling-dark" : "twinkling-sw"))}`} />
                 {!props.isPhone() && <motion.div initial="zoomBig" animate="zoomFinal" exit="zoomBig" transition={{ transition: "linear", duration: 16, delay: 1 }} variants={pageTransition} className="clouds" />}
             </div>
-            <div className="flex justify-center items-center text-white h-screen w-screen">
+            <div className={`flex justify-center items-center ${colors[props.theme].subTextColor} h-screen w-screen`}>
                 <div className="w-[90%] md:w-3/4 flex justify-between">
                     <div className="flex flex-col">
                         <div className="relative p-1 md:p-2 m-1 text-5xl overflow-hidden">
@@ -71,7 +86,7 @@ function Introduction(props) {
                             I'm Vaibhav
                         </motion.span>
                     </div>
-                    <motion.div initial="zoomInit" animate="zoomFinal" exit="zoomInit" transition={{ duration: 0.25, delay: 1 }} variants={pageTransition} id="wave" className="self-center text-5xl md:text-7xl select-none">
+                    <motion.div initial="zoomHandInit" animate="zoomHandFinal" exit="zoomHandInit" transition={{ duration: 0.25, delay: 1 }} variants={pageTransition} id="wave" className="self-center text-5xl md:text-7xl select-none">
                         <span data-blobity-magnetic="true" data-blobity-offset-x="8" data-blobity-offset-y="8" data-blobity-radius="48">👋</span>
                     </motion.div>
                 </div>

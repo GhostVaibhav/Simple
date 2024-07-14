@@ -1,20 +1,61 @@
 import { Link, useNavigate } from "react-router-dom";
+import "../index.css";
 import GPL from "../images/gplv3.png";
-import ThemeButton from "./ThemeButton";
+import dark from "../images/noun-moon-7000718.svg";
+import light from "../images/noun-sun-5365900.svg";
+import sw from "../images/noun-space-3167218.svg";
+import SwitchSelector from "react-switch-selector";
 
 function Navbar(props) {
+    const options = [
+        {
+            label: <img alt="Dark Mode button" data-no-blobity id="theme-button-dark" className={`scale-50 ${props.theme === "dark" ? "filter-white" : ""} translate-y-[0.1rem]`} src={dark}></img>,
+            value: "dark",
+            selectedBackgroundColor: "#6b7280",
+        },
+        {
+            label: <img alt="Star Wars button" data-no-blobity id="theme-button-sw" className={`scale-50 ${props.theme === "dark" ? "filter-white" : ""} translate-y-[0.15rem]`} src={sw}></img>,
+            value: "sw",
+            selectedBackgroundColor: "#ecbb53"
+        },
+        {
+            label: <img alt="Light Mode button" data-no-blobity id="theme-button-light" className={`scale-50 ${props.theme === "dark" ? "filter-white" : ""} translate-y-[0.15rem]`} src={light}></img>,
+            value: "light",
+            selectedBackgroundColor: "#3b82f6"
+        }
+    ];
+
+    const onChange = (newValue) => {
+        // if(newValue === "sw")   newValue = "dark";
+        props.setTheme(newValue);
+        document.activeElement.blur();
+    };
+
+    const initialSelectedIndex = options.findIndex(({ value }) => value);
     const colors = {
-        green: {
-            navbarColor: "bg-green-800",
+        light: {
+            textColor: "text-black",
+            navbarColor: "bg-gray-300",
             navbarHoverColor: "bg-green-700",
+            navbarButtonBgColor: "bg-gray-300",
+            navbarButtonBorderColor: "border-gray-500",
+            navbarButtonHoverBgColor: "bg-gray-200",
         },
-        red: {
-            navbarColor: "bg-orange-900",
-            navbarHoverColor: "bg-red-800",
+        sw: {
+            textColor: "text-black",
+            navbarColor: "bg-yellow-300",
+            navbarHoverColor: "bg-yellow-800",
+            navbarButtonBgColor: "bg-yellow-300",
+            navbarButtonBorderColor: "border-yellow-200",
+            navbarButtonHoverBgColor: "border-yellow-400",
         },
-        blue: {
+        dark: {
+            textColor: "text-white",
             navbarColor: "bg-gray-800",
             navbarHoverColor: "bg-gray-800",
+            navbarButtonBgColor: "bg-gray-900",
+            navbarButtonBorderColor: "border-gray-700",
+            navbarButtonHoverBgColor: "bg-gray-700",
         }
     };
     const displayIcons = false;
@@ -32,8 +73,9 @@ function Navbar(props) {
             document.querySelector(".sidebar").classList.toggle("-translate-x-[11rem]");
             document.querySelector("#menu-button").classList.toggle("hidden");
             document.querySelector("#close-button").classList.toggle("hidden");
-            if (props.isPhone())
-                document.querySelector(".open-button").classList.toggle("hidden");
+            // if (props.isPhone()) {
+            //     document.querySelector(".open-button").classList.toggle("hidden");
+            // }
             props.setSidebar(true);
         }
         else {
@@ -180,15 +222,15 @@ function Navbar(props) {
                     </button>
                 </div> */}
             {/* </div> */}
-            <div className="z-50 fixed flex text-white top-0 sidebar transform -translate-x-[11rem] h-screen transition duration-200 ease-in-out">
-                <div className={`flex border-r-gray-700 border-r-[1px] md:opacity-95 transition-all ease-linear duration-500 ${colors[props.theme].navbarColor} flex-col`}>
+            <div className="z-50 fixed flex top-0 sidebar transform -translate-x-[11rem] h-screen transition duration-200 ease-in-out">
+                <div className={`flex md:opacity-95 ${colors[props.theme].textColor} transition-all ease-linear duration-500 ${colors[props.theme].navbarColor} flex-col`}>
                     <div className="sticky">
                         {/* Logo */}
                         <Link to="/" onClick={props.isPhone() && props.handleClose}>
                             <div className="flex justify-center">
-                                <article className="flex p-2 mt-2 mr-2 text-white">
+                                <article className="flex p-2 mt-2 mr-2">
                                     <div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 20 20" fill="white">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
                                             <path fillRule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L7.586 10 5.293 7.707a1 1 0 010-1.414zM11 12a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd" />
                                         </svg>
                                     </div>
@@ -201,7 +243,7 @@ function Navbar(props) {
                     </div>
                     <div className="overflow-x-hidden">
                         {/* Navbar */}
-                        <nav className="text-white flex flex-col">
+                        <nav className="flex flex-col">
                             <div>
                                 <Link to="/" onClick={props.isPhone() && props.handleClose}>
                                     <div className="m-1 mx-2">
@@ -274,24 +316,47 @@ function Navbar(props) {
                             </a>
                             <div className="flex flex-col w-full items-center">
                                 <div className="font-bold max-w-full">
-                                    © 2022
+                                    © 2024
                                 </div>
                                 <div className="max-w-full">
                                     Vaibhav Sharma
                                 </div>
                             </div>
                             <div className="w-full mt-2 h-[1px] bg-gray-600" />
-                            <div className="flex">
-                                <ThemeButton bgColor="bg-[#059669]" setTheme={props.setTheme} active={props.theme === "green"} />
-                                <ThemeButton bgColor="bg-[#ff220e]" setTheme={props.setTheme} active={props.theme === "red"} />
-                                <ThemeButton bgColor="bg-[#2563eb]" setTheme={props.setTheme} active={props.theme === "blue"} />
+                            <div id="theme-switch" className="p-2 mode-switcher-background" style={{ height: 50 }}>
+                                <SwitchSelector
+                                    wrapperBorderRadius={8}
+                                    optionBorderRadius={0}
+                                    selectionIndicatorMargin={0}
+                                    onChange={onChange}
+                                    options={options}
+                                    initialSelectedIndex={initialSelectedIndex}
+                                    backgroundColor={props.theme === "dark" ? "#353b48" : "#fff"}
+                                    fontColor={props.theme === "dark" ? "#fff" : "#000"}
+                                />
+                            </div>
+                            <div className="w-full mb-2 h-[1px] bg-gray-600" />
+                            <div>
+                                <Link to="credits" onClick={props.isPhone() && props.handleClose}>
+                                    <div className="m-1 mx-2">
+                                        <article onMouseEnter={displayIcons && !props.isPhone() ? () => hoverIn(".icon4") : () => { }} onMouseLeave={displayIcons && !props.isPhone() ? () => hoverOut(".icon4") : () => { }} data-blobity-magnetic="true" data-blobity-radius="12" className={`flex items-center hover:${colors[props.theme].navbarHoverColor} rounded-md p-2 pr-4`}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="mx-1 inline h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fillRule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z" clipRule="evenodd" />
+                                            </svg>
+                                            Credits
+                                            {displayIcons && !props.isPhone() && <svg className="icon4 justify-self-end opacity-0 w-5 h-5 ml-1" viewBox="0 0 24 24">
+                                                <path fill="white" d="M9,7V13H13V17H15V7H13V11H11V7H9M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2Z" />
+                                            </svg>}
+                                        </article>
+                                    </div>
+                                </Link>
                             </div>
                         </nav>
                     </div>
                 </div>
-                <button aria-label="Sidebar button" onClick={click} className="h-fit ml-3 open-button cursor-none transition duration-150 focus:outline-none opacity-90 backdrop-blur-xl mx-0 m-2 p-4 rounded-full bg-gray-900 hover:bg-gray-700 border border-gray-700 z-10 -right-16 top-0 text-white">
+                <button aria-label="Sidebar button" onClick={click} className={`h-fit ml-3 open-button cursor-none transition-all ease-linear duration-500 focus:outline-none opacity-90 backdrop-blur-xl mx-0 m-2 p-4 rounded-full ${colors[props.theme].navbarButtonBgColor} hover:${colors[props.theme].navbarButtonHoverBgColor} border ${colors[props.theme].navbarButtonBorderColor} z-10 -right-16 top-0 ${colors[props.theme].textColor}`}>
                     <div id="menu-button" className="block">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="white" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h7" />
                         </svg>
                     </div>
@@ -301,7 +366,7 @@ function Navbar(props) {
                         </svg>
                     </div>
                     <div id="close-button" className="hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="white" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </div>

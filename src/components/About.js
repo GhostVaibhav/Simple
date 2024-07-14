@@ -4,6 +4,7 @@ import Github from "../images/github.svg"
 import Gmail from "../images/gmail.svg"
 import Linkedin from "../images/linkedin.svg"
 import { motion } from "framer-motion";
+import "../index.css";
 
 const pageTransition = {
     in: {
@@ -65,22 +66,25 @@ function getRandomInt(ranges) {
 
 export default function About(props) {
     const colors = {
-        green: {
-            textColor: "text-teal-400",
-            bgColor: "bg-green-900",
-            tileColor: "bg-green-800",
-            boxColor: "bg-green-700",
-            borderColor: "border-green-600",
+        light: {
+            textColor: "text-black",
+            subTextColor: "text-black",
+            bgColor: "bg-white",
+            tileColor: "bg-gray-200",
+            boxColor: "bg-gray-300",
+            borderColor: "border-gray-500",
         },
-        red: {
-            textColor: "text-red-300",
-            bgColor: "bg-red-900",
-            tileColor: "bg-pink-800",
-            boxColor: "bg-pink-800",
-            borderColor: "border-pink-600",
+        sw: {
+            textColor: "text-black",
+            subTextColor: "text-black",
+            bgColor: "bg-black",
+            tileColor: "bg-gray-900",
+            boxColor: "bg-yellow-300",
+            borderColor: "border-yellow-200",
         },
-        blue: {
+        dark: {
             textColor: "text-indigo-500",
+            subTextColor: "text-white",
             bgColor: "bg-gray-900",
             tileColor: "bg-gray-800",
             boxColor: "bg-gray-700",
@@ -194,13 +198,15 @@ export default function About(props) {
                     <div className={`col-span-3 ${colors[props.theme].tileColor} transition-colors ease-linear duration-500 rounded animate-pulse`} style={{ animationDelay: `${getRandomInt(delay)}s`, animationDuration: `${getRandomInt(dur)}s` }} />
                 </motion.div>
                 {/* Content */}
-                <div className="w-[90vw] pt-8 md:pt-0 h-min md:w-9/12 lg:w-7/12 relative">
+                <div className="transition-colors ease-linear duration-500 w-[90vw] pt-8 md:pt-0 h-min md:w-9/12 lg:w-7/12 relative">
                     <motion.div transition={trans} initial={props.isPhone() ? "comeLeftOut" : "upOut"} animate={props.isPhone() ? "in" : "upIn"} exit={props.isPhone() ? "comeLeftOut" : "upOut"} variants={pageTransition} className={`phone_landscape:p-1 p-2 md:p-4 ${colors[props.theme].boxColor} transition-colors ease-linear duration-500 bg-opacity-80 ${colors[props.theme].borderColor} border rounded-lg`}>
                         <h1 className="pt-0 p-2 text-2xl lg:text-4xl text-white font-bold">
-                            <span data-no-blobity className={`${colors[props.theme].textColor} transition-colors ease-linear duration-500 text-3xl lg:text-5xl`} style={{ "fontFamily": "Caveat" }}>About </span> Me
+                            <span data-no-blobity className={`${colors[props.theme].textColor} transition-colors ease-linear duration-500 text-3xl lg:text-5xl`} style={{ "fontFamily": "Caveat" }}>About </span>
+                            Me
                         </h1>
-                        <article data-no-blobity className="pt-2 md:pt-0 px-4 text-white">
-                            <span className="text-indigo-300">Hi</span>👋, my name is<a target="_blank" rel="noreferrer" className="lg:underline-offset-2 underline hover:decoration-transparent decoration-teal-500 rounded-md p-1" href="https://www.linkedin.com/in/ghost-vaibhav/"><strong>Vaibhav Sharma!</strong></a>I am a student currently pursuing
+                        <article data-no-blobity className={`transition-all ease-linear duration-500 pt-2 md:pt-0 px-4 ${colors[props.theme].subTextColor}`}>
+                            <span className={`${colors[props.theme].textColor}`}>Hi</span>
+                            👋, my name is<a target="_blank" rel="noreferrer" className="lg:underline-offset-2 underline hover:decoration-transparent decoration-teal-500 rounded-md p-1" href="https://www.linkedin.com/in/ghost-vaibhav/"><strong>Vaibhav Sharma!</strong></a>I am a student currently pursuing
                             <strong> Bachelor of Technology in Computer Science</strong> from<a target="_blank" rel="noreferrer" className="lg:underline-offset-2 underline hover:decoration-transparent decoration-blue-500 rounded-md p-1" href="https://vit.ac.in">Vellore Institute of Technology</a>,<a className="lg:underline-offset-2 underline decoration-indigo-500 hover:decoration-transparent p-1 rounded-md" target="_blank" rel="noreferrer" href="https://goo.gl/maps/gosdtXmyUZt5scTE8">Vellore</a>🏛️.
                             I am a keen learner proficient in C, C++, HTML, CSS, Python, JavaScript, React, TailwindCSS, Bootstrap, Git, Docker, deployment tools <i>(Heroku, Netlify, etc.)</i> and various CI/CD tools <i>(GitHub Actions, TravisCI, CircleCI, etc.)</i>.
                         </article>
@@ -210,7 +216,7 @@ export default function About(props) {
                             <h1 className="pt-0 p-2 text-2xl lg:text-4xl text-white font-bold">
                                 <span data-no-blobity className={`${colors[props.theme].textColor} transition-colors ease-linear duration-500 text-3xl lg:text-5xl`} style={{ "fontFamily": "Caveat" }}>Education</span>
                             </h1>
-                            <article data-no-blobity className="pt-2 md:pt-0 px-4 text-white">
+                            <article data-no-blobity className={`transition-all ease-linear duration-500 pt-2 md:pt-0 px-4 ${colors[props.theme].subTextColor}`}>
                                 I am currently a <strong>final year student</strong> in <a target="_blank" rel="noreferrer" className="lg:underline-offset-2 underline hover:decoration-transparent decoration-blue-500 rounded-md p-1" href="https://vit.ac.in">Vellore Institute of Technology</a>,<a className="lg:underline-offset-2 underline decoration-indigo-500 hover:decoration-transparent p-1 rounded-md" target="_blank" rel="noreferrer" href="https://goo.gl/maps/aPnJgz6SgxoMomna8">Vellore</a>🏛️ pursuing my <strong>Bachelor of Technology <i>(B.Tech)</i> in Computer Science with specialisation in Blockchain Technology</strong> with a<Popover className="p-1 hover:bg-teal-600 mx-1 rounded-lg inline border border-teal-400"><Popover.Button data-blobity-offset-x="4" data-blobity-radius="8">CGPA</Popover.Button><Popover.Panel className={`absolute p-2 ${colors[props.theme].boxColor} transition-colors ease-linear duration-500 border ${colors[props.theme].borderColor} rounded-md`}><div>Cumulative Grade Point Average</div></Popover.Panel></Popover>of <strong>8.66</strong>.
                                 I completed my schooling from<a target="_blank" rel="noreferrer" className="lg:underline-offset-2 underline hover:decoration-transparent decoration-green-500 rounded-md p-1" href="https://tafssp.com/">The Air Force School</a>,<a className="lg:underline-offset-2 underline decoration-green-500 hover:decoration-transparent p-1 rounded-md" target="_blank" rel="noreferrer" href="https://goo.gl/maps/xQJk7qTvCZ2mhc4H7">New Delhi</a>🏫 with a score of <strong>96.2% in AISSCE</strong>.
                                 I have avid interest in <div className="inline font-bold text-green-400">Mathematics</div>, <div className="inline font-bold text-red-400">Physics</div> and <div className="inline font-bold text-teal-400">Computer Science</div>.
@@ -220,14 +226,14 @@ export default function About(props) {
                             <h1 className="pb-3 text-2xl lg:text-4xl text-white font-bold">
                                 My <span data-no-blobity className={`${colors[props.theme].textColor} transition-colors ease-linear duration-500 text-3xl lg:text-5xl`} style={{ "fontFamily": "Caveat" }}>Location</span>
                             </h1>
-                            <iframe className="rounded-lg w-full h-full" title="map" style={{ "border": 0, "filter": "invert(100%)" }} src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7005.920258451487!2d77.0438831!3d28.6009729!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1ad166cab617%3A0xab1280adec323c9b!2sSector%204%2C%20Dwarka%2C%20Delhi!5e0!3m2!1sen!2sin!4v1699302812364!5m2!1sen!2sin" allowFullScreen="" loading="lazy"></iframe>
+                            <iframe className={`transition-all ease-linear duration-500 border-0 rounded-lg w-full h-full ${props.theme === "dark" ? "filter-invert" : ""}`} title="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7005.920258451487!2d77.0438831!3d28.6009729!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1ad166cab617%3A0xab1280adec323c9b!2sSector%204%2C%20Dwarka%2C%20Delhi!5e0!3m2!1sen!2sin!4v1699302812364!5m2!1sen!2sin" allowFullScreen="" loading="lazy"></iframe>
                         </motion.div>
                     </div>
                     <motion.div transition={trans3} initial={props.isPhone() ? "comeLeftOut" : "downOut"} animate={props.isPhone() ? "in" : "upIn"} exit={props.isPhone() ? "comeLeftOut" : "downOut"} variants={pageTransition} className={`phone_landscape:p-1 my-2 mt-4 md:m-2 md:mt-4 md:mx-0 p-2 md:p-4 ${colors[props.theme].boxColor} transition-colors ease-linear duration-500 bg-opacity-80 ${colors[props.theme].borderColor} border rounded-lg`}>
                         <h1 className="pt-0 pb-3 p-2 text-2xl lg:text-4xl text-white font-bold">
                             My <span data-no-blobity className={`${colors[props.theme].textColor} transition-colors ease-linear duration-500 text-3xl lg:text-5xl`} style={{ "fontFamily": "Caveat" }}>Hobbies</span>
                         </h1>
-                        <article data-no-blobity className="pt-2 md:pt-0 px-4 text-white">
+                        <article data-no-blobity className={`transition-all ease-linear duration-500 pt-2 md:pt-0 px-4 ${colors[props.theme].subTextColor}`}>
                             My hobbies include playing sports like <strong className="italic">Cricket</strong>, <strong className="italic">Badminton</strong> and <strong className="italic">Football</strong>. I'm also interested in <div className="inline font-bold text-teal-400">creating music</div>, <div className="inline font-bold text-blue-400">challenging puzzles</div>
                             , <strong>reading and doing</strong> a lot of different things from a variety of domains in <div className="inline text-red-400 font-bold">Computer Science</div>.
                         </article>

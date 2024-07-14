@@ -9,6 +9,7 @@ const OutsideAlerter = lazy(() => import("./components/OutsideAlerter"));
 const Introduction = lazy(() => import("./components/Introduction"));
 const Projects = lazy(() => import("./components/Projects"));
 const Contact = lazy(() => import("./components/Contact"));
+const Credits = lazy(() => import("./components/Credits"));
 
 function isPhone() {
     return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -72,12 +73,16 @@ function App() {
     const [verified, setVerified] = useState(false);
     const challengeBtnCountMax = 10;
     const [challengeBtn, setChallengeBtn] = useState(1);
-    const [theme, setTheme] = useState("blue");
+    const [theme, setTheme] = useState("dark");
     function inInput() {
-        const elem = document.getElementById("in-name");
-        const elem2 = document.getElementById("in-email");
-        const elem3 = document.getElementById("in-msg");
-        if (elem === document.activeElement || elem2 === document.activeElement || elem3 === document.activeElement)
+        var elem = [
+            document.getElementById("in-name"),
+            document.getElementById("in-email"),
+            document.getElementById("in-msg"),
+        ];
+        if(document.getElementById("theme-switch") !== null)
+            elem.push(...document.getElementById("theme-switch").childNodes);
+        if (document.activeElement in elem)
             return true;
         return false;
     }
@@ -92,7 +97,7 @@ function App() {
         setSidebar(true);
     }
     function handleClose() {
-        if (!document.querySelector(".sidebar").classList.contains("-translate-x-[11rem]")) {
+        if (!inInput() && !document.querySelector(".sidebar").classList.contains("-translate-x-[11rem]")) {
             document.querySelector(".sidebar").classList.toggle("-translate-x-[11rem]");
             document.querySelector("#menu-button").classList.toggle("hidden");
             document.querySelector("#close-button").classList.toggle("hidden");
@@ -101,18 +106,13 @@ function App() {
         }
         setSidebar(false);
     }
-    function openLicense() {
-        if (!inInput())
-            window.open("https://github.com/GhostVaibhav/Simple/blob/master/LICENSE");
-    }
     useKey("ArrowRight", handleOpen);
     useKey("ArrowLeft", handleClose);
     useKey("Escape", handleClose);
-    useKey("KeyL", openLicense);
     return (
         <>
             <div className="scroll-smooth">
-                <Suspense fallback={<Loader />}>
+                <Suspense fallback={<Loader theme={theme} />}>
                     <Router>
                         <OutsideAlerter isPhone={isPhone}>
                             <Navbar isPhone={isPhone} sidebar={sidebar} theme={theme} setTheme={setTheme} setSidebar={setSidebar} handleClose={handleClose} handleOpen={handleOpen} useKey={useKey} />
@@ -123,6 +123,7 @@ function App() {
                                 <Route path="/about" element={<About isPhone={isPhone} theme={theme} setChallengeBtn={setChallengeBtn} challengeBtn={challengeBtn} btnCountMax={challengeBtnCountMax} />} />
                                 <Route path="/projects" element={<Projects theme={theme} isPhone={isPhone} />} />
                                 <Route path="/contact" element={<Contact theme={theme} verified={verified} setVerified={setVerified} />} />
+                                <Route path="/credits" element={<Credits theme={theme} />} />
                             </Routes>
                         </AnimatePresence>
                     </Router>

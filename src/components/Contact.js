@@ -43,6 +43,32 @@ const trans = {
 }
 
 function Contact(props) {
+    const colors = {
+        light: {
+            textColor: "text-black",
+            inputBgColor: "",
+            inputBorderColor: "",
+            bgColor: "bg-white",
+            boxColor: "bg-gray-300",
+            borderColor: "border-gray-500",
+        },
+        sw: {
+            textColor: "text-black",
+            inputBgColor: "bg-black",
+            inputBorderColor: "bg-gray-900",
+            bgColor: "bg-black",
+            boxColor: "bg-yellow-300",
+            borderColor: "border-yellow-200",
+        },
+        dark: {
+            textColor: "text-indigo-500",
+            inputBgColor: "bg-gray-800",
+            inputBorderColor: "",
+            bgColor: "bg-gray-900",
+            boxColor: "bg-gray-700",
+            borderColor: "border-gray-800",
+        }
+    };
     const success = () => {
         props.setVerified(true);
         document.getElementById("open").classList.remove("hidden");
@@ -94,21 +120,23 @@ function Contact(props) {
     }, []);
     return (
         <div>
-            <div className="h-fit min-h-screen min-w-full w-fit bg-gray-900 flex justify-center items-center">
+            <div className={`transition-all ease-linear duration-500 h-fit min-h-screen min-w-full w-fit ${colors[props.theme].bgColor} flex justify-center items-center`}>
                 <div className="z-10 absolute h-screen w-screen !opacity-60 blur-2xl overflow-hidden">
                     <div className="absolute top-1/2 md:top-1/4 left-[10%] md:left-1/4 h-1/3 md:h-auto md:w-1/3 aspect-square bg-purple-300 rounded-full mix-blend-multiply filter animate-something animation-delay-2000" />
                     <div className="absolute top-1/2 md:top-1/4 left-[15%] md:left-[45%] h-1/3 md:h-auto md:w-1/3 aspect-square bg-yellow-300 rounded-full mix-blend-multiply filter animate-something" />
                     <motion.div transition={trans} initial="upOut" animate="upIn" exit="upOut" variants={pageTransition} className="absolute top-1/3 md:top-[20%] left-[15%] md:left-[45%] h-1/3 md:h-auto md:w-1/3 aspect-square bg-pink-300 rounded-full mix-blend-multiply filter animate-something animation-delay-4000" />
                 </div>
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="z-20 phone_landscape:my-2 flex justify-center backdrop-blur-2xl rounded-lg">
-                    <div className="flex flex-col sm:flex-row items-center border border-gray-800 bg-opacity-80 bg-gray-700 rounded-lg">
-                        <div data-blobity-offset-y="10" style={{ fontFamily: "Caveat" }} className="text-center phone_landscape:mx-1 font-extrabold mt-6 pr-3 md:pr-0 m-2 text-indigo-500 text-5xl w-full md:ml-6 md:mr-20">📑Contact Me</div>
+                    <div className={`transition-all ease-linear duration-500 flex flex-col sm:flex-row items-center border ${colors[props.theme].borderColor} ${colors[props.theme].boxColor} bg-opacity-80 rounded-lg`}>
+                        <div data-blobity-offset-y="10" style={{ fontFamily: "Caveat" }} className={`text-center phone_landscape:mx-1 font-extrabold mt-6 pr-3 md:pr-0 m-2 ${colors[props.theme].textColor} text-5xl w-full md:ml-6 md:mr-20`}>
+                            📑Contact Me
+                        </div>
                         <form id="form" onSubmit={handleSubmit} action="https://formcarry.com/s/rJM8b8RJ5Ob" method="POST" acceptCharset="UTF-8" className="flex flex-col phone_landscape:my-0 phone_landscape:mx-2 text-white my-4 md:mr-6 m-2 justify-center w-[90%]">
-                            <input id="in-name" data-blobity-radius="8" name="firstName" spellCheck="false" className="w-full m-2 self-center p-2 rounded-md bg-gray-800" placeholder="Name" type="text" />
-                            <input id="in-email" data-blobity-radius="8" name="email" className="w-full m-2 self-center p-2 rounded-md bg-gray-800" placeholder="Email*" type="email" />
-                            <input id="in-msg" data-blobity-radius="8" name="anotherInput" spellCheck="false" autoComplete="off" className="resize-none w-full m-2 self-center p-2 rounded-md bg-gray-800" placeholder="Message*" type="text" />
+                            <input id="in-name" data-blobity-radius="8" name="firstName" spellCheck="false" className={`transition-all ease-linear duration-500 w-full m-2 self-center p-2 rounded-md ${colors[props.theme].inputBgColor}`} placeholder="Name" type="text" />
+                            <input id="in-email" data-blobity-radius="8" name="email" className={`transition-all ease-linear duration-500 w-full m-2 self-center p-2 rounded-md ${colors[props.theme].inputBgColor}`} placeholder="Email*" type="email" />
+                            <input id="in-msg" data-blobity-radius="8" name="anotherInput" spellCheck="false" autoComplete="off" className={`transition-all ease-linear duration-500 resize-none w-full m-2 self-center p-2 rounded-md ${colors[props.theme].inputBgColor}`} placeholder="Message*" type="text" />
                             <span className="flex w-full pr-4 phone_landscape:pr-0 md:pr-0" required>
-                                <ReCAPTCHA onErrored={expire} onExpired={expire} onChange={success} className="w-fit self-center" sitekey={rekey} theme="dark" />
+                                <ReCAPTCHA onErrored={expire} onExpired={expire} onChange={success} className="w-fit self-center" sitekey={rekey} theme={props.theme === "light" ? "light" : "dark"} />
                             </span>
                             <button id="open" data-blobity-radius="8" className="hidden cursor-none m-2 w-fit self-end p-1 border-2 border-transparent focus:border-indigo-900 bg-indigo-700 rounded-md" type="submit">Submit</button>
                             <button onClick={handleSubmit} disabled id="dis" data-blobity-radius="8" className="cursor-none m-2 w-fit self-end p-1 border-2 border-transparent focus:border-indigo-500 bg-indigo-400 rounded-md" type="button">Submit</button>

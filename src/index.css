@@ -169,8 +169,15 @@ html {
 .twinkling {
   background: transparent url("../src/images/twinkling.png") repeat top center;
   z-index: 1;
-  filter: invert(9%) sepia(16%) saturate(1665%) hue-rotate(183deg) brightness(94%) contrast(99%);
   animation: move-twink-back 200s linear infinite;
+}
+
+.twinkling-dark {
+  filter: invert(9%) sepia(16%) saturate(1665%) hue-rotate(183deg) brightness(94%) contrast(99%);
+}
+
+.twinkling-sw {
+  filter: invert(0%) sepia(0%) saturate(20%) hue-rotate(12deg) brightness(95%) contrast(105%);
 }
 
 .clouds {
@@ -225,4 +232,78 @@ html {
 
 .ldio-mffgx1tmlt8 div {
   box-sizing: content-box;
+}
+
+.filter-white {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(59deg) brightness(103%)
+}
+
+.filter-invert {
+  filter: invert(100%)
+}
+
+.mode-switcher-background {
+  background: linear-gradient(270deg, #9ca3af, #facc15, #60a5fa);
+  background-size: 600% 600%;
+
+  -webkit-animation: mode-switcher-background-anim 5s ease infinite;
+  -moz-animation: mode-switcher-background-anim 5s ease infinite;
+  -o-animation: mode-switcher-background-anim 5s ease infinite;
+  animation: mode-switcher-background-anim 5s ease infinite;
+}
+
+@-webkit-keyframes mode-switcher-background-anim {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 51%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@-moz-keyframes mode-switcher-background-anim {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 51%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@-o-keyframes mode-switcher-background-anim {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 51%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes mode-switcher-background-anim {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 51%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
 }

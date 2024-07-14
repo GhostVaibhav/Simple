@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function ThemeButton(props) {
     const theming = {
-        "bg-[#059669]": "green",
+        "bg-[#059669]": "light",
         "bg-[#ff220e]": "red",
         "bg-[#2563eb]": "blue"
     }
