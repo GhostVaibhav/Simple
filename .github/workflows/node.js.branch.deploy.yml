@@ -25,7 +25,7 @@ jobs:
         cache: 'npm'
     - name: Installing dependencies
       run: sudo apt-get install -y jq
-    - name: Creating the new website's CNAME value on Cloudflare
+    - name: Creating the new website's CNAME value on Cloudflare and creating a new repository
       run: |
         echo "CNAME_ID=$(echo -n ${{ github.run_id }} | sha256sum | cut -c-32)" >> $GITHUB_ENV
         echo "REAL_ID=$(curl --request POST \
@@ -42,18 +42,6 @@ jobs:
         "id": "'"$CNAME_ID"'",
         "ttl": 3600
         }') | jq '.result.id')" >> $GITHUB_ENV
-    - name: Installing dependencies
-      run: npm install
-    - name: Writing to environment variable
-      run: |
-           touch .env
-           echo 'REACT_APP_RECAPTCHA_KEY=${{ secrets.REACT_APP_RECAPTCHA_KEY }}' >> .env
-    - name: Build the website
-      run: npm run build
-    - name: Creating the CNAME file
-      run: echo '${{ github.ref_name }}.ghostvaibhav.com' > ./build/CNAME
-    - name: Creating a temporary GitHub repository for the build
-      run: |
         curl -L \
         -X POST \
         -H "Accept: application/vnd.github+json" \
@@ -70,6 +58,16 @@ jobs:
         "has_wiki": false,
         "auto_init": true
         }'
+    - name: Installing dependencies
+      run: npm install
+    - name: Writing to environment variable
+      run: |
+        touch .env
+        echo 'REACT_APP_RECAPTCHA_KEY=${{ secrets.REACT_APP_RECAPTCHA_KEY }}' >> .env
+    - name: Build the website
+      run: npm run build
+    - name: Creating the CNAME file
+      run: echo '${{ github.ref_name }}.ghostvaibhav.com' > ./build/CNAME
     - name: Pushes to another repository
       uses: cpina/github-action-push-to-another-repository@main
       env:

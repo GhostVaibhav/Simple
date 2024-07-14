@@ -30,8 +30,8 @@ jobs:
       run: npm install
     - name: Writing to environment variable
       run: |
-           touch .env
-           echo 'REACT_APP_RECAPTCHA_KEY=${{ secrets.REACT_APP_RECAPTCHA_KEY }}' >> .env
+        touch .env
+        echo 'REACT_APP_RECAPTCHA_KEY=${{ secrets.REACT_APP_RECAPTCHA_KEY }}' >> .env
     - name: Build the website
       run: npm run build
     - name: Creating the CNAME file
