@@ -37,7 +37,7 @@ jobs:
         "proxied": true,
         "type": "CNAME",
         "comment": "Temporary Feature Branch",
-        "id": ${{ env.CNAME_ID }},
+        "id": "'"$CNAME_ID"'",
         "ttl": 3600
         }'
         sleep 10
@@ -61,7 +61,7 @@ jobs:
         https://api.github.com/orgs/Temporary-Feature-Branch/repos \
         -d '{
         "name": "${{ github.ref_name }}-Simple",
-        "description": "$CNAME_ID",
+        "description": "'"$CNAME_ID"'",
         "homepage": "https://github.com/GhostVaibhav/Simple",
         "visibility": "public",
         "has_issues": false,
@@ -77,7 +77,7 @@ jobs:
         source-directory: 'build'
         destination-github-username: 'Temporary-Feature-Branch'
         destination-repository-name: '${{ github.ref_name }}-Simple'
-        user-email: sharmavaibhav110028@gmail.com
+        user-email: 48472541+GhostVaibhav@users.noreply.github.com
         target-branch: main
     - name: Enabling GitHub Pages for the temporary repository
       run: |

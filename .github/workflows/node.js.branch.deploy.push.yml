@@ -44,5 +44,5 @@ jobs:
         source-directory: 'build'
         destination-github-username: 'Temporary-Feature-Branch'
         destination-repository-name: '${{ github.ref_name }}-Simple'
-        user-email: sharmavaibhav110028@gmail.com
+        user-email: 48472541+GhostVaibhav@users.noreply.github.com
         target-branch: main
