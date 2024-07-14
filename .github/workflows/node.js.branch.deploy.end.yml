@@ -15,7 +15,7 @@ jobs:
       run: sudo apt-get install -y jq
     - name: Getting the temporary CNAME record ID from the Repo
       run: |
-        echo "CNAME_ID = $(curl -L \
+        echo "CNAME_ID=$(curl -L \
         -H 'Accept: application/vnd.github+json' \
         -H 'Authorization: Bearer ${{ secrets.GENERATE_TEMPORARY_BRANCH_WEBSITE }}' \
         -H 'X-GitHub-Api-Version: 2022-11-28' \
@@ -23,7 +23,7 @@ jobs:
     - name: Deleting the new website's CNAME value from Cloudflare
       run: |
         curl --request DELETE \
-        --url https://api.cloudflare.com/client/v4/zones/${{ secrets.CNAME_ZONE_ID }}/dns_records/"'$CNAME_ID'" \
+        --url https://api.cloudflare.com/client/v4/zones/${{ secrets.CNAME_ZONE_ID }}/dns_records/'"$CNAME_ID"' \
         --header 'Content-Type: application/json' \
         --header 'X-Auth-Email: sharmavaibhav110028@gmail.com' \
         --header 'X-Auth-Key: ${{ secrets.CNAME_KEY }}'

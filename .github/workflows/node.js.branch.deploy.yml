@@ -40,7 +40,6 @@ jobs:
         "id": "'"$CNAME_ID"'",
         "ttl": 3600
         }'
-        sleep 10
     - name: Installing dependencies
       run: npm install
     - name: Writing to environment variable
