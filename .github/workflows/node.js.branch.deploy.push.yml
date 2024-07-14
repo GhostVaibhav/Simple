@@ -3,6 +3,7 @@ name: Modifying the temporary site and deploying
 on:
   push:
     branches:
+      - '*'
       - '!main'
       - '!develop'
   workflow_dispatch:
