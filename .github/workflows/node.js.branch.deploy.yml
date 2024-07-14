@@ -72,7 +72,7 @@ jobs:
     - name: Pushes to another repository
       uses: cpina/github-action-push-to-another-repository@main
       env:
-        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        API_TOKEN_GITHUB: ${{ secrets.GENERATE_TEMPORARY_BRANCH_WEBSITE }}
       with:
         source-directory: 'build'
         destination-github-username: 'Temporary-Feature-Branch'
