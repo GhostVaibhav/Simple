@@ -37,7 +37,7 @@ jobs:
         "proxied": true,
         "type": "CNAME",
         "comment": "Temporary Feature Branch",
-        "id": "$CNAME_ID",
+        "id": ${{ env.CNAME_ID }},
         "ttl": 3600
         }'
         sleep 10

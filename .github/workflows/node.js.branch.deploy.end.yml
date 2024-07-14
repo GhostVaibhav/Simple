@@ -23,7 +23,7 @@ jobs:
     - name: Deleting the new website's CNAME value from Cloudflare
       run: |
         curl --request DELETE \
-        --url https://api.cloudflare.com/client/v4/zones/${{ secrets.CNAME_ZONE_ID }}/dns_records/$CNAME_ID \
+        --url https://api.cloudflare.com/client/v4/zones/${{ secrets.CNAME_ZONE_ID }}/dns_records/${{ env.CNAME_ID }} \
         --header 'Content-Type: application/json' \
         --header 'X-Auth-Email: sharmavaibhav110028@gmail.com' \
         --header 'X-Auth-Key: ${{ secrets.CNAME_KEY }}'
